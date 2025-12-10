@@ -1,0 +1,174 @@
+---
+import Call from "../assets/images/call-icon.svg"
+import Email from "../assets/images/email-icon.svg"
+import FooterLinks from "./FooterLinks.astro"
+import AWSLogo from "../assets/images/aws-footer-logo.png"
+import GoldLogo from "../assets/images/gold-footer-logo.png"
+import LinkClutch from "../assets/images/Linkclutch.png"
+import MSCertification from "../assets/images/ms-certification.png"
+import GoogleRating from "../assets/images/google-5-rating.png"
+import Logo from "../assets/images/giriraj-digital.svg"
+import X from "../assets/images/x.svg"
+import Instagram from "../assets/images/instagram.svg"
+import Linkedin from "../assets/images/linkedin.svg"
+import Facebook from "../assets/images/facebook.svg"
+import youtube from "../assets/images/youtube.svg"
+
+const IndustriesLink = [
+    { Link: "/", Text: "AI Automation" },
+    { Link: "/", Text: "Insurance" },
+    { Link: "/", Text: "Healthcare" },
+    { Link: "/", Text: "Media & Entertainment" },
+    { Link: "/", Text: "Travel & Tourism" },
+    { Link: "/", Text: "Fitness" },
+    { Link: "/", Text: "Retail & Hospitality" },
+    { Link: "/", Text: "E Commerce" },
+    { Link: "/", Text: "AI App Development Services" },
+];
+
+const ServiceLinks = [
+    { Link: "/", Text: "Product Engineering" },
+    { Link: "/", Text: "E Commerce Solutions" },
+    { Link: "/", Text: "Web Application Development" },
+    { Link: "/", Text: "Dedicated Development" },
+    { Link: "/", Text: "Umbraco Development Service" },
+    { Link: "/", Text: "MS Power Development Service" },
+    { Link: "/", Text: "Quality Assurance" },
+    { Link: "/", Text: "UI/UX Design Services" },
+    { Link: "/", Text: "DevOps Services" },
+];
+
+const ResourceLinks = [
+    { Link: "/", Text: "Client Success Stories" },
+    { Link: "/", Text: "Portfolio" },
+    { Link: "/", Text: "Blog" },
+    { Link: "/", Text: "White Paper" },
+    { Link: "/", Text: "Business Events" },
+    { Link: "/", Text: "Security at GD" }
+];
+
+const AboutUsLinks = [
+    { Link: "/", Text: "About GIRIRAJ DIGITAL" },
+    { Link: "/", Text: "Our Leadership Team" },
+    { Link: "/", Text: "Technology Partners" },
+    { Link: "/", Text: "Careers" },
+    { Link: "/", Text: "Culture & Events" },
+    { Link: "/", Text: "Awards & Recognition" },
+    { Link: "/", Text: "Contact Us" },
+    { Link: "/", Text: "CSR" }
+];
+---
+
+<footer class="w-full text-white bg-white mt-10 lg:mt-40">
+    <div class="py-[100px] bg-[#041E28] px-5 lg:px-[30px]">
+        <div class="grid grid-cols-12  gap-5 lg:gap-[30px] xl:gap-y-20">
+            <!-- * Business And HR/Career Details -->
+            <div class="col-span-12 xl:col-start-2 xl:col-span-2 space-y-5 lg:space-y-[30px]">
+                <div class="py-[13px] px-5 space-y-[18px] rounded-[18px] border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.06)]">
+                    <h5 class="font-semibold lg:text-lg uppercase pb-2 border-b border-[rgba(255,255,255,0.2)]">Business</h5>
+                    <div class="roboto space-y-3.5">
+                        <a href="tel:+918200817694" class="flex space-x-2 content-center items-center">
+                            <img src={Call.src} alt="contact">
+                            <p>+91 82008 17694</p>
+                        </a>
+                        <a href="mailto:info@girirajdigital.com" class="flex space-x-2 content-center items-center">
+                            <img src={Email.src} alt="email">
+                            <p>info@girirajdigital.com</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="py-[13px] px-5 space-y-[18px] rounded-[18px] border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.06)]">
+                    <p class="font-semibold lg:text-lg uppercase pb-2 border-b border-[rgba(255,255,255,0.2)]">HR / Career</p>
+                    <div class="roboto space-y-3.5">
+                        <a href="tel:+918200817694" class="flex space-x-2 content-center items-center">
+                            <img src={Call.src} alt="contact">
+                            <p>+91 82008 17694</p>
+                        </a>
+                        <a href="mailto:career@girirajdigital.com" class="flex space-x-2 content-center items-center">
+                            <img src={Email.src} alt="email">
+                            <p>career@girirajdigital.com</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- * INDUSTRIES -->
+            <div class="col-span-12 space-y-5 xl:col-span-2">
+                <div class="w-full border-b border-[#FFFFFF]">
+                    <h5 class="font-bold pb-[22px]  lg:text-lg uppercase bg-[linear-gradient(90deg,#0FA1DB_0%,#CCCCCC_100%)] w-fit bg-clip-text text-transparent">INDUSTRIES</h5>
+                </div>
+                {IndustriesLink.map((item) => (
+                    <FooterLinks Link={item.Link} Text={item.Text} />
+                ))}
+            </div>
+
+
+            <!-- * Services -->
+            <div class="col-span-12 space-y-5 xl:col-span-2">
+                <div class="w-full border-b border-[#FFFFFF]">
+                    <h5 class="font-bold pb-[22px]  lg:text-lg uppercase bg-[linear-gradient(90deg,#0FA1DB_0%,#CCCCCC_100%)] w-fit bg-clip-text text-transparent">SERVICES</h5>
+                </div>
+                {ServiceLinks.map((item) => (
+                    <FooterLinks Link={item.Link} Text={item.Text} />
+                ))}
+            </div>
+
+            <!-- * Resources -->
+            <div class="col-span-12 space-y-5 xl:col-span-2">
+                <div class="w-full border-b border-[#FFFFFF]">
+                    <h5 class="font-bold pb-[22px]  lg:text-lg uppercase bg-[linear-gradient(90deg,#0FA1DB_0%,#CCCCCC_100%)] w-fit bg-clip-text text-transparent">Resources</h5>
+                </div>
+                {ResourceLinks.map((item) => (
+                    <FooterLinks Link={item.Link} Text={item.Text} />
+                ))}
+            </div>
+
+            <!-- * About Us -->
+            <div class="col-span-12 space-y-5 xl:col-span-2">
+                <div class="w-full border-b border-[#FFFFFF]">
+                    <h5 class="font-bold pb-[22px]  lg:text-lg uppercase bg-[linear-gradient(90deg,#0FA1DB_0%,#CCCCCC_100%)] w-fit bg-clip-text text-transparent">About Us</h5>
+                </div>
+                {AboutUsLinks.map((item) => (
+                    <FooterLinks Link={item.Link} Text={item.Text} />
+                ))}
+            </div>
+
+            <!-- * Certificates and Accolades -->
+            <div class="col-start-2 col-span-10 space-y-[22px]">
+                <h5 class="font-bold  lg:text-lg uppercase bg-[linear-gradient(90deg,#0FA1DB_0%,#CCCCCC_100%)] w-fit bg-clip-text text-transparent">Certificates and Accolades</h5>
+                <div class="rounded-[20px] flex flex-wrap justify-around border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.06)] py-6">
+                    <img class="w-fit" src={AWSLogo.src} alt="awslogo" />
+                    <img class="w-fit" src={GoldLogo.src} alt="goldlogo" />
+                    <img class="w-fit" src={LinkClutch.src} alt="link clutch" />
+                    <img class="w-fit" src={MSCertification.src} alt="microsoft certification" />
+                    <img class="w-fit" src={GoogleRating.src} alt="google rating" />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="p-5 lg:p-10 bg-[#02141B] flex flex-wrap justify-between">
+        <div class="space-x-5 flex content-center items-center">
+            <img src={Logo.src} alt="giriraj digital">
+            <div class="border border-white h-full"></div>
+            <div class="flex space-x-4 ">
+                <div class="p-3.5">
+                    <img src={Facebook.src} alt="facebook">
+                </div>
+                <div class="p-3.5">
+                    <img src={Linkedin.src} alt="linkedin">
+                </div>
+                <div class="p-3.5">
+                    <img src={X.src} alt="x">
+                </div>
+                <div class="p-3.5">
+                    <img src={Instagram.src} alt="instagram">
+                </div>
+                <div class="p-3.5">
+                    <img src={youtube.src} alt="youtube">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

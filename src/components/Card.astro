@@ -17,12 +17,12 @@ import ButtonIcon from "../assets/images/link-icon.svg";
   >
     <!-- Heading + Paragraph -->
 
-    <div class="flex space-x-5 items-center content-center"> {Icon && <img src={Icon.src} class="w-14" alt={Heading}/>} <h3 class="text-[#21292C] font-bold text-[26px]">{Heading}</h3> </div>
+    <div class="flex space-x-5 items-center content-center"> {Icon && <img src={Icon.src} class="w-14" alt={Heading}/>} <h3 class="text-[#21292C] font-bold text-[26px] leading-[100%]">{Heading}</h3> </div>
     <p class="text-[#2C363A] leading-[150%]">{Paragraph}</p>
 
     <!-- Know More Button -->
     <a
-      href="/"
+      href={Link ? Link : "/"}
       class="absolute bottom-6 left-8
             opacity-0 translate-y-4
             transition-all duration-500 ease-out

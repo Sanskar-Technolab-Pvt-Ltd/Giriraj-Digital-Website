@@ -1,4 +1,6 @@
 --- 
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
 // remove: import Swiper from 'swiper';
 // remove: import 'swiper/css';
@@ -20,7 +22,17 @@ import "../styles/global.css";
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
-		
+		<!-- Nunito Sans -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+		<!-- Roboto -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 		<title>Astro Basics</title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 		<style is:inline is:global>
@@ -28,8 +40,10 @@ import "../styles/global.css";
 		.slider div { outline:none; }
 		</style>
 	</head>
-	<body>
+	<body class="bg-white">
+		<Navbar />
 		<slot />
+		<Footer />
 	</body>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </html>

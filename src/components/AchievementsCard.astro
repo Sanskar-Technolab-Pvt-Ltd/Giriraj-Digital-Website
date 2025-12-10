@@ -1,0 +1,20 @@
+---
+const {Title, Heading, Certificates=[], CardGridNumber, BgImage} = Astro.props;
+---
+
+<section class="w-full bg-white grid grid-cols-12 gap-5 lg:gap-[30px]">
+    <div class="col-span-12 lg:col-span-10 lg:col-start-2 p-5 md:p-10 lg:p-20 grid grid-cols-10 rounded-3xl" style={`background-image: url('${BgImage.src}');`}>
+        <div class="col-span-10 lg:col-span-4 space-y-3.5 text-white lg:w-[80%]">
+            <p class="font-semibold lg:text-xl">{Title || ""}</p>
+            <h2 class="lg:text-5xl leading-[120%] font-bold">{Heading || ""}</h2>
+        </div>
+
+        <div class="col-span-10 lg:col-span-6 grid grid-cols-3 gap-5 lg:gap-[30px]">
+            {Certificates.map((item:any) => (
+                <div class="flex justify-center">
+                    <img src={item.src} alt={item.alt || "certificate"} class="w-full h-full object-contain border-6 border-[#99BFD8] rounded-[20px]" />
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

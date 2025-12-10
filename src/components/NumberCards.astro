@@ -1,0 +1,8 @@
+---
+const {BgImage, Heading="", Paragraph=""} = Astro.props;
+---
+
+<div class="p-4 rounded-[20px] bg-cover  h-fit border-6 border-[#99BFD8] text-white" style={`background-image: url('${BgImage.src}');`}>
+    <h4 class="font-bold lg:text-[56px] leading-[100%]">{Heading || ""}</h4>
+    <p class="font-semibold">{Paragraph || ""}</p>
+</div>

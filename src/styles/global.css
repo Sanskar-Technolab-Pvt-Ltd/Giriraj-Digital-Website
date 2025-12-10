@@ -3,9 +3,19 @@
 html,
 body {
     font-family: "Inter", sans-serif !important;
+    background: white;
 }
 
 
 h1,h2,h3 {
     font-family: "Lora", serif !important;
+}
+
+
+footer {
+    font-family: "Nunito Sans", sans-serif !important;
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif !important;
 }

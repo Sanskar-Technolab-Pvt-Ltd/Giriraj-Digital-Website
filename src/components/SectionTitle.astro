@@ -1,0 +1,8 @@
+---
+const {Title, Heading, WidthClass} = Astro.props;
+---
+
+<div class=`space-y-5 ${WidthClass ? WidthClass : ""}`>
+    <p class="text-[#0FA1DB] font-semibold lg:text-xl">{Title || ""}</p>
+    <h2 class="text-[#21292C] lg:text-5xl leading-[120%] font-bold">{Heading || ""}</h2>
+</div>

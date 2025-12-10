@@ -2,12 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 
 // Components
-import Navbar from '../components/Navbar.astro';
 import Carousel from '../components/Carousel.astro';
 import CenterCardContainer from "../components/CenterCardContainer.astro";
 import Card from "../components/Card.astro";
-
-
+import SectionTitle from '../components/SectionTitle.astro';
+import NumberCards from '../components/NumberCards.astro';
+import LeftSideCard from "../components/LeftSideCard.astro";
+import AchievementsCard from '../components/AchievementsCard.astro';
+import Testimonial from '../components/Testimonial.astro';
+import ContactUsForm from '../components/ContactUsForm.astro';
 
 // Images
 import GoldUmbraco from "../assets/images/gold-umbraco-partner.png"
@@ -27,70 +30,192 @@ import SitecoreIcon from "../assets/images/sitecore.svg"
 import MSDotNetCoreIcon from "../assets/images/ms-dot-net-core.svg"
 import MSAzureCloudIcon from "../assets/images/ms-azure-cloud.svg"
 import MSDOtNetIcon from "../assets/images/ms-dot-net.svg"
+import Map from "../assets/images/map.webp";
+import NumberCard1 from "../assets/images/numbercard-bg-1.webp";
+import NumberCard2 from "../assets/images/numbercard-bg-2.webp";
+import NumberCard3 from "../assets/images/numbercard-bg-3.webp";
+import NumberCard4 from "../assets/images/numbercard-bg-4.webp";
+import LeftCardBgImage from "../assets/images/giriraj-digital-as-your-consulting-partner-bg-image.png";
+import Arrow from "../assets/images/button-arrow.svg"
+import CertificationBG from "../assets/images/certification-bg.webp"
+import MSCertofication from "../assets/images/microsoft-certification.png"
+import UmbracoMVPCertification from "../assets/images/umbraco-mvp-certification.png"
+import AWSCertofication from "../assets/images/aws.png"
+import GoogleCertification from "../assets/images/google.png"
+import GlassdoorCertification from "../assets/images/glassdoor.png"
+import FAQs from '../components/FAQs.astro';
+
+
+
+const ParagraphContent = [
+        "At Giriraj Digital, we're more than just a technology consulting firm – we're your trusted partner on the journey towards digital excellence. We leverage Microsoft and our bunch of professionals to offer a wide range of services that cover everything from creating engaging web experiences with Umbraco to supercharging your operations with the Microsoft Power Platform.",
+        "We also excel in implementing Microsoft Dynamics 365 CRM, enhancing your online presence with Sitecore, seamlessly transitioning your business to Microsoft Azure Cloud, and optimizing your operations with ERP systems.",
+        "What sets us apart is our dedicated team of highly skilled professionals who are not just experts in these technologies but are also passionate about aligning them with your strategic objectives. With a client-centric approach and a relentless focus on staying at the forefront of technological advancements, Giriraj Digital remains your trusted partner in the pursuit of digital excellence."
+    ]
+
+
+const Certifications = [
+    MSCertofication, UmbracoMVPCertification, AWSCertofication, GoogleCertification, GlassdoorCertification
+]
+
+
+const faqList = [
+    {
+        Question: "What is Umbraco, and can you help with the Umbraco development?",
+        Answer: "Umbraco is a user-friendly and flexible content management system (CMS) that empowers you to create and manage captivating web experiences effortlessly. Giriraj Digital is the leading Umbraco Gold Partner - with a wealth of expertise and experience in development and maintenance"
+    },
+    {
+        Question: "How can I get started with Giriraj Digital's services?",
+        Answer: "To get started, simply reach out to us through our contact page or give us a call. Our team will be happy to discuss your requirements, provide information, and guide you through the initial steps."
+    },
+    {
+        Question: "How can Giriraj Digital assist with compliance and data security of my confidential data?",
+        Answer: "We use the best-in-class security measures when it comes to compliance and data security of our clients. Giriraj Digital can implement secure solutions that meet regulatory requirements, safeguard patient data, and streamline customer processes. Even our developers are well aware of the security standards and are well aware of the same."
+    },
+    {
+        Question: "Can Giriraj Digital help us migrate our on-premises infrastructure to Microsoft Azure Cloud?",
+        Answer: "Yes, we have extensive experience in cloud migration projects. We can plan and execute the migration of your on-premises infrastructure to Microsoft Azure, ensuring minimal downtime and a seamless transition."
+    },
+    {
+        Question: "Can Giriraj Digital help migrate our legacy applications to modern Microsoft technologies like .NET Core or .NET 5?",
+        Answer: "Absolutely, we specialize in legacy application modernization and can assist in migrating applications to modern Microsoft technologies, ensuring compatibility, performance, and security enhancements."
+    },
+    {
+        Question: "What sets Giriraj Digital apart in terms of customer support and response time for technical issues?",
+        Answer: "Giriraj Digital is committed to providing exceptional customer support. We have a dedicated support team available around the clock to address technical issues promptly, ensuring minimal downtime for your end users and uninterrupted operations."
+    }
+];
+
 ---
 
 <Layout>
-    <div class="space-y-40 bg-white">
+    <div class="space-y-40 bg-white ">
         <div>
-            <Navbar />
             <Carousel />
             <CenterCardContainer BgImage={CenterCardBGImage} Cards={[GoldContribute, UmbracoMVP, GoldUmbraco]} SideImage={CenterCardSideImage} />
         </div>
 
+        <div class="px-5 lg:px-[30px] space-y-40">
+            <!-- * Leverage The Microsoft Powerhouse To Elevate Your Digital Realm -->
+            <section class=" grid grid-cols-12 gap-5 lg:gap-[30px]">
+                <div class="lg:col-start-2 lg:col-span-10 space-y-10 ">
+                    <SectionTitle Title="Elevating Your Digital Presence" Heading="Leverage The Microsoft Powerhouse To Elevate Your Digital Realm" WidthClass="lg:w-[70%]" />
 
-        <div class="mx-5 lg:mx-10 grid grid-cols-12">
-            <div class="lg:col-start-2 lg:col-span-10 space-y-10 ">
-                <div class="space-y-5 lg:w-[70%]">
-                    <p class="text-[#0FA1DB] font-semibold lg:text-xl">Elevating Your Digital Presence</p>
-                    <h2 class="text-[#21292C] lg:text-5xl leading-[120%] font-bold">Leverage The Microsoft Powerhouse To Elevate Your Digital Realm</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+                        <Card 
+                            BgImage={Card1BgImage1}
+                            Icon={UmbracoIcon}
+                            Heading="Umbraco"
+                            Paragraph="Umbraco is a user-friendly and highly flexible content management system (CMS) that enables businesses to create and manage web applications."
+                            Link="/"
+                        />
+                        <Card 
+                            BgImage={Card1BgImage2}
+                            Icon={MSPowerPlatFormIcon}
+                            Heading="Microsoft Power Platform"
+                            Paragraph="The Microsoft Power Platform is a suite of interconnected tools: Power BI for business analytics, Power Apps for app creation."
+                            Link="/"
+                        />
+                        <Card 
+                            BgImage={Card1BgImage3}
+                            Icon={SitecoreIcon}
+                            Heading="Sitecore"
+                            Paragraph="Sitecore is another prominent digital experience platform that offers tools for content management, marketing automation, and customer analytics."
+                            Link="/"
+                        />
+
+                        <Card 
+                            BgImage={Card1BgImage4}
+                            Icon={MSDotNetCoreIcon}
+                            Heading="Microsoft .NET Core"
+                            Paragraph="Elevate your projects with our ASP.NET Core expertise at Giriraj Digital. Our skilled team delivers innovative solutions for your digital needs."
+                            Link="/"
+                        />
+                        <Card 
+                            BgImage={Card1BgImage5}
+                            Icon={MSAzureCloudIcon}
+                            Heading="Microsoft Azure Cloud"
+                            Paragraph="Microsoft Azure is a cloud computing platform that provides a wide range of cloud services and enables businesses to scale their infrastructure."
+                            Link="/"
+                        />
+                        <Card 
+                            BgImage={Card1BgImage6}
+                            Icon={MSDOtNetIcon}
+                            Heading="Microsoft .NET"
+                            Paragraph="Powering robust and scalable software solutions across diverse platforms. Elevate your development with cutting-edge tools and frameworks."
+                            Link="/"
+                        />
+                    </div>
                 </div>
+            </section>
 
-                <div class="grid grid-cols-3 gap-[30px]">
-                    <Card 
-                        BgImage={Card1BgImage1}
-                        Icon={UmbracoIcon}
-                        Heading="Umbraco"
-                        Paragraph="Umbraco is a user-friendly and highly flexible content management system (CMS) that enables businesses to create and manage web applications."
-                        Link="/"
-                    />
-                    <Card 
-                        BgImage={Card1BgImage2}
-                        Icon={MSPowerPlatFormIcon}
-                        Heading="Microsoft Power Platform"
-                        Paragraph="The Microsoft Power Platform is a suite of interconnected tools: Power BI for business analytics, Power Apps for app creation."
-                        Link="/"
-                    />
-                    <Card 
-                        BgImage={Card1BgImage3}
-                        Icon={SitecoreIcon}
-                        Heading="Sitecore"
-                        Paragraph="Sitecore is another prominent digital experience platform that offers tools for content management, marketing automation, and customer analytics."
-                        Link="/"
-                    />
+            <!-- * Our Incredible Journey of Digital Transformation -->
+            <section class=" grid grid-cols-12 gap-5 lg:gap-[30px]">
+                <div class="lg:col-start-2 lg:col-span-10 space-y-7 lg:space-y-[53px]">
+                    <SectionTitle Title="Company Metrics Overview" Heading="Our Incredible Journey of Digital Transformation"  />
 
-                    <Card 
-                        BgImage={Card1BgImage4}
-                        Icon={MSDotNetCoreIcon}
-                        Heading="Microsoft .NET Core"
-                        Paragraph="Elevate your projects with our ASP.NET Core expertise at Giriraj Digital. Our skilled team delivers innovative solutions for your digital needs."
-                        Link="/"
-                    />
-                    <Card 
-                        BgImage={Card1BgImage5}
-                        Icon={MSAzureCloudIcon}
-                        Heading="Microsoft Azure Cloud"
-                        Paragraph="Microsoft Azure is a cloud computing platform that provides a wide range of cloud services and enables businesses to scale their infrastructure."
-                        Link="/"
-                    />
-                    <Card 
-                        BgImage={Card1BgImage6}
-                        Icon={MSDOtNetIcon}
-                        Heading="Microsoft .NET"
-                        Paragraph="Powering robust and scalable software solutions across diverse platforms. Elevate your development with cutting-edge tools and frameworks."
-                        Link="/"
-                    />
+                    <div class="grid grid-cols-10">
+                        <div class="col-span-12 lg:col-span-5">
+                            <img src={Map.src} alt="Our Incredible Journey of Digital Transformation">
+                        </div>
+
+                        <div class="col-span-12 lg:col-start-7 lg:col-span-4 grid grid-cols-2 gap-5 lg:gap-10 content-center">
+                            <NumberCards BgImage={NumberCard1} Heading="18+" Paragraph="Serving Countries!" />
+                            <NumberCards BgImage={NumberCard2} Heading="80+" Paragraph="Clients" />
+                            <NumberCards BgImage={NumberCard3} Heading="300+" Paragraph="Successful Projects" />
+                            <NumberCards BgImage={NumberCard4} Heading="60+" Paragraph="Brilliant Minds" />
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- * More About GIRIRAJ DIGITAL As Your Consulting Partner! -->
+            <section>
+                <LeftSideCard BgImage={LeftCardBgImage} ButtonLink="/" SubTitle="Center of Excellence" Title="More About GIRIRAJ DIGITAL As Your Consulting Partner!" Paragraph={ParagraphContent} />
+                <div class="bg-[#E9F2FC]  bg-[url('../assets/images/rectangle.svg')] bg-no-repeat bg-position-[right_100px_center] rounded-b-[20px]">
+                    <div class="grid grid-cols-12 ">
+                        <div class="col-span-12 lg:col-start-2 py-5 lg:py-10 lg:col-span-10 lg:w-[70%] space-y-[30px]">
+                            <h2 class="text-[#21292C] lg:text-5xl leading-[120%] font-bold">Skyrocket your business success with the right tools and trusted partners!</h2>
+                            <div class="w-fit">
+                                <a href="/" class="rounded-full text-white flex space-x-2.5 py-2.5  px-6 w-fit items-center bg-[linear-gradient(90deg,#0FA1DB_0%,#5C2D91_100%)] font-semibold outline-none lg:font-xl">
+                                    <p>Connect Now</p>
+                                    <img src={Arrow.src} alt="explore">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- * Our Certificates and Accolades -->
+            <AchievementsCard Title="Achievements" Heading="Our Certificates and Accolades" BgImage={CertificationBG} Certificates={Certifications}  />
+
+            <!-- * Testimonial -->
+            <Testimonial />
+
+            <!-- * Form -->
+            <ContactUsForm />
+
+
+            <!-- * FAQ -->
+            <section class="grid grid-cols-12 gap-5 lg:gap-[30px]">
+                <div class="col-span-12 lg:col-start-5 lg:col-span-6 space-y-5 lg:space-y-[30px]">
+                    <SectionTitle Title="Your Curiosities, Our Clarity" Heading="Frequently Asked Questions"  />
+                    <div id="accordion-collapse" class="overflow-hidden text-[#212529]">
+                        {faqList.map((faq, index) => (
+                            <FAQs 
+                                id={index}
+                                Question={faq.Question}
+                                Answer={faq.Answer}
+                                Border={index === 0 ? "border-none" : ""}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
         </div>
+        
     </div>
+
+    <script src="../assets/js/faq.js"></script>
 </Layout>

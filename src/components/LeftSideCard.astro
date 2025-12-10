@@ -1,0 +1,35 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+import Arrow from "../assets/images/button-arrow.svg"
+const {BgImage, RightImage, SubTitle, Title, Paragraph, ButtonLink} = Astro.props;
+---
+
+<section class="w-full bg-white">
+    <div class="grid grid-cols-12 gap-5 lg:gap-[30px] rounded-xl bg-cover bg-center w-full lg:py-20 xl:py-[100px]" style={`background-image: url('${BgImage.src}');`} >
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 grid grid-cols-10 gap-10">
+            <div class="col-span-10 lg:col-span-5 p-5 lg:p-[30px] bg-white rounded-3xl border-6 border-[#99BFD8] space-y-5 lg:space-y-[30px]">
+                <SectionTitle Title={SubTitle || ""} Heading={Title || ""} />
+                <div class="space-y-5 lg:space-y-7 text-[#2C363A] lg:text-lg">
+                    {Paragraph.map((text:any) => (
+                        <p class="leading-[150%]">{text}</p>
+                    ))}
+                </div>
+                {ButtonLink && (
+                    <div class="w-fit">
+                        <a
+                            href={ButtonLink}
+                            class="rounded-full text-white flex space-x-2.5 py-2.5 px-6 lg:px-6 w-fit items-center 
+                            bg-[linear-gradient(90deg,#0FA1DB_0%,#5C2D91_100%)] font-semibold outline-none lg:font-xl"
+                        >
+                            <p>Explore More</p>
+                            <img src={Arrow.src} alt="explore" />
+                        </a>
+                    </div>
+                )}
+            </div>
+            {RightImage && (
+                    <img src={Arrow.src} class="col-span-10 lg:col-start-7 lg:col-span-4 self-center justify-self-center" alt="explore" />
+            )}
+        </div>
+    </div>
+</section>

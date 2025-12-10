@@ -11,6 +11,11 @@
     position: relative;
   }
 
+  testimonial-swiper-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
 
   /* Bottom Slide Labels */
   .slide-tabs {

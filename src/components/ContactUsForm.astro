@@ -1,0 +1,24 @@
+---
+import Image from "../assets/images/contact-us-left-side-image.webp"
+import Arrow from "../assets/images/button-arrow.svg"
+---
+
+<section class="grid grid-cols-12  ">
+    <img src={Image.src} class="col-span-12 lg:col-span-6 rounded-l-[20px]" alt="contact us">
+    <div class="col-span-12 lg:col-span-6 bg-[url('../assets/images/contact-us-left-side-image.webp')] content-center items-center rounded-r-[20px]">
+        <form action="" class="space-y-5 lg:space-y-10 p-[100px]">
+            <h2 class="text-white lg:text-5xl leading-[120%] font-bold">Contact Us</h2>
+            <div class="grid grid-cols-2 gap-6">
+                <input type="text" name="fullname" class="col-span-2 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" placeholder="Full Name">
+
+                <input type="email" name="email" class="col-span-1 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" placeholder="Email">
+                <input type="tel" name="phoneNumber" class="col-span-1 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" placeholder="Phone Number">
+
+                <input type="text" name="company" class="col-span-2 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" placeholder="Company">
+                <textarea name="message" class="col-span-2 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" id="" placeholder="Message"></textarea>
+
+                <button type="submit" class="rounded-full w-fit text-white py-2.5 px-6 lg:px-6 col-span-2   bg-[linear-gradient(90deg,#0FA1DB_0%,#5C2D91_100%)] font-semibold outline-none lg:font-xl">Send Message</button>
+            </div>
+        </form>
+    </div>
+</section>
