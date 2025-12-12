@@ -4,16 +4,18 @@ const { BgImage, Cards = [] , SideImage } = Astro.props;
 
 <div class="w-full bg-white px-5 lg:px-[30px]">
     <div
-        class="grid grid-cols-12 gap-[30px] rounded-xl bg-cover bg-center w-full lg:py-20"
+        class="grid grid-cols-12 lg:gap-[30px] rounded-xl bg-cover bg-center w-full px-5 py-6 lg:px-0 lg:py-20"
         style={`background-image: url('${BgImage.src}');`}
     >
-        <div class="lg:col-start-2 lg:col-span-10 bg-white grid grid-cols-2 lg:gap-[30px] lg:p-10 rounded-xl lg:rounded-3xl outline-8 outline-[rgba(255,255,255,0.6)]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 bg-white space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-[30px] p-5 lg:p-10 rounded-xl lg:rounded-3xl outline-4 lg:outline-8 outline-[rgba(255,255,255,0.6)]">
         <div class="space-y-[23px]">
-            <div class="space-y-5">
-                <p class="text-[#0FA1DB] font-semibold lg:text-xl">Your Business Accelerator</p>
-                <h2 class="text-[#21292C] lg:text-5xl leading-[120%] font-bold">
-                    Trusted by 80+ clients globally in Digital Transformation Journey
-                </h2>
+            <div class="space-y-[23px] lg:space-y-5 ">
+                <div class="space-y-2 lg:space-y-5">
+                    <p class="text-[#0FA1DB] font-semibold lg:text-xl">Your Business Accelerator</p>
+                    <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">
+                        Trusted by 80+ clients globally in Digital Transformation Journey
+                    </h2>
+                </div>
                 <p class="lg:text-lg text-black font-regular leading-[150%]">
                     Giriraj Digital is an Umbraco Gold Partner company specializing in building high-quality solutions. We have excellent engineering capabilities for building applications and business solutions with Umbraco, Sitecore, .NET Core, PowerApps, Azure Cloud, C#, and more.
                 </p>

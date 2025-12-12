@@ -27,3 +27,16 @@ swiperEl.addEventListener("swiperslidechange", (e) => {
 window.onload = () => {
     updateTabs(0);
 };
+
+// --- MAKE TABS CLICKABLE ---
+tabItems.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        const index = parseInt(tab.dataset.index);
+
+        // Move Swiper to selected slide
+        swiperEl.swiper.slideTo(index);
+
+        // Update tab UI + progress bar
+        updateTabs(index);
+    });
+});

@@ -1,0 +1,14 @@
+---
+const { Text, ArrowImage, Link } = Astro.props;
+import Arrow from "../assets/images/button-arrow.svg";
+---
+
+<a href={Link  ? Link : "/"} class="h-fit rounded-full text-white flex space-x-2.5 py-2 lg:py-3 px-3.5 lg:px-6 w-fit  items-center bg-[linear-gradient(90deg,#0FA1DB_0%,#5C2D91_100%)]  font-semibold outline-none lg:font-xl" >
+    <p>{Text}</p>
+
+    {ArrowImage ? (
+        <img src={ArrowImage} alt={Text} />
+    ) : (
+        <img src={Arrow.src} alt={Text} />
+    )}
+</a>

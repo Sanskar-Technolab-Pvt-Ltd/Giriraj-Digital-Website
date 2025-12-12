@@ -2,7 +2,7 @@
 const {BgImage, Heading="", Paragraph=""} = Astro.props;
 ---
 
-<div class="p-4 rounded-[20px] bg-cover  h-fit outline-8 outline-[rgba(18,158,216,0.2)] text-white" style={`background-image: url('${BgImage.src}');`}>
-    <h4 class="font-bold lg:text-[56px] leading-[100%]">{Heading || ""}</h4>
-    <p class="font-semibold">{Paragraph || ""}</p>
+<div class="p-4 rounded-[20px] space-y-0.5 lg:space-y-0 bg-cover  outline-8 outline-[rgba(18,158,216,0.2)] text-white" style={`background-image: url('${BgImage.src}');`}>
+    <h4 class="font-bold text-[40px] lg:text-[56px] leading-[100%]">{Heading || ""}</h4>
+    <p class="text-sm lg:text-base font-semibold">{Paragraph || ""}</p>
 </div>

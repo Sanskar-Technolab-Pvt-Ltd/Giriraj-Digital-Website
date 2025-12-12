@@ -4,7 +4,6 @@
     width: 100%;
     height: 277px;
     /* keep your fixed height */
-    overflow: hidden;
 }
 
 /* card basics */
@@ -106,14 +105,84 @@
 }
 
 
-/* ❗Stop right text animation when hover OUT */
+/*@media (min-width: 1024px) {
+
+    .swiperBg {
+      background-image: none !important;
+    }
+  }
+Stop right text animation when hover OUT */
 .location-item .right {
     transition: none !important; /* Hide instantly */
 }
 
-/* ✅ Animate only when becoming active (hover IN) */
+/* Animate only when becoming active (hover IN) */
 .location-item.active .right {
     opacity: 1;
     transform: translateX(0);
     transition: opacity 0.45s ease 0.35s, transform 0.45s ease 0.35s !important;
+}
+
+
+
+@media (max-width: 1024px) {
+    #gallery {
+        height: auto;
+    }
+
+    .bottom-bar {
+        padding:20px;
+        position: static;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .location-item {
+        position: static;
+        filter: grayscale(100%);
+        transition: filter 0.5s ease-in-out;
+    }
+
+    .location-item.active {
+        filter: grayscale(0%);
+    }
+
+    /* ------------------------------ */
+    /* SMOOTH OPEN / CLOSE ANIMATION  */
+    /* ------------------------------ */
+
+    /* Right section default = collapsed */
+    .location-item .right {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(10px);
+        transition:
+            max-height 0.35s ease-in-out,
+            opacity 0.25s ease-in-out,
+            transform 0.25s ease-in-out;
+    }
+
+    /* When ACTIVE → smooth open */
+    .location-item.active .right {
+        max-height: 500px;   /* big enough for your content */
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    /* ------------------------------ */
+    /* Left content visibility rules   */
+    /* ------------------------------ */
+
+    /* City always visible */
+    .location-item .left p:nth-child(1) {
+        display: block;
+    }
+
+    /* Country always visible */
+    .location-item .left div {
+        display: flex;
+    }
 }

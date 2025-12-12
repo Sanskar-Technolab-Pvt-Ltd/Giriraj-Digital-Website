@@ -14,11 +14,11 @@ import Email from "../assets/images/Email-Icon.png";
 import Phone from "../assets/images/Phone-Icon.png";
 ---
 
-<div id="gallery" class="flex w-full h-[277px] group overflow-hidden roboto">
-    <!-- 1 -->
-    <div class="location-item">
-        <img src={COLORADO.src} alt="COPENHAGEN" />
-        <div class="bottom-bar">
+<div id="gallery" class="flex flex-col lg:flex-row w-full lg:h-[277px] group overflow-hidden roboto">
+
+    <div class="location-item bg-[url('../assets/images/COPENHAGEN.webp')] lg:bg-none bg-cover">
+        <img class="hidden lg:block" src={COLORADO.src} alt="COPENHAGEN" />
+        <div class="bottom-bar space-y-5 lg:space-y-0">
             <div class="left flex flex-col space-y-2">
                 <p class="font-bold lg:text-2xl">COPENHAGEN</p>
                 <div class="flex space-x-3 w-fit content-center items-center">
@@ -26,10 +26,10 @@ import Phone from "../assets/images/Phone-Icon.png";
                     <span>DENMARK</span>
                 </div>
             </div>
-            <div class="right flex flex-col space-y-[18px] w-[45%] xl:w-auto">
+            <div class="right flex flex-col space-y-2.5 lg:space-y-[18px] w-full lg:w-[45%] xl:w-auto">
                 <p class="font-bold lg:text-lg">Amagerfælledvej 108, 2300 København Denmark</p>
-                <div class="flex space-x-5 lg:text-base">
-                    <a href="tel:+4561419191" class="pr-5 border-r border-white flex space-x-3 font-bold items-center w-fit!">
+                <div class="space-y-1 lg:space-y-0 lg:flex space-x-5 lg:text-base">
+                    <a href="tel:+4561419191" class="pr-5 lg:border-r border-white flex space-x-3 font-bold items-center w-fit!">
                         <img class="w-fit! h-fit!" src={Phone.src} alt="contact">
                         <p>+45 61 41 91 91</p>
                     </a>
@@ -44,20 +44,20 @@ import Phone from "../assets/images/Phone-Icon.png";
     </div>
 
     <!-- 2 (DEFAULT ACTIVE) -->
-    <div class="location-item active">
-        <img src={AHMEDABAD.src} alt="AHMEDABAD" />
-        <div class="bottom-bar">
+    <div class="location-item active bg-[url('../assets/images/AHMEDABAD.webp')] lg:bg-none bg-cover">
+        <img class="hidden lg:block" src={AHMEDABAD.src} alt="AHMEDABAD" />
+        <div class="bottom-bar space-y-5 lg:space-y-0">
             <div class="left flex flex-col space-y-2">
                 <p class="font-bold lg:text-2xl">AHMEDABAD</p>
-                <div class="flex space-x-3 w-fit content-center items-center">
+                <div class="space-y-1 lg:space-y-0 flex space-x-3 w-fit content-center items-center">
                     <img src={india.src} class="INDIA"> 
                     <span>INDIA</span>
                 </div>
             </div>
-            <div class="right flex flex-col space-y-[18px] w-[50%] xl:w-auto">
+            <div class="right flex flex-col space-y-2.5 lg:space-y-[18px] w-full lg:w-[45%] xl:w-auto">
                 <p class="font-bold lg:text-lg">B-1020, Navratna Corporate Park, Ambli, Ahmedabad - 380058, India</p>
-                <div class="flex space-x-5 lg:text-base">
-                    <a href="tel:+918200817694" class="pr-5 border-r border-white flex space-x-3 font-bold items-center w-fit!">
+                <div class="lg:flex space-x-5 lg:text-base">
+                    <a href="tel:+918200817694" class="pr-5 lg:border-r border-white flex space-x-3 font-bold items-center w-fit!">
                         <img class="w-fit! h-fit!" src={Phone.src} alt="contact">
                         <p>+91 82008 17694</p>
                     </a>
@@ -72,9 +72,9 @@ import Phone from "../assets/images/Phone-Icon.png";
     </div>
 
     <!-- 3 -->
-    <div class="location-item">
-        <img src={COPENHAGEN.src} alt="COLORADO" />
-        <div class="bottom-bar">
+    <div class="location-item bg-[url('../assets/images/COLORADO.webp')] lg:bg-none bg-cover">
+        <img class="hidden lg:block" src={COPENHAGEN.src} alt="COLORADO" />
+        <div class="bottom-bar space-y-5 lg:space-y-0">
             <div class="left flex flex-col space-y-2">
                 <p class="font-bold lg:text-2xl">COLORADO</p>
                 <div class="flex space-x-3 w-fit content-center items-center">
@@ -82,10 +82,10 @@ import Phone from "../assets/images/Phone-Icon.png";
                     <span>USA</span>
                 </div>
             </div>
-            <div class="right flex flex-col space-y-[18px] w-[50%] xl:w-auto">
+            <div class="right flex flex-col space-y-2.5 lg:space-y-[18px] w-full lg:w-[45%] xl:w-auto">
                 <p class="font-bold lg:text-lg">200 Union Blvd. Suite 200, Lakewood, Colorado - 80228 USA</p>
-                <div class="flex space-x-5 lg:text-base">
-                    <a href="tel:+14088311164" class="pr-5 border-r border-white flex space-x-3 font-bold items-center w-fit!">
+                <div class="space-y-1 lg:space-y-0 lg:flex space-x-5 lg:text-base">
+                    <a href="tel:+14088311164" class="pr-5 lg:border-r border-white flex space-x-3 font-bold items-center w-fit!">
                         <img class="w-fit! h-fit!" src={Phone.src} alt="contact">
                         <p>+1(408) 831 1164</p>
                     </a>

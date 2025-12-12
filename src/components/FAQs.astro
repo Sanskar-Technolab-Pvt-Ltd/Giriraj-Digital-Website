@@ -6,8 +6,8 @@ const isOpen = id === 0;   // first one open
 <div id={`faq-heading-${id}`}>
     <button 
         type="button" 
-        class={`faq-btn flex text-left justify-between w-full py-5 font-medium gap-3 cursor-pointer
-        ${Border ? Border : "border-t-2 border-t-[#D9D9D9]"} border-x-0 outline-none`} 
+        class={`faq-btn flex text-left justify-between w-full py-5 font-medium gap-3 lg:gap-5 cursor-pointer
+        ${Border ? Border : "border-t border-t-[#D9D9D9]"} border-x-0 outline-none`} 
         data-target={`#faq-body-${id}`}
     >
         <span class="lg:text-xl">{Question}</span>

@@ -4,33 +4,30 @@ import ButtonIcon from "../assets/images/link-icon.svg";
 ---
 
 <div
-  class="lg:px-[70px] lg:pt-[60px] bg-cover group rounded-4xl overflow-hidden"
+  class="px-5 pt-5 lg:px-[70px] lg:pt-[60px] bg-cover group rounded-xl lg:rounded-4xl overflow-hidden"
   style={`background-image: url('${BgImage.src}');`}
 >
-  <!-- Inner Card -->
-  <div
-    class="relative rounded-t-[20px] outline-8 outline-[rgba(255,255,255,0.6)] border-b-0
-        p-[30px] pb-[70px] space-y-5 bg-white h-full
-        translate-y-6
-        transition-all duration-500 ease-out
-        group-hover:translate-y-0"
+  <!-- CLICKABLE CARD -->
+  <a
+    href={Link ? Link : "/"}
+    class="block lg:relative rounded-t-xl lg:rounded-t-[20px]  outline-4 lg:outline-8 outline-[rgba(255,255,255,0.6)] border-b-0 p-5 lg:p-[30px] lg:pb-[70px] space-y-5 bg-white h-full lg:translate-y-6 lg:transition-all lg:duration-500 lg:ease-out lg:group-hover:translate-y-0"
   >
     <!-- Heading + Paragraph -->
+    <div class="flex space-x-5 items-center content-center">
+      {Icon && <img src={Icon.src} class="w-14" alt={Heading} />}
+      <h3 class="text-[#21292C] font-bold text-[26px] leading-[100%]">
+        {Heading}
+      </h3>
+    </div>
 
-    <div class="flex space-x-5 items-center content-center"> {Icon && <img src={Icon.src} class="w-14" alt={Heading}/>} <h3 class="text-[#21292C] font-bold text-[26px] leading-[100%]">{Heading}</h3> </div>
     <p class="text-[#2C363A] leading-[150%]">{Paragraph}</p>
 
     <!-- Know More Button -->
-    <a
-      href={Link ? Link : "/"}
-      class="absolute bottom-6 left-8
-            opacity-0 translate-y-4
-            transition-all duration-500 ease-out
-            group-hover:opacity-100 group-hover:translate-y-0
-            flex items-center space-x-2"
+    <div
+      class="lg:absolute lg:bottom-6 lg:left-8 lg:opacity-0 lg:translate-y-4 lg:transition-all lg:duration-500 lg:ease-out lg:group-hover:opacity-100 lg:group-hover:translate-y-0 flex items-center space-x-2"
     >
       <p class="text-[#2C363A] font-semibold">Know More</p>
       <img src={ButtonIcon.src} alt="Know More" />
-    </a>
-  </div>
+    </div>
+  </a>
 </div>

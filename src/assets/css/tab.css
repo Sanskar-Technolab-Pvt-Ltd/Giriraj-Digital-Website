@@ -1,61 +1,44 @@
-/* 
-.tabs-item.active .tabs-progress {
-    opacity: 1;
-}
-
+/* Wrapper */
 .tabs-progress {
-    opacity: 0;
-    transition: opacity 0.3s;
+    position: relative;
+    height: 3px;
+    width: 100%;
 }
 
-.tabs-item.active .tabs-progress {
-    opacity: 1;
+/* Grey base line */
+.tabs-progress .progress-bg {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: rgba(44, 54, 58, 0.2);
+    border-radius: 10px;
 }
 
-.tabs-progress {
-    opacity: 0.4;
+/* Blue fill bar */
+.tabs-progress .progress-fill {
+    position: absolute;
+    height: 3px;
     width: 0%;
-    height: 3px;
-    background: #0fa1db;
+    background: #0FA1DB;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* Active → start animation */
+.tabs-item.active .progress-fill {
+    width: 100%;
 }
 
 
+/* Hide tab link icon by default */
 .tabs-item img {
     opacity: 0;
     transform: translateX(-5px);
     transition: all 0.3s ease;
 }
 
+/* Show icon only when the tab is active */
 .tabs-item.active img {
     opacity: 1;
     transform: translateX(0);
-} */
-
-
-/* Hide icon by default */
-.tabs-item img {
-    opacity: 0;
-    transform: translateX(-5px);
-    transition: all 0.3s ease;
-}
-
-/* Show icon only when active */
-.tabs-item.active img {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Progress bar – default state (NON ACTIVE) */
-.tabs-item .tabs-progress {
-    opacity: 1;               /* Always visible */
-    width: 100%;              /* Full width */
-    height: 3px;
-    background-color: rgba(44, 54, 58, 0.2); /* Light color */
-    transition: all 0.3s ease;
-}
-
-/* Progress bar – active state */
-.tabs-item.active .tabs-progress {
-    background-color: #0FA1DB; /* Full color */
-    opacity: 1;
 }

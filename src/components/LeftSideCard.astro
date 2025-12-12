@@ -1,6 +1,7 @@
 ---
 import SectionTitle from "./SectionTitle.astro";
 import Arrow from "../assets/images/button-arrow.svg"
+import LinkButton from "./LinkButton.astro";
 const {BgImage, RightImage, SubTitle, Title, Paragraph, ButtonLink} = Astro.props;
 ---
 
@@ -16,14 +17,7 @@ const {BgImage, RightImage, SubTitle, Title, Paragraph, ButtonLink} = Astro.prop
                 </div>
                 {ButtonLink && (
                     <div class="w-fit">
-                        <a
-                            href={ButtonLink}
-                            class="rounded-full text-white flex space-x-3 py-2 px-4 lg:px-6 w-fit items-center 
-                            bg-[linear-gradient(90deg,#0FA1DB_0%,#5C2D91_100%)] font-semibold outline-none lg:font-xl"
-                        >
-                            <p>Explore More</p>
-                            <img src={Arrow.src} alt="explore" />
-                        </a>
+                        <LinkButton Text="Explore More" Link="/" />
                     </div>
                 )}
             </div>

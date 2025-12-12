@@ -1,26 +1,30 @@
-// footerlocation.js
 const items = document.querySelectorAll(".location-item");
-const centerIndex = 1;           // initial active index (on load)
-let lastActiveIndex = centerIndex;
+let lastActiveIndex = 1; // Default active is second
 
-// helper to set active by index
 function setActiveByIndex(index) {
-    items.forEach((it, i) => {
-        it.classList.toggle("active", i === index);
+    items.forEach((item, i) => {
+        item.classList.toggle("active", i === index);
     });
 }
 
-// initialize
 setActiveByIndex(lastActiveIndex);
 
-// On hover, activate the hovered item and remember it.
-// We DO NOT revert on mouseleave — last hovered remains active.
+// Desktop hover
 items.forEach((item, index) => {
     item.addEventListener("mouseenter", () => {
-        lastActiveIndex = index;
-        setActiveByIndex(index);
+        if (window.innerWidth > 1024) {
+            lastActiveIndex = index;
+            setActiveByIndex(index);
+        }
     });
 });
 
-// Optional: If you ever want to programmatically reset to center later,
-// call setActiveByIndex(centerIndex);
+// Mobile tap
+items.forEach((item, index) => {
+    item.addEventListener("click", () => {
+        if (window.innerWidth <= 1024) {
+            lastActiveIndex = index;
+            setActiveByIndex(index);
+        }
+    });
+});

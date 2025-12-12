@@ -45,6 +45,7 @@ import GoogleCertification from "../assets/images/google.png"
 import GlassdoorCertification from "../assets/images/glassdoor.png"
 import FAQs from '../components/FAQs.astro';
 import SolutionDelivered from '../components/SolutionDelivered.astro';
+import LinkButton from '../components/LinkButton.astro';
 
 
 
@@ -90,7 +91,7 @@ const faqList = [
 ---
 
 <Layout>
-    <div class="space-y-40 bg-white ">
+    <div class="space-y-[60px] lg:space-y-40 bg-white ">
         <div>
             <Carousel />
             <CenterCardContainer BgImage={CenterCardBGImage} Cards={[GoldContribute, UmbracoMVP, GoldUmbraco]} SideImage={CenterCardSideImage} />
@@ -103,7 +104,7 @@ const faqList = [
 
             <!-- * Leverage The Microsoft Powerhouse To Elevate Your Digital Realm -->
             <section class=" grid grid-cols-12 gap-5 lg:gap-[30px]">
-                <div class="lg:col-start-2 lg:col-span-10 space-y-10 ">
+                <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-10 ">
                     <SectionTitle Title="Elevating Your Digital Presence" Heading="Leverage The Microsoft Powerhouse To Elevate Your Digital Realm" WidthClass="lg:w-[70%]" />
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
@@ -156,15 +157,15 @@ const faqList = [
 
             <!-- * Our Incredible Journey of Digital Transformation -->
             <section class=" grid grid-cols-12 gap-5 lg:gap-[30px]">
-                <div class="lg:col-start-2 lg:col-span-10 space-y-7 lg:space-y-[53px]">
+                <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px] lg:space-y-[53px]">
                     <SectionTitle Title="Company Metrics Overview" Heading="Our Incredible Journey of Digital Transformation"  />
 
-                    <div class="grid grid-cols-10">
+                    <div class="grid grid-cols-10 gap-y-[30px] lg:gap-y-0">
                         <div class="col-span-12 lg:col-span-5">
                             <img src={Map.src} alt="Our Incredible Journey of Digital Transformation">
                         </div>
 
-                        <div class="col-span-12 lg:col-start-7 lg:col-span-4 grid grid-cols-2 gap-5 lg:gap-10 content-center">
+                        <div class="col-span-12 lg:col-start-7 lg:col-span-4 grid grid-cols-2 gap-6 lg:gap-10 content-center">
                             <NumberCards BgImage={NumberCard1} Heading="18+" Paragraph="Serving Countries!" />
                             <NumberCards BgImage={NumberCard2} Heading="80+" Paragraph="Clients" />
                             <NumberCards BgImage={NumberCard3} Heading="300+" Paragraph="Successful Projects" />
@@ -183,10 +184,7 @@ const faqList = [
                         <div class="col-span-12 lg:col-start-2 p-5 lg:px-0 lg:py-10 lg:col-span-10 lg:w-[70%] space-y-[30px]">
                             <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">Skyrocket your business success with the right tools and trusted partners!</h2>
                             <div class="w-fit">
-                                <a href="/" class="rounded-full text-white flex space-x-2.5 py-2 px-3 lg:py-2.5  lg:px-6 w-fit items-center bg-[linear-gradient(90deg,#0FA1DB_0%,#5C2D91_100%)] font-semibold outline-none lg:font-xl">
-                                    <p>Connect Now</p>
-                                    <img src={Arrow.src} alt="explore">
-                                </a>
+                                <LinkButton Text="Connect Now" Link="/" />
                             </div>
                         </div>
                     </div>

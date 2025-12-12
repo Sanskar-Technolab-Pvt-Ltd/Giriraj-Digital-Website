@@ -11,7 +11,7 @@ import Logo from "../assets/images/logo.svg";
 >
   <div
     class="flex flex-wrap
-      mx-auto py-4 px-[60px]
+      mx-auto p-5 lg:py-4 lg:px-[60px]
       items-center justify-between"
   >
     <a
@@ -20,22 +20,22 @@ import Logo from "../assets/images/logo.svg";
           space-x-3
           items-center rtl:space-x-reverse"
     >
-      <img src={Logo.src} alt="giriraj digital" />
+      <img src={Logo.src} class="h-[46px] lg:h-auto" alt="giriraj digital" />
     </a>
     <div
       class="inline-flex
-        space-x-3
+        space-x-3 md:space-x-5 lg:space-x-3
         rtl:space-x-reverse
-        md:order-2 md:space-x-0"
+        md:order-2 items-center content-center"
     >
       <button
         type="button"
-        class="px-4 py-3
-             font-semibold leading-5 text-base
-            bg-brand
+        class="px-3 py-2.5 lg:px-4 lg:py-3
+             font-semibold leading-5
+            bg-brand text-sm lg:text-base
             border border-transparent rounded-base
-            shadow-xs bg-[#000000] rounded-full
-            cursor-pointer"
+            bg-[#000000] rounded-full
+            cursor-pointer "
         >Inquire Now</button
       >
       <button
@@ -43,17 +43,17 @@ import Logo from "../assets/images/logo.svg";
         type="button"
         class="inline-flex
             w-9 h-9
-            p-2
+            lg:p-2
             text-base text-body
             rounded-base
             items-center justify-center hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary
-            md:hidden"
+            lg:hidden"
         aria-controls="navbar-cta"
         aria-expanded="false"
       >
         <span class="sr-only">Open main menu</span>
         <svg
-          class="w-6 h-6"
+          class="w-6 h-6 text-[#0FA1DB]"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -73,7 +73,7 @@ import Logo from "../assets/images/logo.svg";
       class="hidden
           w-full cursor-pointer
           items-center justify-between
-          md:flex md:order-1 md:w-auto"
+          lg:flex md:order-1 md:w-auto"
       id="navbar-cta"
     >
       <ul
@@ -197,158 +197,7 @@ import Logo from "../assets/images/logo.svg";
         </li>
       </ul>
     </div>
-    
   </div>
-<!-- <div
-  id="mega-menu-full-dropdown"
-  class="mt-1
-      bg-neutral-primary-soft
-      border-default border-y
-      shadow-xs"
->
-  <div
-    class="grid
-      max-w-screen-xl
-      px-4 py-5 mx-auto
-      text-heading
-      sm:grid-cols-2
-      md:grid-cols-3 md:px-6"
-  >
-    <ul aria-labelledby="who-we-are-dropdown-button">
-      <li>
-        <a
-          href="#"
-          class="block
-              p-3
-              rounded-lg
-              hover:bg-neutral-secondary-medium"
-        >
-          <div class="font-semibold">Online Stores</div>
-          <span class="text-base text-body"
-            >Connect with third-party tools that you're already using.</span
-          >
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block
-              p-3
-              rounded-lg
-              hover:bg-neutral-secondary-medium"
-        >
-          <div class="font-semibold">Segmentation</div>
-          <span class="text-base text-body"
-            >Connect with third-party tools that you're already using.</span
-          >
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block
-              p-3
-              rounded-lg
-              hover:bg-neutral-secondary-medium"
-        >
-          <div class="font-semibold">Marketing CRM</div>
-          <span class="text-base text-body"
-            >Connect with third-party tools that you're already using.</span
-          >
-        </a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a
-          href="#"
-          class="block
-              p-3
-              rounded-lg
-              hover:bg-neutral-secondary-medium"
-        >
-          <div class="font-semibold">Online Stores</div>
-          <span class="text-base text-body"
-            >Connect with third-party tools that you're already using.</span
-          >
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block
-              p-3
-              rounded-lg
-              hover:bg-neutral-secondary-medium"
-        >
-          <div class="font-semibold">Segmentation</div>
-          <span class="text-base text-body"
-            >Connect with third-party tools that you're already using.</span
-          >
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block
-              p-3
-              rounded-lg
-              hover:bg-neutral-secondary-medium"
-        >
-          <div class="font-semibold">Marketing CRM</div>
-          <span class="text-base text-body"
-            >Connect with third-party tools that you're already using.</span
-          >
-        </a>
-      </li>
-    </ul>
-    <ul class="hidden
-        md:block">
-      <li>
-        <a
-          href="#"
-          class="block
-              p-3
-              rounded-lg
-              hover:bg-neutral-secondary-medium"
-        >
-          <div class="font-semibold">Audience Management</div>
-          <span class="text-base text-body"
-            >Connect with third-party tools that you're already using.</span
-          >
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block
-              p-3
-              rounded-lg
-              hover:bg-neutral-secondary-medium"
-        >
-          <div class="font-semibold">Creative Tools</div>
-          <span class="text-base text-body"
-            >Connect with third-party tools that you're already using.</span
-          >
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          class="block
-              p-3
-              rounded-lg
-              hover:bg-neutral-secondary-medium"
-        >
-          <div class="font-semibold">Marketing Automation</div>
-          <span class="text-base text-body"
-            >Connect with third-party tools that you're already using.</span
-          >
-        </a>
-      </li>
-    </ul>
-  </div>
-</div> -->
   
 </nav>
 
