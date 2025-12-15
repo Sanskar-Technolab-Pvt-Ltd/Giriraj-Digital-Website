@@ -125,7 +125,7 @@ Stop right text animation when hover OUT */
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     #gallery {
         height: auto;
     }

@@ -8,7 +8,7 @@ const {BgImage, RightImage, SubTitle, Title, Paragraph, ButtonLink} = Astro.prop
 <section class="w-full bg-white">
     <div class="grid grid-cols-12 gap-5 lg:gap-[30px] rounded-xl bg-cover bg-center w-full p-5 lg:px-0 lg:py-20 xl:py-[100px]" style={`background-image: url('${BgImage.src}');`} >
         <div class="col-span-12 lg:col-start-2 lg:col-span-10 lg:grid lg:grid-cols-10 gap-10">
-            <div class="col-span-10 lg:col-span-5 p-4 lg:p-[30px] bg-white rounded-xl lg:rounded-3xl outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)] space-y-10">
+            <div class="col-span-10 xl:col-span-5 p-4 lg:p-[30px] bg-white rounded-xl lg:rounded-3xl outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)] space-y-10">
                 <SectionTitle Title={SubTitle || ""} Heading={Title || ""} />
                 <div class="space-y-5 lg:space-y-7 text-[#2C363A] lg:text-lg">
                     {Paragraph.map((text:any) => (
@@ -22,7 +22,7 @@ const {BgImage, RightImage, SubTitle, Title, Paragraph, ButtonLink} = Astro.prop
                 )}
             </div>
             {RightImage && (
-                    <img src={Arrow.src} class="col-span-10 lg:col-start-7 lg:col-span-4 self-center justify-self-center" alt="explore" />
+                    <img src={Arrow.src} class="col-span-10 xl:col-start-7 xl:col-span-4 self-center justify-self-center" alt="explore" />
             )}
         </div>
     </div>

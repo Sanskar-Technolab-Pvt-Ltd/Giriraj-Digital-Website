@@ -4,17 +4,17 @@ import Play from "../assets/images/video-play-button.svg"
 import TestimonialSays from "../assets/images/testimonial-says.svg"
 ---
 
-<div class="grid grid-cols-10 gap-5 lg:gap-[30px]">
-    <div class="col-span-12 lg:col-span-3 aspect-square md:aspect-auto lg:aspect-square md:w-fit lg:w-auto p-8 h-fit lg:p-[60px] bg-[url('../assets/images/testimonial-bg.webp')] rounded-4xl relative">
+<div class="grid grid-cols-10 gap-5 xl:gap-[30px]">
+    <div class="col-span-12 xl:col-span-3 xl:h-fit aspect-square md:aspect-auto xl:aspect-square md:w-fit xl:w-auto p-8 h-fit 2xl:p-[60px] bg-[url('../assets/images/testimonial-bg.webp')] rounded-4xl relative">
 
         <img src={TestimonialImage.src} class="border-6 border-[rgba(255,255,255,0.6)] rounded-[20px] h-72 w-[320px] mx-auto" alt={Name}>
         <!-- Center Bottom-10 Play Button -->
-        <button class="cursor-pointer absolute bottom-14 lg:bottom-20 left-1/2 -translate-x-1/2">
+        <button class="cursor-pointer absolute bottom-14 xl:bottom-20 left-1/2 -translate-x-1/2">
             <img src={Play.src} alt="play-video" class="w-[60px] h-[60px]">
         </button>
     </div>
 
-    <div class="col-span-12 lg:col-span-7 content-center text-[#2C363A] space-y-2.5 text-lg md:text-xl lg:text-2xl lg:px-5 xl:px-10">
+    <div class="col-span-12 xl:col-span-7 content-center text-[#2C363A] space-y-2.5 text-lg md:text-xl xl:text-2xl xl:px-5 2xl:px-10">
         <div class="space-y-6">
             <img src={TestimonialSays.src} class="" alt="testimonial says">
             {Content.map((text:any) => (

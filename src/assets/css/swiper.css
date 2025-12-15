@@ -12,6 +12,15 @@
     position: relative;
   }
 
+
+    @media (min-width: 1320) {
+
+    swiper-container,
+    testimonial-swiper-container {
+      height: 100vh !important;
+    }
+  }
+
   /* For lg screens and above (≥1024px) */
   @media (min-width: 1280px) {
 

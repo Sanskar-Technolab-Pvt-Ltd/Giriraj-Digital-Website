@@ -4,13 +4,12 @@ import ButtonIcon from "../assets/images/link-icon.svg";
 ---
 
 <div
-  class="px-5 pt-5 lg:px-[70px] lg:pt-[60px] bg-cover group rounded-xl lg:rounded-4xl overflow-hidden"
+  class="px-5 pt-5 lg:px-[35px] lg:pt-12 2xl:px-[70px] 2xl:pt-[60px] bg-cover group rounded-xl lg:rounded-4xl overflow-hidden"
   style={`background-image: url('${BgImage.src}');`}
 >
-  <!-- CLICKABLE CARD -->
   <a
     href={Link ? Link : "/"}
-    class="block lg:relative rounded-t-xl lg:rounded-t-[20px]  outline-4 lg:outline-8 outline-[rgba(255,255,255,0.6)] border-b-0 p-5 lg:p-[30px] lg:pb-[70px] space-y-5 bg-white h-full lg:translate-y-6 lg:transition-all lg:duration-500 lg:ease-out lg:group-hover:translate-y-0"
+    class="block lg:relative rounded-t-xl 2xl:rounded-t-[20px]  outline-4 lg:outline-8 outline-[rgba(255,255,255,0.6)] border-b-0 p-5 lg:p-[30px] lg:pb-[70px] space-y-5 bg-white h-full 2xl:translate-y-6 2xl:transition-all 2xl:duration-500 2xl:ease-out 2xl:group-hover:translate-y-0"
   >
     <!-- Heading + Paragraph -->
     <div class="flex space-x-5 items-center content-center">
@@ -24,7 +23,7 @@ import ButtonIcon from "../assets/images/link-icon.svg";
 
     <!-- Know More Button -->
     <div
-      class="lg:absolute lg:bottom-6 lg:left-8 lg:opacity-0 lg:translate-y-4 lg:transition-all lg:duration-500 lg:ease-out lg:group-hover:opacity-100 lg:group-hover:translate-y-0 flex items-center space-x-2"
+      class="lg:absolute lg:bottom-6 xl:left-8 2xl:opacity-0 2xl:translate-y-4 2xl:transition-all 2xl:duration-500 2xl:ease-out 2xl:group-hover:opacity-100 2xl:group-hover:translate-y-0 flex items-center space-x-2"
     >
       <p class="text-[#2C363A] font-semibold">Know More</p>
       <img src={ButtonIcon.src} alt="Know More" />
