@@ -90,7 +90,7 @@ const faqList = [
 
 ---
 
-<Layout>
+<Layout Title="Enterprise Software Development Company | GIRIRAJ DIGITAL">
     <div class="space-y-[60px] lg:space-y-40 bg-white ">
         <div>
             <Carousel />
@@ -107,7 +107,7 @@ const faqList = [
                 <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-10 ">
                     <SectionTitle Title="Elevating Your Digital Presence" Heading="Leverage The Microsoft Powerhouse To Elevate Your Digital Realm" WidthClass="lg:w-[70%]" />
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] xl:gap-5 2xl:gap-[30px]">
                         <Card 
                             BgImage={Card1BgImage1}
                             Icon={UmbracoIcon}
@@ -161,11 +161,11 @@ const faqList = [
                     <SectionTitle Title="Company Metrics Overview" Heading="Our Incredible Journey of Digital Transformation"  />
 
                     <div class="grid grid-cols-10 gap-y-[30px] lg:gap-y-0">
-                        <div class="col-span-12 lg:col-span-5">
+                        <div class="col-span-12 lg:col-span-5 content-center">
                             <img src={Map.src} alt="Our Incredible Journey of Digital Transformation">
                         </div>
 
-                        <div class="col-span-12 lg:col-start-7 lg:col-span-4 grid grid-cols-2 gap-6 lg:gap-10 content-center">
+                        <div class="col-span-12 lg:col-span-5 xl:col-start-7 xl:col-span-4 grid grid-cols-2 gap-6 lg:gap-8 xl:gap-10 content-center">
                             <NumberCards BgImage={NumberCard1} Heading="18+" Paragraph="Serving Countries!" />
                             <NumberCards BgImage={NumberCard2} Heading="80+" Paragraph="Clients" />
                             <NumberCards BgImage={NumberCard3} Heading="300+" Paragraph="Successful Projects" />
@@ -178,7 +178,7 @@ const faqList = [
             <!-- * More About GIRIRAJ DIGITAL As Your Consulting Partner! -->
             <section>
                 <LeftSideCard BgImage={LeftCardBgImage} ButtonLink="/" SubTitle="Center of Excellence" Title="More About GIRIRAJ DIGITAL As Your Consulting Partner!" Paragraph={ParagraphContent} />
-               <div class="bg-[#E9F2FC] bg-[url('../assets/images/rectangle.svg')] bg-no-repeat  bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px]  lg:bg-[length:auto] lg:bg-[position:right_100px_center]  rounded-b-[20px]">
+                <div class="bg-[#E9F2FC] bg-[url('../assets/images/rectangle.svg')] bg-no-repeat  bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px]  lg:bg-[length:auto] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_100px]  rounded-b-[20px]">
 
                     <div class="grid grid-cols-12 ">
                         <div class="col-span-12 lg:col-start-2 p-5 lg:px-0 lg:py-10 lg:col-span-10 lg:w-[70%] space-y-[30px]">
@@ -203,7 +203,7 @@ const faqList = [
 
             <!-- * FAQ -->
             <section class="grid grid-cols-12 gap-5 lg:gap-[30px]">
-                <div class="col-span-12 lg:col-start-5 lg:col-span-6 space-y-5 lg:space-y-[30px]">
+                <div class="col-span-12 lg:col-start-4 lg:col-span-7 xl:col-start-5 xl:col-span-6 space-y-5 lg:space-y-[30px]">
                     <SectionTitle Title="Your Curiosities, Our Clarity" Heading="Frequently Asked Questions"  />
                     <div id="accordion-collapse" class="overflow-hidden text-[#212529]">
                         {faqList.map((faq, index) => (

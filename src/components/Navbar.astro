@@ -38,58 +38,66 @@ import Logo from "../assets/images/logo.svg";
             cursor-pointer "
         >Inquire Now</button
       >
-      <button
-        data-collapse-toggle="navbar-cta"
-        type="button"
-        class="inline-flex
-            w-9 h-9
-            lg:p-2
-            text-base text-body
-            rounded-base
-            items-center justify-center hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary
-            lg:hidden"
-        aria-controls="navbar-cta"
-        aria-expanded="false"
-      >
-        <span class="sr-only">Open main menu</span>
-        <svg
-          class="w-6 h-6 text-[#0FA1DB]"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-          ><path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-width="2"
-            d="M5 7h14M5 12h14M5 17h14"></path></svg
-        >
-      </button>
+     <button
+  data-collapse-toggle="navbar-cta"
+  type="button"
+  class="relative inline-flex w-9 h-9 items-center justify-center lg:hidden"
+  aria-controls="navbar-cta"
+  aria-expanded="false"
+>
+  <span class="sr-only">Open main menu</span>
+
+  <!-- Hamburger -->
+  <svg
+    id="icon-open"
+    class="absolute w-6 h-6 text-[#0FA1DB] transition-all duration-300 ease-in-out transform" 
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+      d="M5 7h14M5 12h14M5 17h14" />
+  </svg>
+
+  <!-- Close -->
+  <svg
+    id="icon-close"
+    class="absolute w-6 h-6 text-[#0FA1DB] hidden"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+      d="M6 6l12 12M18 6l-12 12" />
+  </svg>
+</button>
+
+
     </div>
     <div
-      id="mega-menu-full"
+      
       class="hidden
           w-full cursor-pointer
           items-center justify-between
-          lg:flex md:order-1 md:w-auto"
+          lg:flex md:order-1 md:w-auto transition-all duration-300 ease-in-out"
       id="navbar-cta"
     >
       <ul
-        class="flex flex-col
-          p-4 mt-4
-          font-medium
-          bg-neutral-secondary-soft
-          border border-default rounded-base
-          rtl:space-x-reverse
-          md:flex-row md:p-0 md:space-x-8 md:mt-0 md:bg-neutral-primary md:border-0"
-      >
+      class="flex flex-col
+        p-4 mt-4
+        font-medium
+        bg-[#F7FAFF] backdrop-blur-sm
+        border border-[rgba(15,161,219,0.15)]
+        rounded-2xl shadow-sm
+        rtl:space-x-reverse
+        md:flex-row md:p-0 lg:space-x-4 xl:space-x-8
+        md:mt-0 md:bg-transparent md:border-0 md:shadow-none"
+    >
+
         <li>
           <a
             href="#"
             class="block
-                py-2 px-3
                 text-[#0495CF]
                 bg-brand
                 rounded
@@ -202,3 +210,4 @@ import Logo from "../assets/images/logo.svg";
 </nav>
 
 
+<script src="../assets/js/navbar.js" />

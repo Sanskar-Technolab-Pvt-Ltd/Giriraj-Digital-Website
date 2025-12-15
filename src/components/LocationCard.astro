@@ -1,0 +1,34 @@
+---
+const {Image, City, CountryLogo, CountryName, Phone, Email, Address, isActive} = Astro.props;
+
+
+import EmailIcon from "../assets/images/Email-Icon.png";
+import PhoneIcon from "../assets/images/Phone-Icon.png";
+---
+
+<div class=`location-item ${isActive ? 'active' : ''} bg-[url('../assets/images/COPENHAGEN.webp')] lg:bg-none bg-cover`>
+    <img class="hidden lg:block" src={Image.src} alt={City} />
+    <div class="bottom-bar space-y-5 lg:space-y-0">
+        <div class="left flex flex-col space-y-2">
+            <p class="font-bold lg:text-2xl">{City}</p>
+            <div class="flex space-x-3 w-fit content-center items-center">
+                <img src={CountryLogo.src} class="DENMARK"> 
+                <span>{CountryName}</span>
+            </div>
+        </div>
+        <div class="right flex flex-col space-y-2.5 lg:space-y-[18px] w-full lg:w-[55%] xl:w-[70%] 2xl:w-auto">
+            <p class="font-bold lg:text-lg">{Address}</p>
+            <div class="space-y-1 xl:space-y-0 xl:flex space-x-5 lg:text-base">
+                <a href=`tel:${Phone}` class="pr-5 xl:border-r border-white flex space-x-3 font-bold items-center w-fit!">
+                    <img class="w-fit! h-fit!" src={PhoneIcon.src} alt="contact">
+                    <p>{Phone}</p>
+                </a>
+
+                <a href=`mailto:${Email}` class="flex space-x-3 font-bold items-center w-fit!">
+                    <img class="w-fit! h-fit!" src={EmailIcon.src} alt="contact">
+                    <p>{Email}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
