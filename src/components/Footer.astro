@@ -73,12 +73,12 @@ const AboutUsLinks = [
             <div class="col-span-12 md:w-[50%] xl:w-auto xl:col-start-2 xl:col-span-5 2xl:col-start-2 2xl:col-span-2 space-y-5 lg:space-y-[30px]">
                 <div class="py-[13px] px-5 space-y-[18px] rounded-[18px] border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.06)]">
                     <h5 class="font-semibold lg:text-lg uppercase pb-2 border-b border-[rgba(255,255,255,0.2)]">Business</h5>
-                    <div class="roboto space-y-3.5">
-                        <a href="tel:+918200817694" class="flex space-x-2 content-center items-center">
+                    <div class="roboto space-y-3.5 ">
+                        <a href="tel:+918200817694" class="flex space-x-2 content-center items-center hover:text-[#0FA1DB] ease-in-out duration-300">
                             <img src={Call.src} alt="contact">
                             <p>+91 82008 17694</p>
                         </a>
-                        <a href="mailto:info@girirajdigital.com" class="flex space-x-2 content-center items-center">
+                        <a href="mailto:info@girirajdigital.com" class="flex space-x-2 content-center items-center hover:text-[#0FA1DB] ease-in-out duration-300">
                             <img src={Email.src} alt="email">
                             <p>info@girirajdigital.com</p>
                         </a>
@@ -88,11 +88,11 @@ const AboutUsLinks = [
                 <div class="py-[13px] px-5 space-y-[18px] rounded-[18px] border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.06)]">
                     <p class="font-semibold lg:text-lg uppercase pb-2 border-b border-[rgba(255,255,255,0.2)]">HR / Career</p>
                     <div class="roboto space-y-3.5">
-                        <a href="tel:+918200817694" class="flex space-x-2 content-center items-center">
+                        <a href="tel:+918200817694" class="flex space-x-2 content-center items-center hover:text-[#0FA1DB] ease-in-out duration-300">
                             <img src={Call.src} alt="contact">
                             <p>+91 82008 17694</p>
                         </a>
-                        <a href="mailto:career@girirajdigital.com" class="flex space-x-2 content-center items-center">
+                        <a href="mailto:career@girirajdigital.com" class="flex space-x-2 content-center items-center hover:text-[#0FA1DB] ease-in-out duration-300">
                             <img src={Email.src} alt="email">
                             <p>career@girirajdigital.com</p>
                         </a>
@@ -159,23 +159,36 @@ const AboutUsLinks = [
         <!-- * Social Media -->
         <div class="space-x-5 flex justify-between lg:justify-start xl:justify-between 2xl:justify-auto content-center items-center">
             <img src={Logo.src} class="w-20 lg:w-auto lg:pr-5 lg:border-r lg:border-white" alt="giriraj digital">
-            <div class="flex space-x-0.5 lg:space-x-4 ">
-                <a href="" target="_blank" class="p-2 lg:p-3.5">
-                    <img class="h-4 lg:h-auto" src={Facebook.src} alt="facebook">
+            <div class="flex space-x-0.5 lg:space-x-4">
+                <a href="" target="_blank" class="flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 hover:bg-[#3B5998] rounded-full transition-colors ease-in-out duration-300">
+                    <img class="h-4 lg:h-5" src={Facebook.src} alt="facebook">
                 </a>
-                <a href="" target="_blank" class="p-2 lg:p-3.5">
-                    <img class="h-4 lg:h-auto" src={Linkedin.src} alt="linkedin">
+
+                <a href="" target="_blank" class="flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12  hover:bg-[#007bb5] rounded-full transition-colors ease-in-out duration-300" >
+                    <img class="h-4 lg:h-5" src={Linkedin.src} alt="linkedin">
                 </a>
-                <a href="" target="_blank" class="p-2 lg:p-3.5">
-                    <img class="h-4 lg:h-auto" src={X.src} alt="x">
+
+                <a href="" target="_blank" class="flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 hover:bg-black rounded-full transition-colors ease-in-out duration-300" >
+                    <img class="h-4 lg:h-5" src={X.src} alt="x">
                 </a>
-                <a href="" target="_blank" class="p-2 lg:p-3.5">
-                    <img class="h-4 lg:h-auto" src={Instagram.src} alt="instagram">
+                <a href="" target="_blank" class=" group relative flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 rounded-full overflow-hidden">
+                    <!-- Gradient layer -->
+                    <span class=" absolute inset-0 rounded-full bg-[linear-gradient(72.44deg,#ff7a00,#ff0169,#d300c5)] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></span>
+
+                    <!-- Icon -->
+                    <img
+                        class="relative z-10 h-4 lg:h-5 transition-transform duration-300"
+                        src={Instagram.src}
+                        alt="instagram"
+                    />
                 </a>
-                <a href="" target="_blank" class="p-2 lg:p-3.5">
-                    <img class="h-4 lg:h-auto" src={youtube.src} alt="youtube">
+
+
+                <a href="" target="_blank" class="flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 hover:bg-[#bb0000] rounded-full transition-colors ease-in-out duration-300" >
+                    <img class="h-4 lg:h-5" src={youtube.src} alt="youtube">
                 </a>
             </div>
+
         </div>
 
         <!-- * Iso -->
@@ -188,9 +201,9 @@ const AboutUsLinks = [
         <!-- * Copyright -->
         <div class="flex flex-col text-sm md:text-base lg:justify-between 2xl:justify-start items-center space-y-3 lg:space-y-0 lg:flex-row lg:space-x-5 xl:space-x-10 lg:text-lg font-extralight">
             <div class="flex space-x-3 lg:space-x-5 xl:space-x-3">
-                <a href="">Privacy Notice</a>
-                <a href="">Cookie Policy</a>
-                <a href="">Disclaimer</a>
+                <a href="" class="hover:text-[#0FA1DB] ease-in-out duration-300 transition-colors">Privacy Notice</a>
+                <a href="" class="hover:text-[#0FA1DB] ease-in-out duration-300 transition-colors">Cookie Policy</a>
+                <a href="" class="hover:text-[#0FA1DB] ease-in-out duration-300 transition-colors">Disclaimer</a>
             </div>
             <p>Copyright @ 2025 GIRIRAJ DIGITAL</p>
         </div>
