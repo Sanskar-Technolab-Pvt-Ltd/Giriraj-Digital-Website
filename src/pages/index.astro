@@ -91,135 +91,128 @@ const faqList = [
 ---
 
 <Layout Title="Enterprise Software Development Company | GIRIRAJ DIGITAL">
-    <div class="space-y-[60px] lg:space-y-40 bg-white ">
-        <div>
-            <Carousel />
-            <CenterCardContainer BgImage={CenterCardBGImage} Cards={[GoldContribute, UmbracoMVP, GoldUmbraco]} SideImage={CenterCardSideImage} />
-        </div>
 
-        <div class="px-5 lg:px-[30px] space-y-[60px] lg:space-y-40">
+        <Carousel />
+        <CenterCardContainer BgImage={CenterCardBGImage} Cards={[GoldContribute, UmbracoMVP, GoldUmbraco]} SideImage={CenterCardSideImage} />
 
-            <!-- * Solutions Delivered -->
-            <SolutionDelivered />
+        <!-- * Solutions Delivered -->
+        <SolutionDelivered />
 
-            <!-- * Leverage The Microsoft Powerhouse To Elevate Your Digital Realm -->
-            <section class=" grid grid-cols-12 gap-5 lg:gap-[30px]">
-                <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-10 ">
-                    <SectionTitle Title="Elevating Your Digital Presence" Heading="Leverage The Microsoft Powerhouse To Elevate Your Digital Realm" WidthClass="lg:w-[70%]" />
+        <!-- * Leverage The Microsoft Powerhouse To Elevate Your Digital Realm -->
+        <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
+            <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-10 ">
+                <SectionTitle Title="Elevating Your Digital Presence" Heading="Leverage The Microsoft Powerhouse To Elevate Your Digital Realm" WidthClass="lg:w-[70%]" />
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] xl:gap-5 2xl:gap-[30px]">
-                        <Card 
-                            BgImage={Card1BgImage1}
-                            Icon={UmbracoIcon}
-                            Heading="Umbraco"
-                            Paragraph="Umbraco is a user-friendly and highly flexible content management system (CMS) that enables businesses to create and manage web applications."
-                            Link="/"
-                        />
-                        <Card 
-                            BgImage={Card1BgImage2}
-                            Icon={MSPowerPlatFormIcon}
-                            Heading="Microsoft Power Platform"
-                            Paragraph="The Microsoft Power Platform is a suite of interconnected tools: Power BI for business analytics, Power Apps for app creation."
-                            Link="/"
-                        />
-                        <Card 
-                            BgImage={Card1BgImage3}
-                            Icon={SitecoreIcon}
-                            Heading="Sitecore"
-                            Paragraph="Sitecore is another prominent digital experience platform that offers tools for content management, marketing automation, and customer analytics."
-                            Link="/"
-                        />
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] xl:gap-5 2xl:gap-[30px]">
+                    <Card 
+                        BgImage={Card1BgImage1}
+                        Icon={UmbracoIcon}
+                        Heading="Umbraco"
+                        Paragraph="Umbraco is a user-friendly and highly flexible content management system (CMS) that enables businesses to create and manage web applications."
+                        Link="/"
+                    />
+                    <Card 
+                        BgImage={Card1BgImage2}
+                        Icon={MSPowerPlatFormIcon}
+                        Heading="Microsoft Power Platform"
+                        Paragraph="The Microsoft Power Platform is a suite of interconnected tools: Power BI for business analytics, Power Apps for app creation."
+                        Link="/"
+                    />
+                    <Card 
+                        BgImage={Card1BgImage3}
+                        Icon={SitecoreIcon}
+                        Heading="Sitecore"
+                        Paragraph="Sitecore is another prominent digital experience platform that offers tools for content management, marketing automation, and customer analytics."
+                        Link="/"
+                    />
 
-                        <Card 
-                            BgImage={Card1BgImage4}
-                            Icon={MSDotNetCoreIcon}
-                            Heading="Microsoft .NET Core"
-                            Paragraph="Elevate your projects with our ASP.NET Core expertise at Giriraj Digital. Our skilled team delivers innovative solutions for your digital needs."
-                            Link="/"
-                        />
-                        <Card 
-                            BgImage={Card1BgImage5}
-                            Icon={MSAzureCloudIcon}
-                            Heading="Microsoft Azure Cloud"
-                            Paragraph="Microsoft Azure is a cloud computing platform that provides a wide range of cloud services and enables businesses to scale their infrastructure."
-                            Link="/"
-                        />
-                        <Card 
-                            BgImage={Card1BgImage6}
-                            Icon={MSDOtNetIcon}
-                            Heading="Microsoft .NET"
-                            Paragraph="Powering robust and scalable software solutions across diverse platforms. Elevate your development with cutting-edge tools and frameworks."
-                            Link="/"
-                        />
+                    <Card 
+                        BgImage={Card1BgImage4}
+                        Icon={MSDotNetCoreIcon}
+                        Heading="Microsoft .NET Core"
+                        Paragraph="Elevate your projects with our ASP.NET Core expertise at Giriraj Digital. Our skilled team delivers innovative solutions for your digital needs."
+                        Link="/"
+                    />
+                    <Card 
+                        BgImage={Card1BgImage5}
+                        Icon={MSAzureCloudIcon}
+                        Heading="Microsoft Azure Cloud"
+                        Paragraph="Microsoft Azure is a cloud computing platform that provides a wide range of cloud services and enables businesses to scale their infrastructure."
+                        Link="/"
+                    />
+                    <Card 
+                        BgImage={Card1BgImage6}
+                        Icon={MSDOtNetIcon}
+                        Heading="Microsoft .NET"
+                        Paragraph="Powering robust and scalable software solutions across diverse platforms. Elevate your development with cutting-edge tools and frameworks."
+                        Link="/"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- * Our Incredible Journey of Digital Transformation -->
+        <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
+            <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px] lg:space-y-[53px]">
+                <SectionTitle Title="Company Metrics Overview" Heading="Our Incredible Journey of Digital Transformation"  />
+
+                <div class="grid grid-cols-10 gap-y-[30px] lg:gap-y-0">
+                    <div class="col-span-12 lg:col-span-5 content-center">
+                        <img src={Map.src} alt="Our Incredible Journey of Digital Transformation">
+                    </div>
+
+                    <div class="col-span-12 lg:col-span-5 xl:col-start-7 xl:col-span-4 grid grid-cols-2 gap-6 lg:gap-8 xl:gap-10 content-center">
+                        <NumberCards BgImage={NumberCard1} Heading="18+" Paragraph="Serving Countries!" />
+                        <NumberCards BgImage={NumberCard2} Heading="80+" Paragraph="Clients" />
+                        <NumberCards BgImage={NumberCard3} Heading="300+" Paragraph="Successful Projects" />
+                        <NumberCards BgImage={NumberCard4} Heading="60+" Paragraph="Brilliant Minds" />
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- * Our Incredible Journey of Digital Transformation -->
-            <section class=" grid grid-cols-12 gap-5 lg:gap-[30px]">
-                <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px] lg:space-y-[53px]">
-                    <SectionTitle Title="Company Metrics Overview" Heading="Our Incredible Journey of Digital Transformation"  />
+        <!-- * More About GIRIRAJ DIGITAL As Your Consulting Partner! -->
+        <section class="section-container">
+            <LeftSideCard BgImage={LeftCardBgImage} ButtonLink="/" SubTitle="Center of Excellence" Title="More About GIRIRAJ DIGITAL As Your Consulting Partner!" Paragraph={ParagraphContent} />
+            <div class="bg-[#E9F2FC] bg-[url('../assets/images/rectangle.svg')] bg-no-repeat  bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px]  lg:bg-[length:auto] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_100px]  rounded-b-[20px]">
 
-                    <div class="grid grid-cols-10 gap-y-[30px] lg:gap-y-0">
-                        <div class="col-span-12 lg:col-span-5 content-center">
-                            <img src={Map.src} alt="Our Incredible Journey of Digital Transformation">
-                        </div>
-
-                        <div class="col-span-12 lg:col-span-5 xl:col-start-7 xl:col-span-4 grid grid-cols-2 gap-6 lg:gap-8 xl:gap-10 content-center">
-                            <NumberCards BgImage={NumberCard1} Heading="18+" Paragraph="Serving Countries!" />
-                            <NumberCards BgImage={NumberCard2} Heading="80+" Paragraph="Clients" />
-                            <NumberCards BgImage={NumberCard3} Heading="300+" Paragraph="Successful Projects" />
-                            <NumberCards BgImage={NumberCard4} Heading="60+" Paragraph="Brilliant Minds" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- * More About GIRIRAJ DIGITAL As Your Consulting Partner! -->
-            <section>
-                <LeftSideCard BgImage={LeftCardBgImage} ButtonLink="/" SubTitle="Center of Excellence" Title="More About GIRIRAJ DIGITAL As Your Consulting Partner!" Paragraph={ParagraphContent} />
-                <div class="bg-[#E9F2FC] bg-[url('../assets/images/rectangle.svg')] bg-no-repeat  bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px]  lg:bg-[length:auto] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_100px]  rounded-b-[20px]">
-
-                    <div class="grid grid-cols-12 ">
-                        <div class="col-span-12 lg:col-start-2 p-5 lg:px-0 lg:py-10 lg:col-span-10 lg:w-[70%] space-y-[30px]">
-                            <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">Skyrocket your business success with the right tools and trusted partners!</h2>
-                            <div class="w-fit">
-                                <LinkButton Text="Connect Now" Link="/" />
-                            </div>
+                <div class="grid grid-cols-12 ">
+                    <div class="col-span-12 lg:col-start-2 p-5 lg:px-0 lg:py-10 lg:col-span-10 lg:w-[70%] space-y-[30px]">
+                        <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">Skyrocket your business success with the right tools and trusted partners!</h2>
+                        <div class="w-fit">
+                            <LinkButton Text="Connect Now" Link="/" />
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- * Our Certificates and Accolades -->
-            <AchievementsCard Title="Achievements" Heading="Our Certificates and Accolades" BgImage={CertificationBG} Certificates={Certifications}  />
+        <!-- * Our Certificates and Accolades -->
+        <AchievementsCard Title="Achievements" Heading="Our Certificates and Accolades" BgImage={CertificationBG} Certificates={Certifications}  />
 
-            <!-- * Testimonial -->
-            <Testimonial />
+        <!-- * Testimonial -->
+        <Testimonial />
 
-            <!-- * Form -->
-            <ContactUsForm />
+        <!-- * Form -->
+        <ContactUsForm />
 
-
-            <!-- * FAQ -->
-            <section class="grid grid-cols-12 gap-5 lg:gap-[30px]">
-                <div class="col-span-12 lg:col-start-4 lg:col-span-7 xl:col-start-5 xl:col-span-6 space-y-5 lg:space-y-[30px]">
-                    <SectionTitle Title="Your Curiosities, Our Clarity" Heading="Frequently Asked Questions"  />
-                    <div id="accordion-collapse" class="overflow-hidden text-[#212529]">
-                        {faqList.map((faq, index) => (
-                            <FAQs 
-                                id={index}
-                                Question={faq.Question}
-                                Answer={faq.Answer}
-                                Border={index === 0 ? "border-none" : ""}
-                            />
-                        ))}
-                    </div>
+        <!-- * FAQ -->
+        <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
+            <div class="col-span-12 lg:col-start-4 lg:col-span-7 xl:col-start-5 xl:col-span-6 space-y-5 lg:space-y-[30px]">
+                <SectionTitle Title="Your Curiosities, Our Clarity" Heading="Frequently Asked Questions"  />
+                <div id="accordion-collapse" class="overflow-hidden text-[#212529]">
+                    {faqList.map((faq, index) => (
+                        <FAQs 
+                            id={index}
+                            Question={faq.Question}
+                            Answer={faq.Answer}
+                            Border={index === 0 ? "border-none" : ""}
+                        />
+                    ))}
                 </div>
-            </section>
-        </div>
-        
-    </div>
+            </div>
+        </section>
+
 
     <script src="../assets/js/faq.js"></script>
 </Layout>

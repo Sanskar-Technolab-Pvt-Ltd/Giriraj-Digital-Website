@@ -2,7 +2,7 @@
 const {Title, Heading, Certificates=[], CardGridNumber, BgImage} = Astro.props;
 ---
 
-<section class="w-full bg-white grid grid-cols-12 gap-5 lg:gap-[30px]">
+<section class="section-container w-full bg-white grid grid-cols-12 gap-5 lg:gap-[30px]">
     <div class="space-y-[30px] 2xl:space-y-0 col-span-12 lg:col-span-10 lg:col-start-2 p-5 md:p-10 lg:p-20 grid grid-cols-10 rounded-3xl" style={`background-image: url('${BgImage.src}');`}>
         <div class="col-span-10 2xl:col-span-4 space-y-1.5 lg:space-y-3.5 text-white lg:w-[80%]">
             <p class="font-semibold lg:text-xl">{Title || ""}</p>

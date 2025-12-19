@@ -29,3 +29,19 @@ footer h5 {
     font-family: "Roboto", sans-serif !important;
 }
 
+
+.section-container {
+    padding-left: 1.25rem;
+    /* px-5 */
+    padding-right: 1.25rem;
+    margin-top: 60px;
+}
+
+
+@media (min-width: 1024px) {
+    .section-container {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 160px;
+    }
+}

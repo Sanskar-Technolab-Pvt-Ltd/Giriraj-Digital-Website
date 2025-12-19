@@ -2,7 +2,7 @@
 import Image from "../assets/images/contact-us-left-side-image.webp"
 ---
 
-<section class="grid grid-cols-12  ">
+<section class="section-container grid grid-cols-12  ">
     <img src={Image.src} class="hidden lg:block lg:col-span-6 rounded-l-[20px] w-full lg:h-full" alt="contact us">
     <div class="col-span-12 lg:col-span-6 bg-[url('../assets/images/contact-us-bg.webp')] content-center items-center rounded-l-[20px] lg:rounded-l-none rounded-r-[20px]">
         <form action="" class="space-y-5 lg:space-y-10 p-5 lg:p-16 xl:p-[100px]">
@@ -16,7 +16,7 @@ import Image from "../assets/images/contact-us-left-side-image.webp"
                 <input type="text" name="company" class="border-2 border-[#4B4B4B] outline-none  col-span-2 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" placeholder="Company">
                 <textarea name="message" class="border-2 border-[#4B4B4B] outline-none col-span-2 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" id="" placeholder="Message"></textarea>
 
-                <button type="submit" class="relative h-fit w-fit rounded-full text-white flex items-center space-x-2.5 py-2 lg:py-3 px-3.5 lg:px-6 font-semibold overflow-hidden bg-[linear-gradient(90deg,#0FA1DB,#5C2D91,#0FA1DB)] bg-[length:200%_200%] bg-left transition-[background-position] duration-500 ease-in-out hover:bg-right cursor-pointer">Send Message</button>
+                <button type="submit" class="col-span-2  relative h-fit w-fit rounded-full text-white flex items-center space-x-2.5 py-2 lg:py-3 px-3.5 lg:px-6 font-semibold overflow-hidden bg-[linear-gradient(90deg,#0FA1DB,#5C2D91,#0FA1DB)] bg-[length:200%_200%] bg-left transition-[background-position] duration-500 ease-in-out hover:bg-right cursor-pointer">Send Message</button>
             </div>
         </form>
     </div>
