@@ -1,0 +1,28 @@
+---
+const {BgImage,ButtonLink, Title="", Paragraph="", ParagraphTitle="", HeroImage, ButtonText=""} = Astro.props;
+
+import UmbracoBg from "../assets/images/umbreco-hero-bg.svg"
+import LinkButton from "./LinkButton.astro";
+---
+
+<section class="section-container mt-[90px]! grid grid-cols-12 lg:gap-[30px] py-10 md:py-20 lg:py-24 xl:py-[120px] bg-no-repeat  bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px]  lg:bg-[length:auto] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_165px]" style={`background-image: url('${BgImage.src}');`}>
+    <div class="lg:col-start-2 col-span-12 lg:col-span-6 space-y-5 lg:space-y-8">
+        <h1 class="font-bold text-[32px] lg:text-[64px] text-[#21292C] leading-[120%]">{Title}</h1>
+        <div class="space-y-3 text-[#000000]">
+            {ParagraphTitle && (
+                <p class="font-semibold text-lg lg:text-2xl">{ParagraphTitle}</p>
+            )}
+
+            {Paragraph && (
+                <p class="lg:text-lg">{Paragraph}</p>
+            )}
+            
+        </div>
+        {ButtonLink && (
+        <div class="w-fit">
+            <LinkButton Text={ButtonText} Link="/" />
+        </div>
+    )}
+    </div>
+    <img src={HeroImage.src} class="col-span-12 lg:col-span-4 justify-self-end" alt="">
+</section>

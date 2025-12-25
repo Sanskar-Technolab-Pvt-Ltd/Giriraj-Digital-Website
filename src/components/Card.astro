@@ -1,16 +1,47 @@
 ---
-const { Icon, Heading, Paragraph, Link, BgImage } = Astro.props;
+const {
+  Icon,
+  Heading,
+  Paragraph,
+  Link,
+  BgImage,
+  BgColor,
+  BorderOutline,
+  ShowReadMore = true, // default ON
+} = Astro.props;
+
 import ButtonIcon from "../assets/images/link-icon.svg";
+
+const backgroundStyle = BgColor
+  ? `background-color: ${BgColor};`
+  : BgImage
+    ? `background-image: url('${BgImage.src}');`
+    : "";
+
+const outlineClass = BorderOutline
+  ? `outline-[${BorderOutline}]`
+  : "outline-[rgba(255,255,255,0.6)]";
+
+const Wrapper = Link ? "a" : "div";
+const wrapperProps = Link ? { href: Link } : {};
 ---
+
 
 <div
   class="px-5 pt-5 lg:px-[35px] lg:pt-12 2xl:px-[70px] 2xl:pt-[60px] bg-cover group rounded-xl lg:rounded-4xl overflow-hidden"
-  style={`background-image: url('${BgImage.src}');`}
+  style={backgroundStyle}
 >
-  <a
-    href={Link ? Link : "/"}
-    class="block lg:relative rounded-t-xl 2xl:rounded-t-[20px]  outline-4 lg:outline-8 outline-[rgba(255,255,255,0.6)] border-b-0 p-5 lg:p-[30px] lg:pb-[70px] space-y-5 bg-white h-full 2xl:translate-y-6 2xl:transition-all 2xl:duration-500 2xl:ease-out 2xl:group-hover:translate-y-0"
+  <Wrapper
+    {...wrapperProps}
+    class={`block lg:relative rounded-t-xl 2xl:rounded-t-[20px]
+      outline-4 lg:outline-8 ${outlineClass}
+      border-b-0 p-5 lg:p-[30px] lg:pb-[70px]
+      space-y-5 bg-white h-full
+      ${Link ? "cursor-pointer" : "cursor-default"}
+      2xl:translate-y-6 2xl:transition-all 2xl:duration-500
+      2xl:ease-out 2xl:group-hover:translate-y-0`}
   >
+
     <!-- Heading + Paragraph -->
     <div class="flex space-x-5 items-center content-center">
       {Icon && <img src={Icon.src} class="w-14" alt={Heading} />}
@@ -22,11 +53,19 @@ import ButtonIcon from "../assets/images/link-icon.svg";
     <p class="text-[#2C363A] leading-[150%]">{Paragraph}</p>
 
     <!-- Know More Button -->
-    <div
-      class="lg:absolute lg:bottom-6 xl:left-8 2xl:opacity-0 2xl:translate-y-4 2xl:transition-all 2xl:duration-500 2xl:ease-out 2xl:group-hover:opacity-100 2xl:group-hover:translate-y-0 flex items-center space-x-2"
-    >
-      <p class="text-[#2C363A] font-semibold">Know More</p>
-      <img src={ButtonIcon.src} alt="Know More" />
-    </div>
-  </a>
+    {Link && ShowReadMore && (
+      <div
+        class="lg:absolute lg:bottom-6 xl:left-8
+          2xl:opacity-0 2xl:translate-y-4
+          2xl:transition-all 2xl:duration-500
+          2xl:ease-out
+          2xl:group-hover:opacity-100
+          2xl:group-hover:translate-y-0
+          flex items-center space-x-2"
+      >
+        <p class="text-[#2C363A] font-semibold">Know More</p>
+        <img src={ButtonIcon.src} alt="Know More" />
+      </div>
+    )}
+  </Wrapper>
 </div>

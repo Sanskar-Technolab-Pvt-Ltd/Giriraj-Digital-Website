@@ -1,0 +1,20 @@
+---
+const {Heading="" , MarginNone = false} = Astro.props
+import LinkButton from "./LinkButton.astro"
+
+const sectionClass = `section-container ${MarginNone ? "mt-0!" : ""}`;
+
+const roundedClass = MarginNone ? "rounded-b-[20px]" : "rounded-[20px]";
+---
+<section class={sectionClass}>
+    <div class=`bg-[#E9F2FC]  bg-[url('../assets/images/rectangle.svg')] bg-no-repeat  bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px]  lg:bg-[length:auto] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_100px] ${roundedClass}`>
+        <div class="grid grid-cols-12 ">
+            <div class="col-span-12 lg:col-start-2 p-5 lg:px-0 lg:py-10 lg:col-span-10 lg:w-[70%] space-y-[30px]">
+                <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">{Heading}</h2>
+                <div class="w-fit">
+                    <LinkButton Text="Connect Now" Link="/contact" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

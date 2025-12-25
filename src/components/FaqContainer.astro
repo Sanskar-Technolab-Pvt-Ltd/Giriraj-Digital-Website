@@ -1,0 +1,24 @@
+---
+import SectionTitle from "./SectionTitle.astro"
+import FAQs from "./FAQs.astro"
+
+const {FaqList} = Astro.props 
+---
+
+<section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
+    <div class="col-span-12 lg:col-start-4 lg:col-span-7 xl:col-start-5 xl:col-span-6 space-y-5 lg:space-y-[30px]">
+        <SectionTitle Title="Your Curiosities, Our Clarity" Heading="Frequently Asked Questions"  />
+        {FaqList && (
+            <div id="accordion-collapse" class="overflow-hidden text-[#212529]">
+                {FaqList.map((faq:any, index:any) => (
+                    <FAQs 
+                        id={index}
+                        Question={faq.Question}
+                        Answer={faq.Answer}
+                        Border={index === 0 ? "border-none" : ""}
+                    />
+                ))}
+            </div>  
+        )}
+    </div>
+</section>

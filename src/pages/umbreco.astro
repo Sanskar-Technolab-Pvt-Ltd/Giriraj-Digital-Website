@@ -1,0 +1,73 @@
+---
+import HeroSection from "../components/HeroSection.astro";
+import Layout from "../layouts/Layout.astro";
+import LeftSideCard from "../components/LeftSideCard.astro";
+import SwipeUpCard from "../components/SwipeUpCard.astro";
+import ContactNowHeading from "../components/ContactNowHeading.astro";
+import AchievementsCard from "../components/AchievementsCard.astro";
+
+
+import HeroImage from "../assets/images/umbraco-hero-image.webp"
+import UmbracoBg from "../assets/images/umbreco-hero-bg.svg"
+import UmbracoLeftContentBgImage from "../assets/images/umbraco-left-content-bg.webp" 
+import CardIcon1 from "../assets/images/umbreco-knowledge.png"
+import CardIcon2 from "../assets/images/umbreco-experience.png"
+import CardIcon3 from "../assets/images/umbreco-support.png"
+import CertificationBG from "../assets/images/certification-bg.webp"
+import MSCertofication from "../assets/images/microsoft-certification.png"
+import UmbracoMVPCertification from "../assets/images/umbraco-mvp-certification.png"
+import AWSCertofication from "../assets/images/aws.png"
+import GoogleCertification from "../assets/images/google.png"
+import GlassdoorCertification from "../assets/images/glassdoor.png"
+const Certifications = [
+    MSCertofication, UmbracoMVPCertification, AWSCertofication, GoogleCertification, GlassdoorCertification
+]
+
+const ParagraphContent = [
+        "Our Umbraco solutions are fully tailored to the client's needs. We design and develop personalized solutions for your company, which address your users and enhance your ROI significantly."
+]
+
+const cards = [
+    {
+        bgColor: "#E9F2FC",
+        icon: CardIcon1,
+        heading: "Knowledge",
+        paragraph:
+        "Giriraj Digital's team is skilled and aware of Umbraco's capabilities. Furthermore, the developers are up to current on the latest Umbraco tools and technology to assist you in achieving your goals.",
+        borderOutline: "rgba(0,62,135,0.1)",
+    },
+    {
+        bgColor: "#E9F2FC",
+        icon: CardIcon2,
+        heading: "Experience",
+        paragraph:
+        "Giriraj Digital's developers have an average of 4 years of experience and can construct highly dynamic web products for your various needs while providing highly satisfying solutions.",
+        borderOutline: "rgba(0,62,135,0.1)",
+    },
+    {
+        bgColor: "#E9F2FC",
+        icon: CardIcon3,
+        heading: "Support",
+        paragraph:
+        "When you work with Giriraj Digital for your Umbraco development or migration needs, you'll get all-around support and maintenance to give your visitors a seamless experience.",
+        borderOutline: "rgba(0,62,135,0.1)",
+    }
+]
+---
+
+<Layout Title="Umbreco | GIRIRAJ DIGITAL">
+    
+    <!-- * Hero Section -->
+    <HeroSection BgImage={UmbracoBg}, ButtonLink="/", Title="The Umbraco Developer Team Your Project Deserves", ParagraphTitle="We're A Team Of Umbraco Certified Developers", Paragraph="Giriraj Digital has a skilled team of Umbraco developers if you are looking for the best, secure, robust, and highly scalable Umbraco solutions.", HeroImage={HeroImage}, ButtonText="Schedule a call" />
+    
+    <!-- * Left Side Card -->
+    <LeftSideCard BgImage={UmbracoLeftContentBgImage} SubTitle="Overview" Title="Your Content Your Rules" Paragraph={ParagraphContent} Section="false" />
+
+    <!-- * SwipeUp Card -->
+    <SwipeUpCard CardsData={cards}  Title="Why Us?" Heading="The biggest .NET open-source CMS in the world" />
+
+    <!-- * Contact Now -->
+    <ContactNowHeading Heading="GIRIRAJ DIGITAL is a top-notch e-commerce development company for all your needs!" />
+
+    <!-- * Achievements -->
+</Layout>
