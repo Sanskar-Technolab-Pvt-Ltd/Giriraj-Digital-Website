@@ -1,0 +1,11 @@
+---
+const {Icon, Title="", Paragraph=""} = Astro.props;
+---
+
+<div class="lg:pt-[60px] p-5 lg:px-[110px] text-center justify-items-center lg:pb-10 space-y-5 lg:space-y-[30px] border-3 lg:border-8 border-[#E9F2FC] rounded-[40px]">
+    <img src={Icon.src} alt={Title}>
+    <div class="space-y-1">
+        <h4 class="text-[#21292C] font-bold text-xl lg:text-[26px]">{Title}</h4>
+        <p class="text-[#2C363A] lg:text-lg leading-[150%]">{Paragraph}</p>
+    </div>
+</div>

@@ -1,23 +1,82 @@
 ---
-import Image from "../assets/images/contact-us-left-side-image.webp"
+const { BgImage, Image, ContactUsBgImage } = Astro.props;
+const hasContactBg = !!ContactUsBgImage;
+
+const inputBase = "col-span-2 border outline-none px-3 py-2";
+
+const darkInput = "border-[#4B4B4B] bg-[rgba(0,0,0,0.6)] text-white placeholder:text-[#C3C3C3]";
+
+const lightInput = "border-[#7AADD9] bg-white text-[#21292C] placeholder-[rgba(33,37,41,0.7)]";
 ---
 
-<section class="section-container grid grid-cols-12  ">
-    <img src={Image.src} class="hidden lg:block lg:col-span-6 rounded-l-[20px] w-full lg:h-full" alt="contact us">
-    <div class="col-span-12 lg:col-span-6 bg-[url('../assets/images/contact-us-bg.webp')] content-center items-center rounded-l-[20px] lg:rounded-l-none rounded-r-[20px]">
-        <form action="" class="space-y-5 lg:space-y-10 p-5 lg:p-16 xl:p-[100px]">
-            <h2 class="text-white text-[26px] lg:text-5xl leading-[120%] font-bold">Contact Us</h2>
+
+<section
+    class="section-container"
+>
+    <div class=`grid grid-cols-12 ${hasContactBg && "rounded-2xl"}` style={hasContactBg ? `background-image: url('${ContactUsBgImage.src}');` : ""}>
+        {/* Left Image — only when ContactUsBgImage does NOT exist */}
+        {!hasContactBg && Image && (
+            <img
+            src={Image.src}
+            alt="contact us"
+            class="hidden lg:block lg:col-span-6 rounded-l-[20px] w-full lg:h-full"
+            />
+        )}
+
+        {/* Right Section */}
+        <div
+                class={`col-span-12 ${
+                hasContactBg
+                    ? "lg:col-start-7 lg:col-span-6 rounded-[20px]"
+                    : "lg:col-span-6 rounded-l-none rounded-r-[20px]"
+                } content-center items-center`}
+                style={!hasContactBg ? `background-image: url('${BgImage.src}');` : ""}
+            >
+            <form class="space-y-5 lg:space-y-10 p-5 lg:p-16 xl:p-[100px]">
+            <h2 class=`${!hasContactBg ? "text-white" : "text-[#21292C]"} text-[26px] lg:text-5xl leading-[120%] font-bold`>
+                Contact Us
+            </h2>
+
             <div class="grid grid-cols-2 gap-6">
-                <input type="text" name="fullname" class="border-2 border-[#4B4B4B] outline-none  col-span-2 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" placeholder="Full Name">
+                <input
+                    type="text"
+                    placeholder="Full Name"
+                    class={`${inputBase} ${hasContactBg ? lightInput : darkInput}`}
+                />
 
-                <input type="email" name="email" class="border-2 border-[#4B4B4B] outline-none col-span-2 lg:col-span-1 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" placeholder="Email">
-                <input type="tel" name="phoneNumber" class="border-2 border-[#4B4B4B] outline-none col-span-2 lg:col-span-1 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" placeholder="Phone Number">
+                <input
+                    type="email"
+                    placeholder="Email"
+                    class={`${inputBase} lg:col-span-1 ${hasContactBg ? lightInput : darkInput}`}
+                />
 
-                <input type="text" name="company" class="border-2 border-[#4B4B4B] outline-none  col-span-2 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" placeholder="Company">
-                <textarea name="message" class="border-2 border-[#4B4B4B] outline-none col-span-2 py-2 px-3 placeholder:text-[#C3C3C3] text-white bg-[rgba(0,0,0,0.6)]" id="" placeholder="Message"></textarea>
+                <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    class={`${inputBase} lg:col-span-1 ${hasContactBg ? lightInput : darkInput}`}
+                />
 
-                <button type="submit" class="col-span-2  relative h-fit w-fit rounded-full text-white flex items-center space-x-2.5 py-2 lg:py-3 px-3.5 lg:px-6 font-semibold overflow-hidden bg-[linear-gradient(90deg,#0FA1DB,#5C2D91,#0FA1DB)] bg-[length:200%_200%] bg-left transition-[background-position] duration-500 ease-in-out hover:bg-right cursor-pointer">Send Message</button>
-            </div>
-        </form>
+                <input
+                    type="text"
+                    placeholder="Company"
+                    class={`${inputBase} ${hasContactBg ? lightInput : darkInput}`}
+                />
+
+                <textarea
+                    placeholder="Message"
+                    class={`${inputBase} col-span-2 ${hasContactBg ? lightInput : darkInput}`}
+                ></textarea>
+
+                <button
+                    type="submit"
+                    class="col-span-2 relative h-fit w-fit rounded-full text-white flex items-center space-x-2.5 py-2 lg:py-3 px-3.5 lg:px-6 font-semibold overflow-hidden bg-[linear-gradient(90deg,#0FA1DB,#5C2D91,#0FA1DB)] bg-size-[200%_200%] bg-left transition-[background-position] duration-500 ease-in-out hover:bg-right cursor-pointer"
+                >
+                    Send Message
+                </button>
+
+                </div>
+
+            </form>
+        </div>
     </div>
 </section>

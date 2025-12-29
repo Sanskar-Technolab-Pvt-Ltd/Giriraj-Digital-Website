@@ -1,5 +1,6 @@
 ---
 import Logo from "../assets/images/logo.svg";
+import Icon from "../assets/images/navbar-icon.svg";
 ---
 
 <nav
@@ -23,11 +24,7 @@ import Logo from "../assets/images/logo.svg";
       <img src={Logo.src} class="h-[46px] lg:h-auto" alt="giriraj digital" />
     </a>
     <div
-      class="inline-flex
-        space-x-3 md:space-x-5 lg:space-x-3
-        rtl:space-x-reverse
-        md:order-2 items-center content-center"
-    >
+      class="inline-flex space-x-3 xl:space-x-5 lg:space-x-3 rtl:space-x-reverse lg:order-2 items-center content-center">
       <button
         type="button"
         class="px-3 py-2.5 lg:px-4 lg:py-3
@@ -35,10 +32,10 @@ import Logo from "../assets/images/logo.svg";
             bg-brand text-sm lg:text-base
             border border-transparent rounded-base
             bg-[#000000] rounded-full
-            cursor-pointer "
+            cursor-pointer text-white"
         >Inquire Now</button
       >
-     <button
+      <button
         data-collapse-toggle="navbar-cta"
         type="button"
         class="relative inline-flex w-9 h-9 items-center justify-center lg:hidden"
@@ -75,13 +72,11 @@ import Logo from "../assets/images/logo.svg";
 
     </div>
     <div
-      
-      class="hidden
-          w-full cursor-pointer
-          items-center justify-between
-          lg:flex md:order-1 md:w-auto transition-all duration-300 ease-in-out"
-      id="navbar-cta"
-    >
+  id="navbar-cta"
+  class="hidden w-full lg:flex lg:order-1 lg:w-auto
+         max-h-[85vh] overflow-y-auto overscroll-contain
+         transition-all duration-300 ease-in-out"
+>
       <ul
       class="flex flex-col
         p-4 mt-4
@@ -90,8 +85,8 @@ import Logo from "../assets/images/logo.svg";
         border border-[rgba(15,161,219,0.15)]
         rounded-2xl shadow-sm
         rtl:space-x-reverse
-        md:flex-row md:p-0 lg:space-x-4 xl:space-x-8
-        md:mt-0 md:bg-transparent md:border-0 md:shadow-none"
+        lg:flex-row lg:p-0 lg:space-x-4 xl:space-x-8
+        lg:mt-0 lg:bg-transparent lg:border-0 lg:shadow-none space-y-2 lg:space-y-0"
     >
 
         <li>
@@ -102,47 +97,59 @@ import Logo from "../assets/images/logo.svg";
                 bg-brand
                 rounded
                 text-base font-medium
-                md:p-0 md:text-fg-brand md:bg-transparent"
+                lg:p-0 lg:text-fg-brand lg:bg-transparent"
             aria-current="page">Home</a
           >
         </li>
-        <li>
-          <button
-            id="who-we-are-dropdown-button"
-            data-collapse-toggle="mega-menu-full-dropdown"
-            class="flex
+        <!-- * Who we are Desktop View -->
+        <li class="w-full lg:w-auto hidden lg:block">
+            <button id="dropdownNvbarButton" data-dropdown-toggle="dropdownNavbar" class="flex
                 w-full cursor-pointer
-                font-medium text-heading text-black
-                items-center justify-between"
+                font-medium text-heading text-black hover:text-[#0495CF] transition-colors ease-in-out duration-200
+                items-center justify-between">
+              Who we are 
+              <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+              ><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"></path></svg>
+          </button>
+        </li>
+
+        <!-- * Who we are Mobile View -->
+        <li class="w-full lg:w-auto lg:hidden">
+
+          <!-- MOBILE BUTTON -->
+          <button
+            id="mobileWhoBtn"
+            class="mobile-btn flex w-full items-center justify-between font-medium text-heading text-black focus:text-[#0495CF] lg:hidden"
           >
             Who we are
             <svg
-              class="w-4 h-4
-                ms-1.5"
-              aria-hidden="true"
+              id="who-arrow"
+              class="w-4 h-4 transition-transform duration-300"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
               fill="none"
-              viewBox="0 0 24 24"
-              ><path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m19 9-7 7-7-7"></path></svg
-            >
+              viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="m19 9-7 7-7-7"/>
+            </svg>
           </button>
-        </li>  
 
-        <li>
+          <!-- MOBILE DROPDOWN LINKS -->
+          <div
+            id="who-we-are-mobile"
+            class="mobile-dropdown hidden lg:hidden mt-2 rounded-xl space-y-1"
+          >
+            <a href="#" class="block px-2">Company Overview</a>
+            <a href="#" class="block px-2">Leadership Team</a>
+            <a href="#" class="block px-2">Award Certification</a>
+            <a href="#" class="block px-2">CSR</a>
+          </div>
+
+        </li>
+
+        <!-- * What we do Desktop View  -->
+        <li class="hidden lg:block">
           <button
-            id="what-we-do-dropdown-button"
-            data-collapse-toggle="mega-menu-full-dropdown"
-            class="flex
-                w-full cursor-pointer
-                font-medium text-heading text-black
-                items-center justify-between"
+            id="what-we-do-dropdown-button" data-dropdown-toggle="WhatWeDoDropdown"
+            class="flex w-full cursor-pointer font-medium text-heading text-black hover:text-[#0495CF] transition-colors ease-in-out duration-200 items-center justify-between"
           >
             What we do
             <svg
@@ -164,41 +171,155 @@ import Logo from "../assets/images/logo.svg";
           </button>
         </li>
 
-
-        <li>
+        <!-- * What we do Mobile View -->
+        <li class="w-full lg:w-auto lg:hidden">
           <button
-            id="resources-dropdown-button"
-            data-collapse-toggle="mega-menu-full-dropdown"
-            class="flex
-                w-full cursor-pointer
-                font-medium text-heading text-black
-                items-center justify-between"
+            id="mobileWhatBtn"
+            class="mobile-btn flex w-full items-center justify-between font-medium text-heading text-black focus:text-[#0495CF] lg:hidden"
           >
-            Resources
+            What we do
             <svg
-              class="w-4 h-4
-                ms-1.5"
-              aria-hidden="true"
+              id="what-arrow"
+              class="w-4 h-4 transition-transform duration-300"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
               fill="none"
-              viewBox="0 0 24 24"
-              ><path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m19 9-7 7-7-7"></path></svg
-            >
+              viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="m19 9-7 7-7-7"/>
+            </svg>
+          </button>
+
+
+          <div
+            id="what-we-do-mobile"
+            class="mobile-dropdown hidden lg:hidden mt-2 rounded-xl space-y-1"
+          >
+            <a href="#" class="block px-2">About</a>
+            <button id="industries-served-area" class="block px-2 flex w-full items-center justify-between font-medium text-heading text-black">Industries Served
+              <svg
+              id="industries-arrow"
+              class="w-4 h-4 transition-transform duration-300"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="m19 9-7 7-7-7"/>
+            </svg>  
+            </button>
+              <div id="industries-served-mobile" class="inner-dropdown hidden flex flex-col space-y-1 px-5">
+                    <a href="#" >AI Automation</a>
+                    <a href="">Insurance</a>
+                    <a href="">Retails & Hospitality</a>
+                    <a href="">Travel</a>
+                    <a href="#">Healthcare</a>
+                    <a href="">Media & Entertainment</a>
+                    <a href="">Real Estate</a>
+                    <a href="">Ecommerce</a>
+              </div>
+
+
+            <button id="services-served" class="px-2 flex w-full items-center justify-between font-medium text-heading text-black">Services
+              <svg
+              id="services-arrow"
+              class="w-4 h-4 transition-transform duration-300"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="m19 9-7 7-7-7"/>
+            </svg>  
+            </button>
+              <div id="services-served-mobile" class="inner-dropdown hidden flex flex-col space-y-1 px-5">
+                    <a href="#" >Product Engineering</a>
+                    <a href="">Web Application Development</a>
+                    <a href="">Quality Assurance</a>
+                    <a href="">Ecommerce Solution</a>
+                    <a href="#">Dedicated Development Center</a>
+              </div>
+
+
+            <button id="technology-partnership-area" class="px-2 flex w-full items-center justify-between font-medium text-heading text-black">Technology Partnership
+              <svg
+              id="technology-partnership-arrow"
+              class="w-4 h-4 transition-transform duration-300"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="m19 9-7 7-7-7"/>
+            </svg>  
+            </button>
+              <div id="technology-partnership-mobile" class="inner-dropdown hidden flex flex-col space-y-1 px-5">
+                    <a href="#" >Product Engineering</a>
+                    <a href="">Web Application Development</a>
+                    <a href="">Quality Assurance</a>
+                    <a href="">Ecommerce Solution</a>
+                    <a href="#">Dedicated Development Center</a>
+              </div>
+          </div>
+        </li>
+
+        <!-- * Resources Desktop View -->
+        <li class="hidden lg:block">
+            <button id="resources-dropdown-button" data-dropdown-toggle="ResourcesDropdown" class="flex hover:text-[#0495CF] transition-colors ease-in-out duration-200 w-full cursor-pointer font-medium text-heading text-black items-center justify-between">
+              Resources
+              <svg class="w-4 h-4 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+              ><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"></path></svg>
           </button>
         </li>
 
+        <!-- * Resources Mobile View -->
+        <li class="w-full lg:w-auto lg:hidden">
+          <button
+            id="mobileResourceBtn"
+            class="mobile-btn flex w-full items-center justify-between font-medium text-heading text-black focus:text-[#0495CF] lg:hidden"
+          >
+            Resources
+            <svg
+              id="resources-arrow"
+              class="w-4 h-4 transition-transform duration-300"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="m19 9-7 7-7-7"/>
+            </svg>
+          </button>
+
+
+          <div
+            id="resources-mobile"
+            class="mobile-dropdown hidden lg:hidden mt-2 rounded-xl space-y-1"
+          >
+            <a href="#" class="block px-2">Overview</a>
+            <button id="case-study-area" class="px-2 flex w-full items-center justify-between font-medium text-heading text-black">Case Study
+              <svg
+              id="case-study-arrow"
+              class="w-4 h-4 transition-transform duration-300"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="m19 9-7 7-7-7"/>
+            </svg>  
+            </button>
+              <div id="case-study-mobile" class="inner-dropdown hidden flex flex-col space-y-1 px-5">
+                    <a href="#" >AI Sales Automation Platform</a>
+                    <a href="">Helpdesk Management System</a>
+                    <a href="">Ticket Booking System</a>
+                    <a href="">Reward Loyalty Program</a>
+                    <a href="#">Health Counselling Web Application</a>
+                    <a href="#" >Healthcare Software Solution</a>
+                    <a href="">Multivendor Insurance portal</a>
+                    <a href="">Travel & Tourism Portal</a>
+                    <a href="">Multivendor Ecommerce Portal</a>
+                    <a href="#">Stock Tracker Web App</a>
+                    <a href="#">Construction Equipment App</a>
+              </div>
+            <a href="#" class="block px-2">Blogs</a>
+            <a href="#" class="block px-2">Business Events</a>
+          </div>
+
+        </li>
 
         <li>
           <a
             href="#"
-            class="block text-black
+            class="block text-black hover:text-[#0495CF] transition-colors ease-in-out duration-200
                 text-heading font-medium"
             >Career</a
           >
@@ -207,6 +328,501 @@ import Logo from "../assets/images/logo.svg";
     </div>
   </div>
   
+  <!-- Dropdown menu -->
+  <div id="dropdownNavbar" data-default="overview"  class="z-10 hidden  bg-white lg:min-h-[60vh] border-t border-[rgba(44, 54, 58, 0.2)] py-12 lg:px-[60px] grid grid-cols-12 rounded-base w-full! translate-y-[23px]">
+      <div class="text-sm text-body font-medium col-span-12 lg:col-span-2" aria-labelledby="dropdownNvbarButton">
+        <a href="#" data-target="overview" id="company-overview" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">Company Overview</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+        <a href="#" data-target="leadership" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">Leadership Team</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+        <a href="#" data-target="award-certification" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">Award Certification</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+        <a href="#" data-target="csr" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">CSR</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+      </div>
+
+      <div class="hidden lg:block col-start-4 col-span-7">
+        <div id="overview" class="space-y-4 content-block">
+          <h4 class="text-black text-2xl xl:text-[32px]">We're dedicated to fostering positive change for everyone.</h4>
+          <p class="lg:text-lg xl:text-xl">With our dedicated team, we turn beliefs into action every day, leveraging innovation and collective knowledge to achieve the extraordinary.</p>
+          <div class="pt-3">
+            <a href="" class="py-3 border transition-colors ease-in-out duration-300 border-[#0066CC] px-5 text-base font-medium hover:bg-[#0d6efd] rounded text-[#0495CF] hover:text-white uppercase">Company Overview</a>
+          </div>
+        </div>
+
+        <div id="leadership" class="space-y-4 content-block hidden">
+          <h4 class="text-black text-2xl xl:text-[32px]">Meet Our Dynamic Leadership Team</h4>
+          <p class="lg:text-lg xl:text-xl">Get to know the visionary minds behind our success. Learn about our experienced leadership team driving innovation, guiding strategy, and inspiring excellence in everything we do.</p>
+          <div class="pt-3">
+            <a href="" class="py-3 border transition-colors ease-in-out duration-300 border-[#0066CC] px-5 text-base font-medium hover:bg-[#0d6efd] rounded text-[#0495CF] hover:text-white uppercase">about our relationship team</a>
+          </div>
+        </div>
+        
+        <div id="award-certification" class="space-y-4 content-block hidden">
+          <h4 class="text-black text-2xl xl:text-[32px]">Celebrating Excellence: Our Awards & Recognition</h4>
+          <p class="lg:text-lg xl:text-xl">Discover the accolades that highlight our commitment to excellence. Explore the awards and recognition earned by our team for innovation, quality, and outstanding contributions to the IT industry.</p>
+          <div class="pt-3">
+            <a href="" class="py-3 border transition-colors ease-in-out duration-300 border-[#0066CC] px-5 text-base font-medium hover:bg-[#0d6efd] rounded text-[#0495CF] hover:text-white uppercase">see our awards & recognition</a>
+          </div>
+        </div>
+
+        <div id="csr" class="space-y-4 content-block hidden">
+          <h4 class="text-black text-2xl xl:text-[32px]">Making a Difference: Our CSR Initiatives</h4>
+          <p class="lg:text-lg xl:text-xl">Learn about our commitment to corporate social responsibility and community engagement. Explore how we contribute to social causes, support sustainability, and make a positive impact on the world around us.</p>
+          <div class="pt-3">
+            <a href="" class="py-3 border transition-colors ease-in-out duration-300 border-[#0066CC] px-5 text-base font-medium hover:bg-[#0d6efd] rounded text-[#0495CF] hover:text-white uppercase">more about our csr</a>
+          </div>
+        </div>
+
+      </div>
+  </div>
+
+
+  <div id="WhatWeDoDropdown" data-default="about" class="z-10 hidden  bg-white lg:min-h-[60vh] border-t border-[rgba(44, 54, 58, 0.2)] py-12 lg:px-[60px] grid grid-cols-12 rounded-base w-full! translate-y-[23px]">
+      <div class="text-sm text-body font-medium col-span-12 lg:col-span-2" aria-labelledby="what-we-do-dropdown-button">
+        <a href="#" data-target="about" id="company-overview" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">About</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+        <a href="#" data-target="industries-served" class="inner-btn transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">Industries Served</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+        <a href="#" data-target="services" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">Services</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+        <a href="#" data-target="technology-partnership" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">Technology Partnership</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+      </div>
+
+      <div class="col-start-4 col-span-7">
+
+        <div id="about" class="space-y-4 content-block">
+          <h4 class="text-black text-2xl xl:text-[32px]">At GIRIRAJ DIGITAL, we believe in the transformative power of technology.</h4>
+          <p class="lg:text-lg xl:text-xl">With a legacy of over 6+ years, we're pioneering innovation to drive growth and create brighter futures worldwide.</p>
+          <div class="pt-3">
+            <a href="" class="py-3 border transition-colors ease-in-out duration-300 border-[#0066CC] px-5 text-base font-medium hover:bg-[#0d6efd] rounded text-[#0495CF] hover:text-white uppercase">Company Overview</a>
+          </div>
+        </div>
+
+        <div
+          id="industries-served"
+          class="content-block hidden space-y-4"
+        >
+          <div class="grid grid-cols-2 gap-[60px]">
+            <div>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                AI Automation
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Insurance
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Retails & Hospitality
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Travel
+              </a>
+
+            </div>
+            <div>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Healthcare
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Media & Entertainment
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Real Estate
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Ecommerce
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="services"
+          class="content-block hidden space-y-4"
+        >
+          <div class="grid grid-cols-2 gap-[60px]">
+            <div>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Product Engineering
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Web Application Development
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Quality Assurance
+              </a>
+
+            </div>
+            <div>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Ecommerce Solution
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Dedicated Development Center
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div
+          id="services"
+          class="content-block hidden space-y-4"
+        >
+          <div class="grid grid-cols-2 gap-[60px]">
+            <div>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Product Engineering
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Web Application Development
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Quality Assurance
+              </a>
+
+            </div>
+            <div>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Ecommerce Solution
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Dedicated Development Center
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div
+          id="technology-partnership"
+          class="content-block hidden space-y-4"
+        >
+          <div class="grid grid-cols-2 gap-[60px]">
+            <div>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Umbraco
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                ASP.NET Core
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                React JS
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Umbraco Heartcore
+              </a>
+
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                React Native
+              </a>
+
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Angular
+              </a>
+
+            </div>
+            <div>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                ASP.NET
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Sitecore
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Vue JS
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Umbraco Agency
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                PHP Laravel
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Node JS
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </div>
+
+  <div id="ResourcesDropdown" data-default="resource-overview" class="z-10 hidden  bg-white lg:min-h-[60vh] border-t border-[rgba(44, 54, 58, 0.2)] py-12 lg:px-[60px] grid grid-cols-12 rounded-base w-full! translate-y-[23px]">
+      <div class="text-sm text-body font-medium col-span-12 lg:col-span-2" aria-labelledby="resources-dropdown-button">
+        <a href="#" data-target="resource-overview" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">Overview</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+        <a href="#" data-target="case-study" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">Case Study</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+        <a href="#" data-target="blogs" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">Blogs</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+        <a href="#" data-target="business-event" class="transition-colors ease-in-out duration-200 menu-link flex border-b-2 border-white hover:border-[#0d6efd] hover:bg-[#D9D9D933] items-center">
+          <p  class="py-4 px-2 inline-flex items-center w-full hover:bg-neutral-tertiary-medium hover:text-heading rounded text-base xl:text-lg">Business Event</p>
+          <img src={Icon.src} alt="" class="hidden lg:block -rotate-90">
+        </a>
+      </div>
+
+      <div class="col-start-4 col-span-7">
+        <div id="resource-overview" class="space-y-4 content-block">
+          <h4 class="text-black text-2xl xl:text-[32px]">Empowering Knowledge Sharing: Explore Our Resources.</h4>
+          <p class="lg:text-lg xl:text-xl">Dive into our wealth of resources including blogs, whitepapers, events, and more. Stay updated on industry trends, gain insights from thought leaders, and access valuable information to fuel your success journey.</p>
+        </div>
+
+        <div
+          id="case-study"
+          class="content-block hidden space-y-4"
+        >
+          <div class="grid grid-cols-2 gap-[60px]">
+            <div>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                AI Sales Automation Platform
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Helpdesk Management System
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Ticket Booking System
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Reward Loyalty Program
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Health Counselling Web Application
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Healthcare Software Solution
+              </a>
+
+            </div>
+            <div>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Multivendor Insurance portal
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Travel & Tourism Portal
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Multivendor Ecommerce Portal
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Stock Tracker Web App
+              </a>
+
+              <a
+                href="#"
+                class="flex items-center w-full py-4 px-2 border-b-2 border-[#CECECE] text-base xl:text-lg transition-colors duration-200 hover:border-[#0d6efd] hover:bg-[#D9D9D933] hover:text-heading rounded"
+              >
+                Construction Equipment App
+              </a>
+
+            </div>
+          </div>
+        </div>
+        
+        <div id="blogs" class="space-y-4 content-block hidden">
+          <h4 class="text-black text-2xl xl:text-[32px]">Insights Hub: Explore Our IT Blogs</h4>
+          <p class="lg:text-lg xl:text-xl">Unlock a treasure trove of knowledge with our IT blogs. Delve into expert insights, industry trends, and innovative solutions that empower your business growth and digital transformation journey.</p>
+          <div class="pt-3">
+            <a href="" class="py-3 border transition-colors ease-in-out duration-300 border-[#0066CC] px-5 text-base font-medium hover:bg-[#0d6efd] rounded text-[#0495CF] hover:text-white uppercase">view all blogs</a>
+          </div>
+        </div>
+
+        <div id="business-event" class="space-y-4 content-block hidden">
+          <h4 class="text-black text-2xl xl:text-[32px]">Connecting Minds: Our IT Business Events</h4>
+          <p class="lg:text-lg xl:text-xl">Join us at our IT business events to connect with industry experts, explore cutting-edge technologies, and gain valuable insights to drive your business forward. Experience networking opportunities and interactive sessions designed to inspire innovation and collaboration.
+
+</p>
+          <div class="pt-3">
+            <a href="" class="py-3 border transition-colors ease-in-out duration-300 border-[#0066CC] px-5 text-base font-medium hover:bg-[#0d6efd] rounded text-[#0495CF] hover:text-white uppercase">gd at global</a>
+          </div>
+        </div>
+
+      </div>
+  </div>
 </nav>
 
 

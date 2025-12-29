@@ -1,0 +1,63 @@
+---
+import LinkButton from "./LinkButton.astro"
+import Image1 from "../assets/images/hiring-umbreco-developer.webp"
+import Image2 from "../assets/images/umbreco-gold-partner.webp"
+
+import NikhilPrajapati from "../assets/images/nikhil-prajapati-image.png"
+import Clock from "../assets/images/clock-icon.svg"
+---
+
+
+<section class="section-container">
+    <div class="grid grid-cols-12 gap-5 lg:gap-[30px] rounded-2xl bg-[url('../assets/images/center-card-bg.webp')] p-5 lg:px-0 lg:py-20 bg-cover">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 grid grid-cols-10 p-5 lg:p-10 rounded-[20px] outline-4 lg:outline-8 outline-[rgba(255,255,255,0.6)] gap-y-5 lg:gap-10 bg-white">
+            <div class="col-span-12 lg:col-span-4 space-y-5">
+                <p class="text-[#0FA1DB] font-semibold lg:text-xl">Featured Resources</p>
+                <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">Your Gateway to IT Excellence</h2>
+                <div class="space-y-6 text-[#0D0D0D] lg:text-lg">
+                    <p>Stay ahead of the curve with expert insights, best practices, and cutting-edge solutions tailored to your IT needs.</p>
+                    <p>Unlock the full potential of your digital endeavors with our featured resources, exclusively crafted to drive innovation and success in the digital age.</p>
+                </div>
+                <LinkButton Text="View All Resources" Link="/" />
+            </div>
+
+            <div class="col-span-12 lg:col-span-6 gap-[30px] grid grid-cols-1 md:grid-cols-2">
+                <a href="" class="shadow-[0_0px_6px_rgba(0,0,0,0.15)] rounded-2xl border border-[#CCCCCC]">
+                    <img src={Image1.src} class="rounded-t-2xl" alt="Hiring Umbraco Developers">
+                    <div class="p-5">
+                        <p class="text-[#21292C] font-bold text-lg lg:text-xl pb-4 border-b border-[#CCCCCC]">The Detailed Guide to Hiring Umbraco Developers from the Outsourcing Company!</p>
+                        <div class="pt-4 justify-between flex flex-wrap gap-2 sm:gap-0">
+                            <div class="space-x-2 flex">
+                                <img src={NikhilPrajapati.src} alt="Nikhil Prajapati">
+                                <p class="text-[#2C363A]">Nikhil Prajapati</p>
+                            </div>
+
+                            <div class="space-x-2 flex">
+                                <img src={Clock.src} alt="Clock">
+                                <p class="text-[#2C363A]">4 Mins read</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="" class="shadow-[0_0px_6px_rgba(0,0,0,0.15)] rounded-2xl border border-[#CCCCCC]">
+                    <img src={Image2.src} class="rounded-t-2xl" alt="Umbraco Gold Partner">
+                    <div class="p-5">
+                        <p class="text-[#21292C] font-bold text-lg lg:text-xl pb-4 border-b border-[#CCCCCC]">Why choose Umbraco Gold Partner for Umbraco Development & Maintenance needs?</p>
+                        <div class="pt-4 justify-between flex flex-wrap gap-2 sm:gap-0">
+                            <div class="space-x-2 flex">
+                                <img src={NikhilPrajapati.src} alt="Nikhil Prajapati">
+                                <p class="text-[#2C363A]">Nikhil Prajapati</p>
+                            </div>
+
+                            <div class="space-x-2 flex">
+                                <img src={Clock.src} alt="Clock">
+                                <p class="text-[#2C363A]">3 Mins read</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

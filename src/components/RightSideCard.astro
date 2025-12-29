@@ -1,0 +1,60 @@
+---
+const {BgImage} = Astro.props;
+import Icon from "../assets/images/li-icon.svg"
+---
+
+<section class="section-container ">
+    <div class="grid grid-cols-12 gap-5 lg:gap-[30px] rounded-2xl p-5 lg:px-0 lg:py-20 xl:py-[100px]" style={`background-image: url('${BgImage.src}');`}>
+        <div class="col-span-12 lg:col-start-7 lg:col-span-5 p-5 lg:p-[30px] space-y-[30px] bg-white rounded-[20px] outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)]" >
+            <div class="space-y-1.5 md:space-y-3 lg:space-y-5">
+                <p class="text-[#0FA1DB] font-semibold lg:text-xl">Seamless Solutions, Endless Possibilities</p>
+                <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">Our Umbraco Web Developer Covered all Needs of Umbraco Website</h2>
+            </div>
+            
+            <ul class="space-y-2 text-[#21292C] font-medium">
+                <li class="flex items-start gap-3">
+                    <img src={Icon.src} alt="icon" class="w-5 h-5 mt-1 shrink-0" />
+                    <span >
+                    Umbraco Consultancy Services & Training
+                    </span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <img src={Icon.src} alt="icon" class="w-5 h-5 mt-1 shrink-0" />
+                    <span >
+                    Umbraco Website Development & Deployment
+                    </span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <img src={Icon.src} alt="icon" class="w-5 h-5 mt-1 shrink-0" />
+                    <span >
+                    App Development / Custom Add-ons/ Packages Development
+                    </span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <img src={Icon.src} alt="icon" class="w-5 h-5 mt-1 shrink-0" />
+                    <span >
+                    System Integrations such as CRM, ERP, Commerce
+                    </span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <img src={Icon.src} alt="icon" class="w-5 h-5 mt-1 shrink-0" />
+                    <span >
+                    Centrally managed content Solution
+                    </span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <img src={Icon.src} alt="icon" class="w-5 h-5 mt-1 shrink-0" />
+                    <span >
+                    Migrating PHP /ASP/ASP.Net website to Umbraco website
+                    </span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <img src={Icon.src} alt="icon" class="w-5 h-5 mt-1 shrink-0" />
+                    <span >
+                    Umbraco website maintenance, support and security updates
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

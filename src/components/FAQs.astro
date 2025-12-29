@@ -1,5 +1,5 @@
 ---
-const { id, Question, Answer, Border } = Astro.props;
+const { id, Question, Answer, Answer2, Border } = Astro.props;
 const isOpen = id === 0;   // first one open
 ---
 
@@ -23,9 +23,12 @@ const isOpen = id === 0;   // first one open
     class={`${isOpen ? "" : "hidden"}`}
     aria-labelledby={`faq-heading-${id}`}
 >
-    <div class="pb-4 md:pb-5">
+    <div class="pb-4 md:pb-5 space-y-3">
         <p class="lg:text-lg text-body">
             {Answer}
+        </p>
+        <p class="lg:text-lg text-body">
+            {Answer2}
         </p>
     </div>
 </div>

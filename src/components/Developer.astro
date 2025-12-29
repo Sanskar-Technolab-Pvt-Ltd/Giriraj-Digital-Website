@@ -1,0 +1,37 @@
+---
+const {Image, Name="", Designation="", Link="/", Icons = []} = Astro.props;
+import Arrow from "../assets/images/button-arrow.svg";
+---
+
+<a href={Link} class="relative rounded-t-2xl group">
+    <img src={Image.src} class="rounded-2xl w-full" alt={Name}>
+    <div class="absolute rounded-b-2xl bottom-0 w-full">
+        <div class="bg-[url('../assets/images/certified-developer-bg.webp')] p-5  text-white">
+            <h6 class="font-bold text-lg lg:text-xl">{Name}</h6>
+            <p class="font-medium text-sm sm:text-base">{Designation}</p>
+        </div>
+        <div class="p-4 rounded-b-2xl bg-[linear-gradient(90deg,#0FA1DB,#5C2D91,#0FA1DB)] bg-size-[200%_200%] flex bg-left transition-[background-position] duration-500 ease-in-out  justify-between">
+            <p class="text-white font-semibold">View Profile</p>
+            <img src={Arrow.src} alt="arrow" />
+        </div>
+    </div>
+
+    {/* ICONS */}
+    {Icons.length > 0 && (
+        <div class="absolute bottom-28 lg:bottom-25 right-5 flex flex-col gap-4">
+            {Icons.map((icon: any, index: number) => (
+            <img
+                src={icon.src}
+                alt="certification-icon"
+                class={`
+                transition-all duration-300 ease-out
+                
+                ${index === Icons.length - 1
+                    ? "lg:opacity-100 lg:translate-y-0"
+                    : "lg:opacity-0 lg:translate-y-3 lg:group-hover:opacity-100 lg:group-hover:translate-y-0"}
+                `}
+            />
+            ))}
+        </div>
+    )}
+</a>

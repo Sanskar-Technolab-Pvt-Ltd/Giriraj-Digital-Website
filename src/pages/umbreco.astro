@@ -1,0 +1,282 @@
+---
+import HeroSection from "../components/HeroSection.astro";
+import Layout from "../layouts/Layout.astro";
+import LeftSideCard from "../components/LeftSideCard.astro";
+import SwipeUpCard from "../components/SwipeUpCard.astro";
+import ContactNowHeading from "../components/ContactNowHeading.astro";
+import RightSideCard from "../components/RightSideCard.astro";
+import Card from "../components/Card.astro";
+import PlansCard from "../components/PlansCard.astro";
+import LinkButton from "../components/LinkButton.astro";
+import SolutionDelivered from "../components/SolutionDelivered.astro";
+import FeatureResources from "../components/FeatureResources.astro";
+import FaqContainer from "../components/FaqContainer.astro";
+import ContactUsForm from "../components/ContactUsForm.astro";
+import CertifiedTeam from "../components/CertifiedTeam.astro";
+
+
+import HeroImage from "../assets/images/umbraco-hero-image.webp"
+import UmbracoBg from "../assets/images/umbreco-hero-bg.svg"
+import UmbracoLeftContentBgImage from "../assets/images/umbraco-left-content-bg.webp" 
+import CardIcon1 from "../assets/images/umbreco-knowledge.png"
+import CardIcon2 from "../assets/images/umbreco-experience.png"
+import CardIcon3 from "../assets/images/umbreco-support.png"
+import SlakeOrSkypeDirectCommunication from "../assets/images/slake-or-skype-direct-communication.svg"
+import BgImage from "../assets/images/hiring-umbreco-developer-bg.webp"
+import InquiryIcon from "../assets/images/inquiry-icon.png"
+import TakeInterviewIcon from "../assets/images/take-interview.png"
+import SelectCV from "../assets/images/select-cv.png"
+import AddResourceIcon from "../assets/images/add-resource.png"
+import Arrow from "../assets/images/arrow.svg"
+import UmbrecoWebDeveloperImage from "../assets/images/umbreco-web-developer-bg-image.webp"
+import Icon1 from "../assets/images/flexible-contract.svg"
+import Icon2 from "../assets/images/account-manager.svg"
+import Icon3 from "../assets/images/secure-payment.svg"
+import ContactBg from "../assets/images/contact-bg.webp"
+
+
+
+const ParagraphContent = [
+        "Our Umbraco solutions are fully tailored to the client's needs. We design and develop personalized solutions for your company, which address your users and enhance your ROI significantly."
+]
+
+const cards = [
+    {
+        bgColor: "#E9F2FC",
+        icon: CardIcon1,
+        heading: "Knowledge",
+        paragraph:
+        "Giriraj Digital's team is skilled and aware of Umbraco's capabilities. Furthermore, the developers are up to current on the latest Umbraco tools and technology to assist you in achieving your goals.",
+        borderOutline: "rgba(0,62,135,0.1)",
+    },
+    {
+        bgColor: "#E9F2FC",
+        icon: CardIcon2,
+        heading: "Experience",
+        paragraph:
+        "Giriraj Digital's developers have an average of 4 years of experience and can construct highly dynamic web products for your various needs while providing highly satisfying solutions.",
+        borderOutline: "rgba(0,62,135,0.1)",
+    },
+    {
+        bgColor: "#E9F2FC",
+        icon: CardIcon3,
+        heading: "Support",
+        paragraph:
+        "When you work with Giriraj Digital for your Umbraco development or migration needs, you'll get all-around support and maintenance to give your visitors a seamless experience.",
+        borderOutline: "rgba(0,62,135,0.1)",
+    }
+]
+
+const CardsData = [
+    {
+        bgColor: "#E9F2FC",
+        heading: "Agile Web Development Methodology",
+        paragraph:
+        "When we have not fixed and clear requirements, we use this Agile web development to minimize risk (Such as changing requirements, over cost, and bugs). In the Agile method, the software is to be released in iterations.",
+        borderOutline: "rgba(0,62,135,0.1)",
+    },
+    {
+        bgColor: "#E9F2FC",
+        heading: "DevOps Deployment Methodology",
+        paragraph:
+        "DevOps is focused on improving time to market by continuous deployment, lowering the failure rate of new releases, and shortening the lead time between fixes. This method minimizes disruption in deployment.",
+        borderOutline: "rgba(0,62,135,0.1)",
+    },
+    {
+        bgColor: "#E9F2FC",
+        heading: "Waterfall Web Development Method",
+        paragraph:
+        "The best use of waterfall methods is when any project comes up with clear objectives and stable requirements. In this method, project execution is done in linear sequential phases which include SRS, design, coding, testing, and deployment.",
+        borderOutline: "rgba(0,62,135,0.1)",
+    },
+]
+
+const faqList = [
+    {
+        Question: "Where are you based?",
+        Answer: "Giriraj Digital is currently based in India and Denmark having support centers in Australia, USA, UK, and Dubai."
+    },
+    {
+        Question: "Why should I pick Giriraj Digital?",
+        Answer: "Giriraj Digital, as a leading development company, focuses on quality and expertise. We work closely with clients to ensure that their digital needs are met and that we achieve exactly what our clients are searching for.",
+        Answer2:"Also, our Umbraco developers keep up with the latest technology and tools in order to provide you with smooth services that set you apart from your competitors."
+    },
+    {
+        Question: "How much do your services cost?",
+        Answer: "As every project is different, with different needs, sizes, and scopes, our charges also vary according to it for our clients. This helps us price projects exactly to our client's needs while keeping their expenditure at a minimum."
+    },
+    {
+        Question: "How do I keep track of my project?",
+        Answer: "At each step of the project, we’ll be in regular contact with updates for you and your team. Similarly, we’ll be in frequent contact to discuss aspects of your online digital presence, ensuring that everything we do is as per your requirements."
+    },
+    {
+        Question: "How do you process payment?",
+        Answer: "We can decide on the mode of payment in a private discussion. The majority of our clients pay us via bank transfer."
+    },
+    {
+        Question: "I want to work with you. Where do we start?",
+        Answer: "Please get in touch with our contact details. A member of our team will get in touch with you right away to discuss your needs. Also, you can ask for a free quote as per your requirements. You can get every minute detail about us to ensure the best results."
+    },
+
+    {
+        Question: "Will your work guarantee me better SEO rankings?",
+        Answer: "While our SEO methods are based on best practices and leading data, we can never fully guarantee that you see increased SEO rankings, nor can we guarantee higher revenues."
+    },
+    {
+        Question: "Does the work made by Giriraj Digital belong to me?",
+        Answer: "Yes. We provide full legal ownership of the work we do to our clients. We take great care to protect the confidentiality of your idea. Before any conversation, we execute a Non-Disclosure Agreement (NDA) to demonstrate our commitment.",
+        Answer2: "To prevent illegal information sharing, we employ stringent security and confidentiality procedures."
+    },
+    {
+        Question: "But what if something goes wrong?",
+        Answer: "We also offer unrivaled, on-demand technical support for your Umbraco website, so you can rest assured that we’ve got everything taken care of! We provide solutions and know that we’ll have the right one for your problem."
+    },
+
+    {
+        Question: "Do you create websites from scratch?",
+        Answer: "Yes. We offer several comprehensive website creation services that cover everything from landing pages to e-commerce stores. Please get in touch for a quote on a new website and get the best Umbraco developers in India."
+    },
+    {
+        Question: "Can you improve pre-existing websites?",
+        Answer: "Yes. Much of the work involves improving the websites of our clients for better SEO rankings, accessibility, UX, and more. Please get in touch for a quote on improving your current site."
+    },
+    {
+        Question: "What if I employ Umbraco web developers and they fail to meet my expectations? What would you do if you were in that situation?",
+        Answer: "We'll check in with you at periodic intervals to make sure you're happy with our employees' performance. If their work begins to deteriorate at any point, we ask that you try to settle the matter as you would with any other employee.",
+        Answer2: "If those efforts cannot yield the required results and performance continues to be a problem, we will replace them with another team of Umbraco-certified developers.",
+    }
+
+];
+
+---
+
+<Layout Title="Umbreco | GIRIRAJ DIGITAL">
+    
+    <!-- * Hero Section -->
+    <HeroSection BgImage={UmbracoBg}, ButtonLink="/", Title="The Umbraco Developer Team Your Project Deserves", ParagraphTitle="We're A Team Of Umbraco Certified Developers", Paragraph="Giriraj Digital has a skilled team of Umbraco developers if you are looking for the best, secure, robust, and highly scalable Umbraco solutions.", HeroImage={HeroImage}, ButtonText="Schedule a call" />
+    
+    <!-- * Left Side Card -->
+    <LeftSideCard BgImage={UmbracoLeftContentBgImage} SubTitle="Overview" Title="Your Content Your Rules" Paragraph={ParagraphContent} Section="false" />
+
+    <!-- * SwipeUp Card -->
+    <SwipeUpCard CardsData={cards}  Title="Why Us?" Heading="The biggest .NET open-source CMS in the world" />
+
+    <!-- * CertifiedTeam -->
+    <CertifiedTeam />
+
+    <!-- * Contact Now -->
+    <ContactNowHeading Heading="GIRIRAJ DIGITAL is a top-notch e-commerce development company for all your needs!" />
+
+    <!-- * Web Development Approach -->
+    <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px] space-y-10 lg:space-y-20">
+        <div class="space-y-1.5 md:space-y-3 lg:space-y-5 col-span-12 lg:col-start-2 lg:col-span-6">
+            <p class="text-[#0FA1DB] font-semibold lg:text-xl">Overview</p>
+            <div class="space-y-2.5">
+                <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">Web Development Approach</h2>
+                <p class="font-medium lg:text-lg text-[#000000]">We offer <span class="font-bold">three</span> wide yet flexible web development methods, as per the complexity of web development products. You can choose the best one as per your business requirements.</p>
+            </div>
+        </div>
+
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 justify-items-center">
+            <img src={SlakeOrSkypeDirectCommunication.src} alt="slakr-or-skype-direct-communication">
+        </div>
+
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px] xl:gap-5 2xl:gap-[30px]">
+                {CardsData.map((card:any) => (
+                    <Card
+                    BgColor = {card.bgColor}
+                    BgImage={card.bgImage}
+                    Icon={card.icon}
+                    Heading={card.heading}
+                    Paragraph={card.paragraph}
+                    Link={card.link}
+                    BorderOutline={card.borderOutline}
+                    />
+                ))}
+        </div>
+    </section>
+
+    <!-- * Unlock Expertise --> 
+    <section class="section-container w-full bg-white grid grid-cols-12 gap-5 lg:gap-[30px]">
+        <div class="space-y-[30px] 2xl:space-y-0 col-span-12 lg:col-span-10 lg:col-start-2 p-5 md:p-10 lg:p-20 grid grid-cols-10 gap-[30px] rounded-3xl bg-cover" style={`background-image: url('${BgImage.src}');`}>
+            <div class="col-span-10 2xl:col-span-3 space-y-1.5 lg:space-y-3.5 text-white ">
+                <p class="font-semibold lg:text-xl text-[#9CDEF9]">Unlock Expertise</p>
+                <h2 class="text-[26px] lg:text-5xl leading-[120%] font-bold">Hiring Umbraco Developers</h2>
+            </div>
+
+            <div class="col-span-10 2xl:col-span-7 h-fit grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="relative flex bg-white p-4 space-x-5 rounded-[20px] outline-4 lg:outline-8 outline-[rgba(18,156,216,0.2)]">
+                    <img src={InquiryIcon.src} alt="inquiry-icon" class="h-fit" >
+                    <div class="space-y-1">
+                        <h5 class="text-[#212529] font-bold text-lg lg:text-[22px]">Inquiry</h5>
+                        <p class="text-[#000000] font-regular">Tell us in brief about your ideas and needs. Don't worry it's secure and confidential.</p>
+                    </div>
+                    <img src={Arrow.src} alt="arrow" class="absolute rotate-90  md:rotate-0 left-1/2 md:left-auto lg:bottom-0 -bottom-10 -translate-x-1/2 md:-right-10 md:translate-x-0 md:top-1/2 md:-translate-y-1/2">
+                </div>
+
+
+                <div class="relative flex bg-white p-4 space-x-5 rounded-[20px] outline-4 lg:outline-8 outline-[rgba(18,156,216,0.2)]">
+                    <img src={SelectCV.src} alt="inquiry-icon" class="h-fit">
+                    <div class="space-y-1">
+                        <h5 class="text-[#212529] font-bold text-lg lg:text-[22px]">Select CV</h5>
+                        <p class="text-[#000000] font-regular">Shortlist candidates which best fit in your need by viewing their CVs.</p>
+                    </div>
+                    <img src={Arrow.src} alt="arrow" class="rotate-90 absolute left-1/2 -bottom-10 -translate-x-1/2">
+                </div>
+                
+                <div class="flex order-2 md:order-1 bg-white p-4 space-x-5 rounded-[20px] outline-4 lg:outline-8 outline-[rgba(18,156,216,0.2)]">
+                    <img src={TakeInterviewIcon.src} alt="TakeInterviewIcon" class="h-fit" >
+                    <div class="space-y-1">
+                        <h5 class="text-[#212529] font-bold text-lg lg:text-[22px]">Take interview</h5>
+                        <p class="text-[#000000] font-regular">Take interview of the selected candidates over a phone or video call</p>
+                    </div>
+                </div>
+
+
+                <div class="relative order-1 md:order-2 flex bg-white p-4 space-x-5 rounded-[20px] outline-4 lg:outline-8 outline-[rgba(18,156,216,0.2)]">
+                    <img src={AddResourceIcon.src} alt="AddResourceIcon" class="h-fit">
+                    <div class="space-y-1">
+                        <h5 class="text-[#212529] font-bold text-lg lg:text-[22px] leading-[120%">Add Resource in your team</h5>
+                        <p class="text-[#000000] font-regular">Based on interview select impressive candidates and add them to your team.</p>
+                    </div>
+                    <img src={Arrow.src} alt="arrow" class="absolute left-1/2 rotate-90 -bottom-10 -translate-x-1/2 md:bottom-0 md:translate-x-0 md:-left-10 md:top-1/2 md:-translate-y-1/2 md:rotate-180">
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- * RightSideCard -->
+    <RightSideCard BgImage={UmbrecoWebDeveloperImage} />
+
+    <!-- * Included In All Plans -->
+    <section class="space-y-10 section-container grid grid-cols-12 gap-[30px]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-10 justify-items-center">
+            <div class=`space-y-1.5 md:space-y-3 lg:space-y-5 text-center`>
+                <p class="text-[#0FA1DB] font-semibold lg:text-xl">Our standard offerings</p>
+                <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">Included In All Plans</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+                <PlansCard Icon={Icon1} Title="Flexible Contract" Paragraph="We offer flexible contract options to fit your needs." />
+                <PlansCard Icon={Icon2} Title="Account Manager" Paragraph="Dedicated Account Manager, available anytime." />
+                <PlansCard Icon={Icon3} Title="Secure Payment" Paragraph="Money-back guarantee for the entire duration of your account*" />
+            </div>
+
+            <LinkButton Text="Connect Now" Link="/contact" />
+        </div>
+    </section>
+
+    <!-- * Solution Delivered -->
+    <SolutionDelivered />
+
+    <!-- * Your Gateway to IT Excellence  -->
+    <FeatureResources />
+    
+    <!-- * FAQs -->
+    <FaqContainer FaqList={faqList}  />
+
+    <!-- * Contact Now -->
+    <ContactUsForm ContactUsBgImage={ContactBg} />
+</Layout>

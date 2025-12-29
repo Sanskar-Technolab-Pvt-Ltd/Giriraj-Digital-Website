@@ -1,0 +1,75 @@
+---
+import BgImage from "../assets/images/umbreco-certified-developer.webp"
+import ThreeDays from "../assets/images/3-days.webp"
+import FiveDays from "../assets/images/5-days.webp"
+import SevenDays from "../assets/images/7-days.webp"
+import Nikhil from "../assets/images/bikhil-p-certified-developer.webp" 
+import Developer from "./Developer.astro"
+
+import MasterIcon from "../assets/images/master-icon.png"
+import ProfessionalIcon from "../assets/images/professional.png"
+import UmbracoIcon from "../assets/images/developer-umbraco.png"
+
+const NIKHIL = [
+    UmbracoIcon,
+    MasterIcon
+]
+    
+const MILAN = [
+    UmbracoIcon,
+    MasterIcon
+]
+
+const DIVYA = [
+    UmbracoIcon,
+    ProfessionalIcon
+]
+---
+
+<section class="section-container grid grid-cols-12 gap-[30px]">
+    <div class="col-span-12 lg:col-start-2 lg:col-span-10 grid grid-cols-10 gap-[30px] bg-red p-5 lg:px-0 lg:py-20 bg-[url('../assets/images/umbreco-certified-developer.webp')] rounded-2xl">
+        <div class="col-span-10 lg:col-start-2 lg:col-span-8 p-5 lg:p-10 space-y-[30px] lg:space-y-[60px] bg-white rounded-2xl">
+            <div class="space-y-7 lg:space-y-12">
+                <div class="space-y-5">
+                    <p class="text-[#0FA1DB] font-semibold lg:text-xl">Your exclusive Certified team </p>
+                    <div class="space-y-2.5">
+                        <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">Leave it to Our Umbraco Certified Developers</h2>
+                        <p class="font-medium lg:text-lg text-[#000000]">It doesn’t matter how complex the project is, our experienced developers can handle it all. The developers have updated knowledge & skills to offer you the best Umbraco solutions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:flex-row gap-10 md:gap-0  lg:w-[90%]">
+                <div class=" space-y-6 md:pr-8 lg:pr-[70px] md:bg-[url('../assets/images/line-vector.png')] bg-repeat-x bg-position-[0px_40px]">
+                    <img src={ThreeDays.src} class="bg-white" alt="3-days">
+                    <div class="space-y-1">
+                        <h5 class="text-[#212529] font-bold text-lg lg:text-[22px]">Developer Ready</h5>
+                        <p class="text-[#000000]">Get your Umbraco Certified Developer in just 3 days.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6 md:pr-8 lg:pr-[70px] md:bg-[url('../assets/images/line-vector.png')] bg-repeat-x bg-position-[0px_40px]">
+                    <img src={FiveDays.src} alt="5-days" class="bg-white">
+                    <div class="space-y-1">
+                        <h5 class="text-[#212529] font-bold text-lg lg:text-[22px]">Project in Motion</h5>
+                        <p class="text-[#000000]">Your Umbraco project starts rolling within 5 days.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6 md:pr-8 lg:pr-[70px]">
+                    <img src={SevenDays.src} alt="7-days">
+                    <div class="space-y-1">
+                        <h5 class="text-[#212529] font-bold text-lg lg:text-[22px]">Risk-Free Trial</h5>
+                        <p class="text-[#000000]">Experience our expertise with a 7-day no-obligation trial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-[30px] justify-between">
+                <Developer Image={Nikhil} Name="NIKHIL P." Icons={NIKHIL} Designation="Umbraco Certified Developer" />
+                <Developer Image={Nikhil} Name="MILAN D." Icons={MILAN} Designation="Umbraco Certified Master" />
+                <Developer Image={Nikhil} Name="DIVYA C." Icons={DIVYA} Designation="Umbraco Certified Professional" />
+            </div>
+        </div>
+    </div>
+</section>

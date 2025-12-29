@@ -45,3 +45,13 @@ footer h5 {
         margin-top: 160px;
     }
 }
+
+
+.menu-active {
+    border-bottom: 1px solid #0d6efd;
+    background-color: rgba(217,217,217,0.2);
+}
+
+.active-dropdown {
+    color: #0495CF !important;
+}

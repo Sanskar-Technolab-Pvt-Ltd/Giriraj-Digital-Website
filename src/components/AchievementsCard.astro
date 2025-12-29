@@ -1,5 +1,17 @@
 ---
-const {Title, Heading, Certificates=[], CardGridNumber, BgImage} = Astro.props;
+const {
+    Title,
+    Heading,
+    Certificates = [],
+    BgImage,
+
+    // optional props
+    GridClass = "grid-cols-2 lg:grid-cols-3",
+    GapClass = "gap-9 lg:gap-[30px]",
+} = Astro.props;
+
+// final class builder
+const gridClasses = `grid ${GridClass} ${GapClass}`;
 ---
 
 <section class="section-container w-full bg-white grid grid-cols-12 gap-5 lg:gap-[30px]">
@@ -9,7 +21,7 @@ const {Title, Heading, Certificates=[], CardGridNumber, BgImage} = Astro.props;
             <h2 class="text-[26px] lg:text-5xl leading-[120%] font-bold">{Heading || ""}</h2>
         </div>
 
-        <div class="col-span-10 2xl:col-span-6 h-fit grid grid-cols-2 lg:grid-cols-3 gap-9 lg:gap-[30px]">
+        <div class={`col-span-10 2xl:col-span-6 h-fit ${gridClasses}`}>
             {Certificates.map((item:any) => (
                 <div class="flex justify-center">
                     <img src={item.src} alt={item.alt || "certificate"} class="w-full h-full object-contain  outline-8 outline-[rgba(18,156,216,0.2)]  rounded-xl lg:rounded-[20px]" />
