@@ -1,28 +1,63 @@
 ---
-const {BgImage,ButtonLink, Title="", Paragraph="", ParagraphTitle="", HeroImage, ButtonText=""} = Astro.props;
+const {
+    BgImage,
+    ButtonLink,
+    Title = "",
+    Paragraph = "",
+    ParagraphTitle = "",
+    HeroImage,
+    ButtonText = "",
+    SubTitle = ""
+} = Astro.props;
 
-import UmbracoBg from "../assets/images/umbreco-hero-bg.svg"
 import LinkButton from "./LinkButton.astro";
+
+// conditions
+const hasHeroImage = !!HeroImage;
+
+// background positioning based on HeroImage
+const bgPosition = hasHeroImage ? "bg-[position:calc(100%-10px)_calc(100%-20px)] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_165px]" : "bg-[position:center_right_40px]";
+
+// column size for content
+const contentCols = hasHeroImage ? "lg:col-span-6" : "lg:col-span-7";
 ---
 
-<section class="section-container mt-[90px]! grid grid-cols-12 gap-[30px] py-10 md:py-20 lg:py-24 xl:py-[120px] bg-no-repeat  bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px]  lg:bg-[length:auto] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_165px]" style={`background-image: url('${BgImage.src}');`}>
-    <div class="lg:col-start-2 col-span-12 lg:col-span-6 space-y-5 lg:space-y-8">
-        <h1 class="font-bold text-[32px] lg:text-[64px] text-[#21292C] leading-[120%]">{Title}</h1>
-        <div class="space-y-3 text-[#000000]">
-            {ParagraphTitle && (
-                <p class="font-semibold text-lg lg:text-2xl">{ParagraphTitle}</p>
-            )}
+<section class={`section-container mt-[90px]! grid grid-cols-12 gap-[30px] py-10 md:py-20 lg:py-24 xl:py-[120px] bg-no-repeat bg-[length:120px] lg:bg-[length:auto] ${bgPosition}`} style={`background-image: url('${BgImage.src}');`}>
+    <div class={`lg:col-start-2 col-span-12 ${contentCols} space-y-5 lg:space-y-8`}>
+        <div class="space-y-4">
+            {
+            SubTitle && (
+                <p class="font-semibold text-black text-lg lg:text-2xl">{SubTitle}</p>
+                )
+            }
 
-            {Paragraph && (
-                <p class="lg:text-lg">{Paragraph}</p>
-            )}
-            
+            <h1 class="font-bold text-[32px] lg:text-[64px] text-[#21292C] leading-[120%]">
+            {Title}
+            </h1>
         </div>
+
+        <div class="space-y-3 text-[#000000]">
+        {ParagraphTitle && (
+            <p class="font-semibold text-lg lg:text-2xl">{ParagraphTitle}</p>
+        )}
+
+        {Paragraph && (
+            <p class="lg:text-lg font-medium">{Paragraph}</p>
+        )}
+        </div>
+
         {ButtonLink && (
         <div class="w-fit">
             <LinkButton Text={ButtonText} Link="/" />
         </div>
-    )}
+        )}
     </div>
-    <img src={HeroImage.src} class="col-span-12 lg:col-span-4 justify-self-center lg:justify-self-end" alt="">
+
+    {HeroImage && (
+        <img
+        src={HeroImage.src}
+        class="col-span-12 lg:col-span-4 justify-self-center lg:justify-self-end"
+        alt={Title}
+        />
+    )}
 </section>

@@ -1,0 +1,342 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+import Icon1 from "../assets/images/software-product-development.png";
+import Icon2 from "../assets/images/software-re-engineering.png";
+import Icon3 from "../assets/images/product-support.png";
+import Icon4 from "../assets/images/mvp.png";
+---
+
+<section class="section-container grid grid-cols-12 gap-[30px] text-[#21292C]">
+    <div class="col-span-12 lg:col-start-2 lg:col-span-10 grid grid-cols-10 gap-[30px] p-5 lg:px-0 lg:py-20 bg-[url('../assets/images/umbreco-certified-developer.webp')] rounded-2xl">
+        <div class="col-span-10 lg:col-start-2 lg:col-span-8 p-5 lg:p-10 space-y-[30px] lg:space-y-[60px] bg-white rounded-2xl outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)]">
+
+        <SectionTitle
+            Title="Streamlined Solutions"
+            Heading="Intuitive Services Giriraj Digital Have"
+        />
+
+        <!-- TABS -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 text-[#21292C]">
+            <div class="service-item relative">
+                <button class="relative service-tab flex items-start text-left pb-6  opacity-100 font-bold text-lg lg:text-xl" data-target="software-product-development" > <p>Software Product Development </p>
+                    <div class="absolute bottom-0 w-full h-1 bg-gray-300 rounded-full overflow-hidden">
+                        <!-- Progress fill -->
+                        <div class="progress-bar h-full w-0 bg-[#0FA1DB] rounded-full blur-sm"></div>
+                    </div>
+                </button>
+            
+                <div class="service-mobile-content pt-5 lg:hidden">
+                    <div class="service-content xl:w-[75%] space-y-5 lg:space-y-8" >
+                        <div class="flex items-start lg:items-center space-x-3">
+                            <img src={Icon1.src} alt="Software Product Development" />
+                            <h5 class="font-bold text-xl lg:text-[26px]">
+                            Software Product Development
+                            </h5>
+                        </div>
+                        <div class="space-y-5">
+                            <p> Software product engineering doesn’t just code. It includes the accuracy of understanding the client’s requirements, business goals, expectations, etc.</p>
+                            <p> We offer cost-effective solutions with the finest technology to our clients. Our effective solution and technology proficiency keep our clients ahead of the competition.</p>
+                            <p> Giriraj Digital, a software product development company in India (Ahmedabad) helped many clients and IT owners (s) in the product lifecycle stage and achieve their goals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <button class="relative service-tab flex items-start text-left pb-6  opacity-60 font-bold text-lg lg:text-xl" data-target="software-product-support" > <p>Software Product Support & Maintenance</p>
+                    <div class="absolute bottom-0 w-full h-1 bg-gray-300 rounded-full overflow-hidden">
+                        <!-- Progress fill -->
+                        <div class="progress-bar h-full w-0 bg-[#0FA1DB] rounded-full blur-sm"></div>
+                    </div>
+                </button>
+                <div class="service-mobile-content pt-5 " >
+                    <div class="xl:w-[75%] space-y-5 lg:space-y-8">
+
+                    
+                    <div class="flex items-start lg:items-center space-x-3">
+                        <img src={Icon2.src} alt="Software Product Development" />
+                        <h5 class="font-bold text-xl lg:text-[26px]">
+                        Software Product Support and Maintenance Services
+                        </h5>
+                    </div>
+                    <div class="space-y-3">
+                        <p> Software maintenance is a key portion of the application ecosystem. It requires improvements in performance, functional enhancement, better user experience, update security patches, and many more in existing software, and, by maintaining software, it provides a competitive edge to stay ahead of the competition.</p>
+                        <p> Giriraj Digital, an offshore software product development company, helps you in completing up-gradation or maintenance with our proven approaches.</p>
+                        <p> Giriraj Digital executes a well-planned knowledge transfer and product ramp-up process to verify and confirm that our team fully understands the client’s product and business perspective.</p>
+                        <ul class="space-y-1 list-outside pl-5 list-disc">
+                            <li>Software Maintenance service line</li>
+                            <li>Software development: Maintenance Onsite and Offsite</li>
+                            <li>Troubleshooting and bug fixes</li>
+                            <li>Bug tracking and reporting</li>
+                            <li>Functionality tuning and smooth UI.</li>
+                            <li>Research, design, and implementation of new features</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-item lg:relative">
+                <button class="relative lg:static w-full service-tab flex items-start text-left pb-6  opacity-60 font-bold text-lg lg:text-xl" data-target="software-re-engineering" > 
+                    <p>Software Re-Engineering</p>
+                    <div class="absolute bottom-0 w-full h-1 bg-gray-300 rounded-full overflow-hidden">
+                            <!-- Progress fill -->
+                            <div class="progress-bar h-full w-0 bg-[#0FA1DB] rounded-full blur-sm"></div>
+                    </div> 
+                </button>
+
+                <div class="service-mobile-content pt-5 " >
+                    <div class="xl:w-[75%] space-y-5 lg:space-y-8">
+                    <div class="flex items-start lg:items-center space-x-3">
+                            <img src={Icon3.src} alt="Software Product Development" />
+                            <h5 class="font-bold text-xl lg:text-[26px]">
+                            Software Re-Engineering
+                            </h5>
+                        </div>
+                        <div class="space-y-3">
+                            <p> Well-established software product becomes outdated in times span and maintenance of such software product is expensive, difficult, and very limited in terms of technology and usability. Many business owners wish to migrate their software products with a new platform and mainstream technology.</p>
+                            <p> To achieve this business goal for our client, we apply our powerful experience of application re-engineering, which assesses the investment in legacy systems by carefully analyzing the legacy application set and business logic, and then mining with a tool-based approach.</p>
+                            <p> Our application re-engineering approach comprises data migration, a technology migration system using tool-based reverse engineering, and forward engineering.</p>
+                            <ul class="space-y-1 list-outside pl-5 list-disc">
+                                <li>Key segment services for software application re-engineering</li>
+                                <li>Migration to new software business model (Like Saas, Paas, on Cloud)</li>
+                                <li>UI and UX up-gradation and technology version upgrades</li>
+                                <li>Porting and data migration</li>
+                                <li>Legacy systems and software application re-engineering</li>
+                                <li>Enterprise Application Integration</li>
+                                <li>Code re-structuring or Code formatting</li>
+                                <li>Platform migration</li>
+                            </ul>
+                            <p class="font-semibold">Software Re-Engineering execution planning</p>
+                            <ul class="space-y-1 list-outside pl-5 list-disc">
+                                <li>Product assessment to be migrated</li>
+                                <li>Knowledge Transfer</li>
+                                <li>Analysis of platform and technology to be supported on the technology segment</li>
+                                <li>Analysis of data domain and create detailed project specifications</li>
+                                <li>Systems Planning and prototype (Technical architectural design, interaction protocols, and technical specification on separate modules)</li>
+                                <li>Systems Engineering (Systems specification, Development, Quality test)</li>
+                                <li>Project Documentation (Systems architecture information, code detailing, etc.)</li>
+                                <li>Systems optimizing and performance.</li>
+                            </ul>
+                            <p>The initial steps are for assessment of the pre-migration process afterward software development approach and method to deliver updated software applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+
+            <div class="service-item lg:relative">
+                <button class="relative service-tab flex items-start text-left pb-6  opacity-60 font-bold text-lg lg:text-xl" data-target="mvp-development" > <p>Minimum Viable Product Development (MVP)</p><div class="absolute bottom-0 w-full h-1 bg-gray-300 rounded-full overflow-hidden">
+                    <!-- Progress fill -->
+                    <div class="progress-bar h-full w-0 bg-[#0FA1DB] rounded-full blur-sm"></div>
+                </div> </button>
+
+                <div class="service-mobile-content pt-5 " >
+                    <div class="xl:w-[75%] space-y-5 lg:space-y-8">
+                    <div class="flex space-x-3 items-start lg:items-center">
+                <img src={Icon4.src} alt="Software Product Development" />
+                <h5 class="font-bold text-xl lg:text-[26px]">
+                Minimum Viable Product Development (MVP)
+                </h5>
+            </div>
+            <div class="space-y-3">
+                <p>We want you to succeed with a minimum budget and time. Using MVP, you can test your product’s idea without investing a lot of time and money. We start MVP development with an understanding of product vision and fundamental features required to launch and test in the market.</p>
+                <p>After deciding all features with the product’s owner, we start with the product’s user journey design by understanding the user’s goal, motivations, user’s pain points, and overall character. We deliver all-screen designs for web and mobile. After the design, we start with development and testing.</p>
+                <p>We test the MVP with real users, collect feedback, and incorporate their feedback to develop a high-quality and user-friendly product.</p>
+            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="space-y-10 hidden lg:block">
+            <!-- 1 -->
+            <div
+            id="software-product-development"
+            class="service-content xl:w-[75%] space-y-5 lg:space-y-8"
+            >
+            <div class="flex items-center space-x-3">
+                <img src={Icon1.src} alt="Software Product Development" />
+                <h5 class="font-bold text-xl lg:text-[26px]">
+                Software Product Development
+                </h5>
+            </div>
+            <div class="space-y-5">
+                <p> Software product engineering doesn’t just code. It includes the accuracy of understanding the client’s requirements, business goals, expectations, etc.</p>
+                <p> We offer cost-effective solutions with the finest technology to our clients. Our effective solution and technology proficiency keep our clients ahead of the competition.</p>
+                <p> Giriraj Digital, a software product development company in India (Ahmedabad) helped many clients and IT owners (s) in the product lifecycle stage and achieve their goals.</p>
+            </div>
+            </div>
+
+            <!-- 2 -->
+            <div
+            id="software-product-support"
+            class="service-content hidden xl:w-[75%] space-y-5 lg:space-y-8"
+            >
+                <div class="flex items-center space-x-3">
+                    <img src={Icon2.src} alt="Software Product Development" />
+                    <h5 class="font-bold text-xl lg:text-[26px]">
+                    Software Product Support and Maintenance Services
+                    </h5>
+                </div>
+                <div class="space-y-3">
+                    <p> Software maintenance is a key portion of the application ecosystem. It requires improvements in performance, functional enhancement, better user experience, update security patches, and many more in existing software, and, by maintaining software, it provides a competitive edge to stay ahead of the competition.</p>
+                    <p> Giriraj Digital, an offshore software product development company, helps you in completing up-gradation or maintenance with our proven approaches.</p>
+                    <p> Giriraj Digital executes a well-planned knowledge transfer and product ramp-up process to verify and confirm that our team fully understands the client’s product and business perspective.</p>
+                    <ul class="space-y-1 list-outside pl-5 list-disc">
+                        <li>Software Maintenance service line</li>
+                        <li>Software development: Maintenance Onsite and Offsite</li>
+                        <li>Troubleshooting and bug fixes</li>
+                        <li>Bug tracking and reporting</li>
+                        <li>Functionality tuning and smooth UI.</li>
+                        <li>Research, design, and implementation of new features</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div
+            id="software-re-engineering"
+            class="service-content hidden xl:w-[75%] space-y-5 lg:space-y-8"
+            >
+            <div class="flex items-center space-x-3">
+                <img src={Icon3.src} alt="Software Product Development" />
+                <h5 class="font-bold text-xl lg:text-[26px]">
+                Software Re-Engineering
+                </h5>
+            </div>
+            <div class="space-y-3">
+                <p> Well-established software product becomes outdated in times span and maintenance of such software product is expensive, difficult, and very limited in terms of technology and usability. Many business owners wish to migrate their software products with a new platform and mainstream technology.</p>
+                <p> To achieve this business goal for our client, we apply our powerful experience of application re-engineering, which assesses the investment in legacy systems by carefully analyzing the legacy application set and business logic, and then mining with a tool-based approach.</p>
+                <p> Our application re-engineering approach comprises data migration, a technology migration system using tool-based reverse engineering, and forward engineering.</p>
+                <ul class="space-y-1 list-outside pl-5 list-disc">
+                    <li>Key segment services for software application re-engineering</li>
+                    <li>Migration to new software business model (Like Saas, Paas, on Cloud)</li>
+                    <li>UI and UX up-gradation and technology version upgrades</li>
+                    <li>Porting and data migration</li>
+                    <li>Legacy systems and software application re-engineering</li>
+                    <li>Enterprise Application Integration</li>
+                    <li>Code re-structuring or Code formatting</li>
+                    <li>Platform migration</li>
+                </ul>
+                <p class="font-semibold">Software Re-Engineering execution planning</p>
+                <ul class="space-y-1 list-outside pl-5 list-disc">
+                    <li>Product assessment to be migrated</li>
+                    <li>Knowledge Transfer</li>
+                    <li>Analysis of platform and technology to be supported on the technology segment</li>
+                    <li>Analysis of data domain and create detailed project specifications</li>
+                    <li>Systems Planning and prototype (Technical architectural design, interaction protocols, and technical specification on separate modules)</li>
+                    <li>Systems Engineering (Systems specification, Development, Quality test)</li>
+                    <li>Project Documentation (Systems architecture information, code detailing, etc.)</li>
+                    <li>Systems optimizing and performance.</li>
+                </ul>
+                <p>The initial steps are for assessment of the pre-migration process afterward software development approach and method to deliver updated software applications.</p>
+            </div>
+            </div>
+
+            <!-- 4 -->
+            <div
+            id="mvp-development"
+            class="service-content hidden xl:w-[75%] space-y-5 lg:space-y-8"
+            >
+            <div class="flex items-center space-x-3">
+                <img src={Icon4.src} alt="Software Product Development" />
+                <h5 class="font-bold text-xl lg:text-[26px]">
+                Minimum Viable Product Development (MVP)
+                </h5>
+            </div>
+            <div class="space-y-3">
+                <p>We want you to succeed with a minimum budget and time. Using MVP, you can test your product’s idea without investing a lot of time and money. We start MVP development with an understanding of product vision and fundamental features required to launch and test in the market.</p>
+                <p>After deciding all features with the product’s owner, we start with the product’s user journey design by understanding the user’s goal, motivations, user’s pain points, and overall character. We deliver all-screen designs for web and mobile. After the design, we start with development and testing.</p>
+                <p>We test the MVP with real users, collect feedback, and incorporate their feedback to develop a high-quality and user-friendly product.</p>
+            </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
+const tabs = document.querySelectorAll(".service-tab");
+const contents = document.querySelectorAll(".lg\\:block .service-content");
+
+const isMobile = window.innerWidth < 1024;
+
+let currentIndex = 0;
+const intervalTime = 5000;
+let autoTab = null;
+
+function activateTab(index) {
+    const tab = tabs[index];
+    const targetId = tab.dataset.target;
+
+    // Reset tabs
+    tabs.forEach(t => {
+    t.classList.remove("opacity-100");
+    t.classList.add("opacity-60");
+
+    const bar = t.querySelector(".progress-bar");
+    if (bar) {
+        bar.style.transition = "none";
+        bar.style.width = "0%";
+    }
+
+    // mobile content
+    const mobileContent = t.closest(".service-item")?.querySelector(".service-mobile-content");
+    mobileContent?.classList.add("hidden");
+    });
+
+    // Desktop content
+    contents.forEach(c => c.classList.add("hidden"));
+
+    // Activate tab
+    tab.classList.remove("opacity-60");
+    tab.classList.add("opacity-100");
+
+    if (isMobile) {
+    // Show content below tab
+    tab.closest(".service-item")
+        ?.querySelector(".service-mobile-content")
+        ?.classList.remove("hidden");
+    } else {
+    document.getElementById(targetId)?.classList.remove("hidden");
+    }
+
+    // Progress bar (desktop only)
+    if (!isMobile) {
+    const activeBar = tab.querySelector(".progress-bar");
+    if (activeBar) {
+        requestAnimationFrame(() => {
+        activeBar.style.transition = "width 5s linear";
+        activeBar.style.width = "100%";
+        });
+    }
+    }
+}
+
+tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => {
+    currentIndex = i;
+    activateTab(currentIndex);
+    resetInterval();
+    });
+});
+
+function resetInterval() {
+    if (isMobile) return;
+    clearInterval(autoTab);
+    autoTab = setInterval(() => {
+    currentIndex = (currentIndex + 1) % tabs.length;
+    activateTab(currentIndex);
+    }, intervalTime);
+}
+
+// Init
+activateTab(0);
+resetInterval();
+});
+
+</script>

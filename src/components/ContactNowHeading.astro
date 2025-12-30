@@ -1,20 +1,44 @@
 ---
-const {Heading="" , MarginNone = false} = Astro.props
-import LinkButton from "./LinkButton.astro"
+const { Heading = "", MarginNone = false, Image } = Astro.props;
+import LinkButton from "./LinkButton.astro";
 
 const sectionClass = `section-container ${MarginNone ? "mt-0!" : ""}`;
-
 const roundedClass = MarginNone ? "rounded-b-[20px]" : "rounded-[20px]";
+
+const hasImage = !!Image;
+
+// background only when image NOT present
+const bgClass = hasImage ? "bg-[#E9F2FC]" : "bg-[#E9F2FC] bg-[url('../assets/images/rectangle.svg')] bg-no-repeat bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px] lg:bg-[length:auto] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_100px]";
 ---
+
 <section class={sectionClass}>
-    <div class=`bg-[#E9F2FC]  bg-[url('../assets/images/rectangle.svg')] bg-no-repeat  bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px]  lg:bg-[length:auto] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_100px] ${roundedClass}`>
-        <div class="grid grid-cols-12 ">
-            <div class="col-span-12 lg:col-start-2 p-5 lg:px-0 lg:py-10 lg:col-span-10 lg:w-[70%] space-y-[30px]">
-                <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">{Heading}</h2>
-                <div class="w-fit">
-                    <LinkButton Text="Connect Now" Link="/contact" />
-                </div>
+    <div class={`${bgClass} ${roundedClass}`}>
+        <div class="grid grid-cols-12 gap-5 lg:gap-[30px]">
+
+        <!-- Left Content -->
+        <div
+            class={`col-span-12 p-5 lg:px-0 lg:py-10 lg:col-start-2 lg:col-span-6 space-y-[30px] content-center`}
+        >
+            <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">
+            {Heading}
+            </h2>
+
+            <div class="w-fit">
+            <LinkButton Text="Connect Now" Link="/contact" />
             </div>
+        </div>
+
+        <!-- Right Image (only if exists) -->
+        {hasImage && (
+            <div class="col-span-12 lg:col-span-5 lg:col-start-8 flex items-center justify-center p-5 lg:p-0">
+            <img
+                src={Image.src}
+                alt={Heading}
+                class="w-auto"
+            />
+            </div>
+        )}
+
         </div>
     </div>
 </section>
