@@ -68,5 +68,5 @@ footer h5 {
 }
 
 .blur-sm {
-  filter: blur(2px);
+    filter: blur(2px);
 }

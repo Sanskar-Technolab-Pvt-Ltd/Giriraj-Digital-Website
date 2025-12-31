@@ -1,5 +1,5 @@
 ---
-const { Heading = "", MarginNone = false, Image } = Astro.props;
+const { Heading = "", MarginNone = false, Image, isImageHidden=false } = Astro.props;
 import LinkButton from "./LinkButton.astro";
 
 const sectionClass = `section-container ${MarginNone ? "mt-0!" : ""}`;
@@ -9,6 +9,8 @@ const hasImage = !!Image;
 
 // background only when image NOT present
 const bgClass = hasImage ? "bg-[#E9F2FC]" : "bg-[#E9F2FC] bg-[url('../assets/images/rectangle.svg')] bg-no-repeat bg-[position:calc(100%-10px)_calc(100%-20px)] bg-[length:120px] lg:bg-[length:auto] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_100px]";
+
+const isHidden = isImageHidden ? 'hidden' : '';
 ---
 
 <section class={sectionClass}>
@@ -30,14 +32,19 @@ const bgClass = hasImage ? "bg-[#E9F2FC]" : "bg-[#E9F2FC] bg-[url('../assets/ima
 
         <!-- Right Image (only if exists) -->
         {hasImage && (
-            <div class="col-span-12 lg:col-span-5 lg:col-start-8 flex items-center justify-center p-5 lg:p-0">
-            <img
+            <div
+                class={`col-span-12 lg:col-span-5 lg:col-start-8 
+                        flex items-center justify-center p-5 lg:p-0
+                        ${isImageHidden ? "hidden lg:block" : ""}`}
+            >
+                <img
                 src={Image.src}
                 alt={Heading}
                 class="w-auto"
-            />
+                />
             </div>
-        )}
+            )}
+
 
         </div>
     </div>

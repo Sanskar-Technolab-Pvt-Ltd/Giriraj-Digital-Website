@@ -42,3 +42,28 @@
     opacity: 1;
     transform: translateX(0);
 }
+
+
+/* Hide icon by default */
+.services-tabs-item .tab-link-icon {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Show icon only on active tab */
+.services-tabs-item.active .tab-link-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Mobile content hidden by default */
+.services-tabs-item .mobile-content {
+    display: none;
+}
+
+/* Show only for active tab */
+.services-tabs-item.active .mobile-content {
+    display: block;
+}

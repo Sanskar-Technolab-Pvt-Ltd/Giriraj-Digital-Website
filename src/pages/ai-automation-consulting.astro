@@ -1,0 +1,245 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import LeftSideCard from "../components/LeftSideCard.astro";
+import PlansCard from "../components/PlansCard.astro";
+import ClientImageCard from "../components/ClientImageCard.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import ContactNowHeading from "../components/ContactNowHeading.astro";
+import SwipeUpCard from "../components/SwipeUpCard.astro";
+import TextCard from "../components/TextCard.astro";
+import Testimonial from "../components/Testimonial.astro";
+import SolutionDelivered from "../components/SolutionDelivered.astro";
+import FeatureResources from "../components/FeatureResources.astro";
+import FaqContainer from "../components/FaqContainer.astro";
+import ContactUsForm from "../components/ContactUsForm.astro";
+import ServiceOffered from "../components/ServiceOffered.astro";
+
+
+import HeroBg from "../assets/images/ai-automation-bg-image.svg"
+import RightImage from "../assets/images/ai-automated-company.webp"
+import Icon1 from "../assets/images/ai-automation-client.png";
+import Icon2 from "../assets/images/clients-onboard.png";
+import Icon3 from "../assets/images/users.png";
+import Icon4 from "../assets/images/retention.png";
+import Stripe from "../assets/images/stripe.png";
+import burrow from "../assets/images/burrow.png";
+import theSill from "../assets/images/the-sill.png";
+import huckberry from "../assets/images/huchberry.png";
+import github from "../assets/images/github.png";
+import shopify from "../assets/images/shopify.png";
+import food from "../assets/images/food52.png";
+import microsoft from "../assets/images/microsoft.png";
+import ContactBg from "../assets/images/ai-business-contact-bg-image.webp"
+import ContactUsBg from "../assets/images/contact-bg.webp"
+import Card1BgImage1 from "../assets/images/bg-card-1.webp"
+import Card1BgImage2 from "../assets/images/bg-card-2.webp"
+import Card1BgImage3 from "../assets/images/bg-card-3.webp"
+import Card1BgImage4 from "../assets/images/bg-card-4.webp"
+import Card1BgImage5 from "../assets/images/bg-card-6.webp"
+import ImageIcon1 from "../assets/images/knowledge-ai-expert.png";
+import ImageIcon2 from "../assets/images/dynamic-expertise.png";
+import ImageIcon3 from "../assets/images/cost-effective-solutions.png";
+import ImageIcon4 from "../assets/images/communication-at-the-core.png";
+import ImageIcon5 from "../assets/images/emracing-the-change.png";
+import ImageIcon6 from "../assets/images/holistic-project-management.png";
+import ImageIcon7 from "../assets/images/enhanced-emphasis.png";
+import ImageIcon8 from "../assets/images/commitment-data.png";
+import TechStack from "../components/TechStack.astro";
+
+
+const ParagraphContent = [
+    "Welcome to Giriraj Digital, where we're all about making AI work for your business. As the leading product development company in developing functional products for AI automation companies, we're here to help you at every step. From talking about your ideas and building custom solutions to smoothly fitting everything into your system and giving ongoing support – we've got your back.",
+    "We understand that AI automation service providers require more than just standard solutions; they need tailored strategies that resonate with their target market.",
+    "Our commitment lies in leveraging the best practices in the industry while staying at the forefront of AI innovations to deliver the desired results. It ensures that our clients receive not only cutting-edge solutions but also customized offerings that align perfectly with their unique business objectives."
+]
+
+const cards = [
+    {
+        bgImage: Card1BgImage1,
+        heading: "Understanding Your Needs",
+        paragraph:
+        "We start by talking to you and understanding what your AI company needs. What are your goals, challenges, mission, and vision? Knowing this helps us figure out the best plan for you.",
+        padding:true
+    },
+    {
+        bgImage: Card1BgImage2,
+        heading: "Making a Smart Plan",
+        paragraph:
+        "Once we know what you need, we make a smart plan. It's like making a roadmap for your AI journey. We set clear goals and make sure our plan fits perfectly with what you want to achieve.",
+        padding:true
+    },
+    {
+        bgImage: Card1BgImage3,
+        heading: "Building the Right Team",
+        paragraph:
+        "It's important to have the right people on board. We carefully pick a team that knows about your business and can handle the task well. This way, you get a team that understands your needs and can provide satisfactory results.",
+        padding:true
+    },
+    {
+        bgImage: Card1BgImage4,
+        heading: "Giving You What You Need",
+        paragraph:
+        "Now, we get to work! Whether you need advice, new tech integrated, custom-made products, or quality testing, we make sure you get what you need.",
+        padding:true
+    },
+    {
+        bgImage: Card1BgImage5,
+        heading: "Always Here to Help",
+        paragraph:
+        "Our job doesn't end when we give you what you need. We're here for the long run. If something goes wrong or if you need to grow, we've got your back. Our support is here to make sure everything runs smoothly, always. ",
+        padding:true
+    },
+]
+
+const KnowMoreCards = [
+    "With a team of experts in cutting-edge AI technologies, Giriraj Digital can provide end-to-end AI development solutions to its clients. With a proven track record of successful implementations, our professionals provide personalized solutions for businesses of all sizes"
+]
+
+const DynamicExperts = [
+    "Giriraj Digital, a reputable AI automation consulting company who has extensive experience in AI product development, consulting, testing, and support. Our track record demonstrates a wide range of effectively developed AI solutions supported by in-depth expertise in AI technologies to guarantee that end users receive satisfying outcomes."
+]
+
+const CostEffectiveness = [
+    "We understand the importance of cost-effectiveness in today's business landscape. By choosing Giriraj Digital, you are opting for a partner who is dedicated to delivering value for your investment. Our approach involves optimizing processes, utilizing resources efficiently, and providing competitive pricing. We ensure that you receive the best return on investment for your initiatives without compromising on quality."
+]
+
+const CommunicationCore = [
+    "Clear and transparent communication is at the core of our ethos at Giriraj Digital. We provide detailed reports on project progress followed by effective communication and updates through the best tools and technologies. This commitment to openness ensures that our clients are well-informed while also taking feedback from them and making updates accordingly."
+]
+
+const EmbracingChange = [
+    "In the dynamic field of AI, staying updated on emerging technologies is crucial. With Giriraj Digital, you are getting the same who embraces change and thrives on it. We make it our business to stay ahead with the latest technological innovations, ensuring that your solutions remain relevant and benefit from the cutting edge of advancements in AI. "
+]
+
+const HolisticProject = [
+    "Our project management philosophy is customized to particular projects and is client-friendly. We meticulously plan, execute, and monitor projects, addressing every aspect from conceptualization to delivery. Our focus on comprehensive project management ensures that your AI initiatives are well-coordinated, on track, and successfully executed. "
+]
+
+const EnhancedEmphasis = [
+    "The scalability of our solutions is a key advantage. And, when you decide to go with Giriraj Digital, you are opting for solutions that can grow with your business. Whether you're starting small or aiming for expansive growth, our emphasis on scalability ensures that your AI automation projects remain adaptable and effective, aligning seamlessly with the evolving needs of your business. "
+]
+
+const CommitmentSecurity = [
+    "Security and compliance are non-negotiables in the digital age and so does with Giriraj Digital. We are committed to ensuring the highest standards of data security and compliance. We implement robust measures to safeguard your data, ensuring that your AI projects adhere to regulatory requirements and industry best practices."
+]
+
+const faqList = [
+    {
+        Question: "Do I need to have a clear AI strategy before approaching Giriraj Digital?",
+        Answer: "No, having a clear idea or strategy is not necessary. At Giriraj Digital, our experienced team collaborates with you to understand your business goals, challenges, and opportunities. Through this collaborative approach, we work together to shape a robust AI strategy that aligns seamlessly with your organization's objectives.",
+    },
+    {
+        Question: "How does Giriraj Digital stay updated on AI trends and innovations?",
+        Answer: "Giriraj Digital is committed to staying at the forefront of AI trends and innovations. By regularly attending seminars, workshops, and events, we stay informed about current trends which helps our clients get the best and latest results.",
+    },
+    {
+        Question: "Can Giriraj Digital integrate AI solutions into existing systems?",
+        Answer: "Absolutely. One of Giriraj Digital's strengths lies in our ability to seamlessly integrate AI solutions into your existing systems. Whether you have legacy systems or modern infrastructure, we tailor our approach to ensure that the integration is smooth, efficient, and aligned with your business operations.",
+    },
+    {
+        Question: "What level of support does Giriraj Digital provide post-implementation?",
+        Answer: "Giriraj Digital is committed to providing robust post-implementation support to ensure the ongoing success of your AI solutions. Our support services include regular maintenance, monitoring, and addressing any issues that may arise. We believe in building long-term partnerships, and our support team is readily available to assist you in optimizing and evolving your AI solutions as your business grows."
+    },
+    {
+        Question: "How can I track the work of my dedicated development team?",
+        Answer: "We provide our customers with complete control over the management and monitoring of the dedicated team they have hired from Giriraj Digital using the best project management and communication tools.",
+        Answer2: "To keep the customer informed about the progress, we use project management and communication tools such as Trello, Asana, Jira, Airtable, Skype, GMeet, Teams, Zoom, etc. The development team even arranges stand-up meetings at specific intervals to keep our client updated and take their feedback."
+    },
+    {
+        Question: "What about the security of my intellectual property?",
+        Answer: "Automated testing is essential for the projects because it ensures efficient and thorough validation of software functionalities. It accelerates the testing process, catches issues early in the development cycle, and provides reliable results, contributing to AI applications' overall quality and reliability.",
+        Answer2: "Giriraj Digital the leading consultation and development company for AI automation brands, stands out to meet the unique challenges of AI applications.",
+        Answer3: "We excel in designing thorough test cases, efficiently executing tests, and seamlessly integrating testing into your development process, ensuring quick identification and resolution of potential issues.",
+    },
+
+];
+
+---
+
+<Layout Title="AI Automation Consulting | GIRIRAJ DIGITAL">
+
+    <!-- * Hero Section -->
+    <HeroSection BgImage={HeroBg}, SubTitle="AI Automation" , Title="Revolunize your AI Services: With Giriraj Digital as your Partner!" />
+
+    <!-- * Contact Now -->
+    <LeftSideCard RightImage={RightImage} SubTitle="Overview" Title="Making work easy for AI Automation Company" Paragraph={ParagraphContent} />
+
+    <!-- * Driving Success: Our Impact on AI Companies  -->
+    <section class="section-container grid grid-cols-12 gap-[30px]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-10 ">
+            <SectionTitle Title="Driving Success: Our Impact on AI Companies" Heading="The Number Game:"
+            SpanBlock="How We Have Helped AI Companies?"   />
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
+                <PlansCard Icon={Icon1} Title="10+ AI Automation Clients in Our Bag" Border={false} Padding={false} Bgcolor="#E9F2FC" />
+                <PlansCard Icon={Icon2} Title="2 of the 10 Clients Onboarded" Border={false} Padding={false} Bgcolor="#E9F2FC" />
+                <PlansCard Icon={Icon3} Title="500+ Users Within Just the First Month" Border={false} Padding={false} Bgcolor="#E9F2FC" />
+                <PlansCard Icon={Icon4} Title="Client User Retention Average 68% to 91%" Border={false} Padding={false} Bgcolor="#E9F2FC" />
+            </div>
+        </div>
+    </section>
+
+    <TechStack />
+
+    <ServiceOffered />
+
+    <!-- * Our Clients -->
+    <section class="section-container grid grid-cols-12 gap-[30px]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px] lg:space-y-[60px]">
+            <SectionTitle Title="Our Clients" Heading="The customers who have joined hands with Giriraj Digital for their AI development and experienced soaring success!" WidthClass="lg:w-[70%]" />
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-[30px]">
+                <ClientImageCard Image={Stripe} AltText="Stripe" />
+                <ClientImageCard Image={burrow} AltText="burrow" />
+                <ClientImageCard Image={theSill} AltText="theSill" />
+                <ClientImageCard Image={huckberry} AltText="huckberry" />
+                <ClientImageCard Image={github} AltText="github" />
+                <ClientImageCard Image={shopify} AltText="shopify" />
+                <ClientImageCard Image={food} AltText="food" />
+                <ClientImageCard Image={microsoft} AltText="microsoft" />
+            </div>
+        </div>
+    </section>
+
+    <!-- * Contact Now -->
+    <ContactNowHeading Heading="Are you ready to level up your AI business with us? Book a free consultation right away!", Image={ContactBg}, isImageHidden={true} />
+
+    <!-- * SwipeUp Card -->
+    <SwipeUpCard CardsData={cards}  Title="Embracing Modernity" Heading="The Modern Methodology for Modern Businesses" Paragraph="Modern businesses want greater speed, efficiency, adaptability, and efficiency. Giriraj Digital's team has the necessary expertise and experience to provide all of that to AI firms via specialized engineering teams and services. Using the greatest tools and platforms available, we automate and streamline procedures while providing creative solutions." />
+
+    <!-- * Our Process Blueprint  -->
+    <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px] space-y-[30px] lg:space-y-[60px]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-8">
+            <SectionTitle Title="Our Process Blueprint" Heading="Process we Follow to archive best result" />
+        </div>
+
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] lg:gap-10">
+            <TextCard Icon={ImageIcon1} Title="knowledgeable AI Experts", Paragraph={KnowMoreCards} />
+            <TextCard Icon={ImageIcon2} Title="Dynamic Expertise", Paragraph={DynamicExperts} />
+            <TextCard Icon={ImageIcon3} Title="Cost-Effective Solutions", Paragraph={CostEffectiveness} />
+
+            <TextCard Icon={ImageIcon4} Title="Communication at the Core", Paragraph={CommunicationCore} />
+            <TextCard Icon={ImageIcon5} Title="Embracing the (constant) Change", Paragraph={EmbracingChange} />
+            <TextCard Icon={ImageIcon6} Title="Holistic Project Management", Paragraph={HolisticProject} />
+
+            <TextCard Icon={ImageIcon7} Title="Enhanced Emphasis on Scalability", Paragraph={EnhancedEmphasis} />
+            <TextCard Icon={ImageIcon8} Title="Commitment to Data Security and Compliance", Paragraph={CommitmentSecurity} />
+        </div>
+    </section>
+
+    <!-- * Testimonial -->
+    <Testimonial />
+
+    <!-- * Solution Delievered -->
+    <SolutionDelivered />
+
+    <!-- * Featured Resources -->
+    <FeatureResources />
+
+    <!-- * FAQs -->
+    <FaqContainer FaqList={faqList}  />
+
+    <!-- * Contact Now -->
+    <ContactUsForm ContactUsBgImage={ContactUsBg} />
+</Layout>
