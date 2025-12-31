@@ -30,20 +30,12 @@ const isHidden = isImageHidden ? 'hidden' : '';
             </div>
         </div>
 
-        <!-- Right Image (only if exists) -->
+        <!-- Right Image -->
         {hasImage && (
-            <div
-                class={`col-span-12 lg:col-span-5 lg:col-start-8 
-                        flex items-center justify-center p-5 lg:p-0
-                        ${isImageHidden ? "hidden lg:block" : ""}`}
-            >
-                <img
-                src={Image.src}
-                alt={Heading}
-                class="w-auto"
-                />
+            <div class={`col-span-12 lg:col-span-5 lg:col-start-8  flex items-center justify-center p-5 lg:p-0 ${isImageHidden ? "hidden lg:block" : ""}`}>
+                <img src={Image.src} alt={Heading} class="w-auto" />
             </div>
-            )}
+        )}
 
 
         </div>

@@ -191,7 +191,7 @@ function updateRightContent(tab) {
 function scheduleNext() {
     clearTimeout(autoplayTimeout);
 
-    // ❌ No autoplay on mobile
+    //  No autoplay on mobile
     if (!isDesktop) return;
 
     autoplayTimeout = setTimeout(nextTab, intervalTime);
