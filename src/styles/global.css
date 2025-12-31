@@ -55,3 +55,18 @@ footer h5 {
 .active-dropdown {
     color: #0495CF !important;
 }
+
+
+/* Progress bar animation for 5 seconds */
+@keyframes progress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+.animate-progress {
+    animation: progress 5s linear forwards;
+}
+
+.blur-sm {
+  filter: blur(2px);
+}

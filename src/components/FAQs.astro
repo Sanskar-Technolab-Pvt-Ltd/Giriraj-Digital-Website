@@ -1,5 +1,5 @@
 ---
-const { id, Question, Answer, Answer2, Border } = Astro.props;
+const { id, Question, Answer, Answer2, Border, AnswerList=[] } = Astro.props;
 const isOpen = id === 0;   // first one open
 ---
 
@@ -27,6 +27,13 @@ const isOpen = id === 0;   // first one open
         <p class="lg:text-lg text-body">
             {Answer}
         </p>
+        {AnswerList && (
+            <ul class="list-disc list-outside pl-5">
+                {AnswerList.map((item:any) => (
+                    <li class="lg:text-lg text-body">{item}</li>
+                ))}
+            </ul>
+        )}
         <p class="lg:text-lg text-body">
             {Answer2}
         </p>

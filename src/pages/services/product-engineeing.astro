@@ -1,0 +1,268 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import LeftSideCard from "../../components/LeftSideCard.astro";
+import TextCard from "../../components/TextCard.astro";
+import ContactNowHeading from "../../components/ContactNowHeading.astro";
+import SolutionDelivered from "../../components/SolutionDelivered.astro";
+import TextCardComponent from "../../components/TextCardComponent.astro";
+import FeatureResources from "../../components/FeatureResources.astro";
+import FaqContainer from "../../components/FaqContainer.astro";
+import ContactUsForm from "../../components/ContactUsForm.astro"; 
+import StreamLinedSolutions from "../../components/StreamLinedSolutions.astro";
+
+
+import UmbracoBg from "../../assets/images/product-engineering-bg-image.svg"
+import LeftSideCardContentBg from "../../assets/images/life-cycle-software-product-bg.webp";
+import SectionTitle from "../../components/SectionTitle.astro";
+import Icon1 from "../../assets/images/requirement-gathering-icon.svg"
+import Icon2 from "../../assets/images/application-prototype.svg"
+import Icon3 from "../../assets/images/product-design.svg"
+import Icon4 from "../../assets/images/software-development-phase.svg"
+import Icon5 from "../../assets/images/verify-and-review.svg"
+import Icon6 from "../../assets/images/testing-and-quality-checks.svg"
+import Icon7 from "../../assets/images/deployment.svg"
+import Icon8 from "../../assets/images/monitor-key-matrics.svg"
+import Icon9 from "../../assets/images/support-and-training.svg" 
+
+import Icon10 from "../../assets/images/streamlined-method.svg"
+import Icon11 from "../../assets/images/customized-solution.svg"
+import Icon12 from "../../assets/images/your-reliable-partner.svg"
+import Icon13 from "../../assets/images/highly-flexible.svg"
+
+import ContactImage from "../../assets/images/user-friendly-product.webp"
+import ContactBg from "../../assets/images/contact-bg.webp"
+
+
+const ParagraphContent = [
+        "We offer entire life cycle software product development services that innovate constantly, optimize expansion to market, and add competitive power to new and legacy products at the best market rates.",
+        "We strive to provide a superior user experience and provide your software products with a competitive advantage.",
+        "Every successful product in its market is one-of-a-kind, and this uniqueness minimizes risk and uncertainty during the production process.",
+        "As a leading software product development company, we envision and strategize the complete roadmap to decrease risk, regulate time and development costs, and provide high-quality consistent products."
+
+]
+
+const RequirementGathering = [
+    "This is the first and most important step in software development. Collection and analysis of requirements will help us to offer you what you and your customers are looking forward to!",
+    "We keep in mind the following things to get all-around information about your business and targeted audience -"
+]
+
+const RequirementGatheringList = [
+    "Vision statement",
+    "Elicitation and prioritization of requirements",
+    "Knowledge acquisition and management",
+    "Feasibility study or risk analysis",
+    "Functional and non-functional requirements",
+    "Safety, security, and performance requirements",
+    "Buy-in, validation, and approval of requirements",
+    "Tracing and changing control of requirements"
+]
+
+const ApplicationPrototypeContent = [
+    "We make a working prototype that helps to collect and understand requirements from the owner and enables them to understand the system. It also helps in reassuring ideas and defining go-to-market (GTM) feasibility.",
+    "Our technical expertise helps broadly through prototyping, selecting the right tools & technology, framework, and defining proper roadmaps. Furthermore, this prototyping approach also decreases   and design errors, including errors in user interface and planning."
+]
+
+
+const ProductDesignContent = [
+    "Our creative design team adopts industry standards and current trends in the market. The useful design of the application attracts users and gives a perfect sense of usability. Our team practiced following fundamentals theory."
+]
+
+const ProductDesignList = [
+    "Good Design needs in-depth knowledge of the industry domain.",
+    "Separation of concerns leads to standard architectures.",
+    "The output of a design activity is a technical plan or blueprint of a system that helps the developers to develop the system."
+]
+
+const SoftwareDevelopmentPhase = [
+    "From ideas to prototypes >> prototypes to application design >> design to development. This phase requires the technical team to perform the functional part and our technical team believes in the following principles."
+]
+
+const SoftwareDevelopmentPhaseList = [
+    "Well-structured and properly commented applications have fewer errors and are easier to maintain and understand.",
+    "Software-reusable code decreases cycle time and increases quality and productivity",
+    "The Agile method decreases the effect of a change in requirements.",
+    "We strongly implement robust coding standards, useful comments code, and proper unit testing during the development phase."
+]
+
+const VerifyAndReview = [
+    "We used to tell our technical team that error prevention is better than error removals, this method’s outcome is to increase productivity, quality, and project stability.",
+    "Thus, our development phase combined review and check of design and code. During the review, we identify the repetition of identical errors and rectify them.",
+    "We also share the same case with the team and keep practicing to improve the product development phase."
+]
+
+const TestingAndQualityChecks = [
+    "Software testing is an essential part of the software development lifecycle. Our project plan covered the test plan. We develop test cases and reports during the design and development phase of software products.",
+    "We ensure that deliverables are up to the best quality. After completion, we also encourage random testing, the formal testing can show the presence but not the absence of errors."
+]
+
+const DeploymentContent = [
+    "Industry experts always said that one of the biggest application lifecycle challenges is dealing with deployment tasks. This process can be complicated and multi-pronged, with many different components and pieces interacting together.",
+    "Luckily, for this last phase of the application lifecycle, we follow a certain checklist to make sure deployment should be uninterrupted with minimum downtime.",
+    "We prefer automatic deployment: Our first approach is to use automatic deployment tools which support native OS operations and scripting deployment."   
+]
+
+const MonitorKeyMetricsContent = [
+    "Once a new version of the software is deployed, it requires some days for monitoring including Server Utilization, exception rates, log volume, database performance, etc. If any performance issue occurs, we identify the cause and fix it early as possible.",
+    "Giriraj Digital makes sure your software product deployment will be smooth, with minimal downtime, and ensures the best performance."
+]
+
+const SupportAndTrainingContent = [
+    "We understand software product delivery isn’t enough until it’s worth resolving business challenges or achieving goals. We believe in supporting after-sales and providing documentation and training after deployment. Also, we are doing a maintenance agreement contract after successful product delivery."
+]
+
+const StreamLineMethodText1 = [
+    "Working on a client’s project, we choose the right kind of software product development process. Broadly we divide our process into 3 phases"
+]
+
+const StreamLineMethodLiList = [
+    "Functional (business functions, such as value proposition, customer segmentation, user joinery, and key activities to deliver value, cost, and revenue)",
+    "Software development",
+    "Marketing Plan"
+]
+
+const StreamLineMethodText2 = [
+    "Giriraj Digital will synchronize and streamline the process. Also, we have implemented the agile method with a highly responsive approach for many clients."
+]
+
+const CustomizedSolutionText = [
+    "We go further into the project's short- and long-term objectives, and after learning about the client's objectives, we use our subject expertise to design a bespoke software solution.",
+    "With our tech-enabled and data-driven bespoke solutions, we have a passion for business expertise and can turn your company goals into reality."
+]
+
+const ReliablePartnerText = [
+    "Giriraj Digital is not just your partner for digital product development, we are family. We promise that"
+]
+
+const ReliablePartnerList = [
+    "Our client will get a world-class software product",
+    "We do not compromise on quality, user experience, and security",
+    "You will have exceeded your expectations and a delightful experience",
+]
+
+const HighlyFlexibleText = [
+    "We are unique, and we boast about it, but our skills and adaptability to technology are unrivaled. Our consultants and project managers are highly skilled and experienced.",
+    "They can be able to grasp the scope of work, answer business questions, and produce high-quality work on schedule for our clients.",
+    "We are willing to use any client-requested communication method to ensure interaction challenges do not hamper that connectivity."
+]
+
+const faqList = [
+    {
+        Question: "How can you help me to reduce risks related to product development?",
+        Answer: "A product engineering services provider who knows the ins and outs of the product design and development phase may assist in reducing product development risks.",
+        Answer2:"A skilled company also helps to keep manufacturing costs low by using tactics such as bettering material selections or simplifying components to lessen the risk associated with your investment."
+    },
+    {
+        Question: "What are some of the benefits of hiring Giriraj Digital for product development?",
+        AnswerList: [
+            "Compared to in-house development, development and operations expenses are lower.",
+            "Flexibility in time zones and working hours",
+            "Working with a world-class, seasoned developer is a once-in-a-lifetime opportunity.",
+            "Product design and development are now considerably more efficient.",
+            "Count on high-quality services and cutting-edge technology.",
+            "You can outsource at any time.",
+            "Oversee and control the entire procedure."
+        ]
+    },
+    {
+        Question: "How would you help me to achieve my goal with your product development services?",
+        Answer: "You can provide us with detailed details about your product development concept. Our business development director will communicate with you via email and online meetings to assess the project's potential and connect it with our services.",
+        Answer2: "Then, using our services, a defined timeline, and a budget, we'll analyze your needs and build a roadmap to help you realize your goal."
+    },
+    {
+        Question: "The product’s design is helpful or not in the coming years?",
+        Answer: "Through current design and state-of-the-art development processes, product design and development are driving toward increased product saleability. Companies that provide inherently safe design services will be more involved in the development of goods that are quicker, better, and easier to use."
+    },
+    {
+        Question: "Do you have the know-how of latest tools and technology?",
+        Answer: "We analyze the product and recommend the best technology based on the project's needs. Our professional developers are well-versed in the newest technologies and have a wealth of expertise in the creation of cutting-edge products.",
+        Answer2: "Also, with varied technologies and skilled developers, you will get the best possible results in no time."
+    },
+
+    {
+        Question: "What is the approximate cost of product development and design?",
+        Answer: "The ultimate cost of designing a product with product engineering services is influenced by a number of factors.",
+        AnswerList: [
+            "Platform selection for product innovation",
+            "Product style, function, and category must be developed",
+            "The product's level of intricacy.",
+            "The number and kind of features that will be included in the product.",
+            "Experience, skills, and knowledge of programmers engaged in the development of your product.",
+        ],
+        Answer2: "And, to have a rough idea about the cost of development, you can reach out to us!"
+    },
+    {
+        Question: "What about the security of my intellectual property?",
+        Answer: "Before beginning any project, we sign a Non-Confidentiality Agreement with all of our clients. We ensure that all the client's data and IP remain confidential with us by adhering to security requirements.",
+        Answer2: "As a result, when you work with us, you won't have to worry about the protection of your project."
+    },
+
+];
+
+---
+
+<Layout>
+    <!-- * Hero Section -->
+    <HeroSection BgImage={UmbracoBg}, SubTitle="PRODUCT ENGINEERING" , Title="We Strive to Craft Future Friendly Solutions.", Paragraph="At Giriraj Digital, our team works toward achieving your business goals." />
+
+    <LeftSideCard BgImage={LeftSideCardContentBg} SubTitle="Overview" Title="We offer entire life cycle software product development services" Paragraph={ParagraphContent} />
+
+    <!-- * Our Process Blueprint -->
+    <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px] space-y-[30px] lg:space-y-[60px]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-8 xl:col-start-2 xl:col-span-6">
+            <SectionTitle Title="Our Process Blueprint" Heading="Process we Follow to archive best result" />
+        </div>
+
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] lg:gap-10">
+            <TextCard Icon={Icon1} Title="Requirement Gathering and Analysis", Paragraph={RequirementGathering}, LiList={RequirementGatheringList} />
+            <TextCard Icon={Icon2} Title="Application Prototype", Paragraph={ApplicationPrototypeContent} />
+            <TextCard Icon={Icon3} Title="Product Design", Paragraph={ProductDesignContent}, LiList={ProductDesignList} />
+
+            <TextCard Icon={Icon4} Title="Software Development Phase", Paragraph={SoftwareDevelopmentPhase}, LiList={SoftwareDevelopmentPhaseList} />
+            <TextCard Icon={Icon5} Title="Verify and Review", Paragraph={VerifyAndReview} />
+            <TextCard Icon={Icon6} Title="Testing and Quality Checks", Paragraph={TestingAndQualityChecks} />
+
+            <TextCard Icon={Icon7} Title="Deployment", Paragraph={DeploymentContent} />
+            <TextCard Icon={Icon8} Title="Monitor Key Metrics", Paragraph={MonitorKeyMetricsContent} />
+            <TextCard Icon={Icon9} Title="Support and Training", Paragraph={SupportAndTrainingContent} />
+        </div>
+    </section>
+
+    <!-- * Contact Now -->
+    <ContactNowHeading Heading="We are using an amazing combination of our skills & innovative tech to offer you with desired solutions." />
+
+    <!-- * Solution Delivered -->
+    <SolutionDelivered />
+
+    <!-- * Streamlined Solutions -->
+    <StreamLinedSolutions />
+
+
+    <!-- * Your Perfect Team -->
+    <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px] space-y-[30px] lg:space-y-[60px]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-8 xl:col-start-2 xl:col-span-6">
+            <SectionTitle Title="Your Perfect Team" Heading="Why Giriraj Digital?" />
+        </div>
+
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10  grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-[30px]">
+            <TextCardComponent Icon={Icon10} Title="Streamlined Methods", PrimaryText={StreamLineMethodText1}, LiList={StreamLineMethodLiList}, SecondaryText={StreamLineMethodText2} />
+            <TextCardComponent Icon={Icon11} Title="Customized Solutions", PrimaryText={CustomizedSolutionText} />
+            <TextCardComponent Icon={Icon12} Title="Your Reliable Partner", PrimaryText={ReliablePartnerText}, LiList={ReliablePartnerList} />
+            <TextCardComponent Icon={Icon13} Title="Highly Flexible", PrimaryText={HighlyFlexibleText} />
+        </div>
+    </section>
+
+
+    <!-- * Contact Now -->
+    <ContactNowHeading Heading="Are you willing to launch a user-friendly product? Giriraj Digital will help you out with this!", Image={ContactImage} />
+
+    <!-- * Feature Resources -->
+    <FeatureResources />
+
+    <!-- * FAQs -->
+    <FaqContainer FaqList={faqList}  />
+
+
+    <!-- * Contact Now -->
+    <ContactUsForm ContactUsBgImage={ContactBg} />
+</Layout>
