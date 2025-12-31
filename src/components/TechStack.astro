@@ -1,0 +1,356 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+import Icon1 from "../assets/images/software-product-development.png";
+import Icon2 from "../assets/images/software-re-engineering.png";
+import Icon3 from "../assets/images/product-support.png";
+import Icon4 from "../assets/images/mvp.png";
+
+import VSCode from "../assets/images/vs-code.png";
+import dotnetcore from "../assets/images/dot-net-core.png";
+import nuget from "../assets/images/nuget.png";
+import SQL from "../assets/images/sql-server-management.png";
+import git from "../assets/images/git.png";
+import azureDevOps from "../assets/images/azure-devops.png";
+import azureFunction from "../assets/images/azure-function.png";
+import docker from "../assets/images/dockor.png";
+
+import Umbraco from "../assets/images/developer-umbraco.png";
+import ASPDotNetCore from "../assets/images/asp-dot-net-core.png";
+import javascript from "../assets/images/javascript.png";
+
+import SQLServer from "../assets/images/developer-umbraco.png"
+import MongoDB from "../assets/images/mongo-db.png"
+import MySql from "../assets/images/mysql-1.png"
+import PostgreSQL from "../assets/images/postgresql.png"
+import SQLite from "../assets/images/sqlite.png"
+---
+
+<section class="section-container grid grid-cols-12 gap-[30px] text-[#21292C]">
+    <div class="col-span-12 lg:col-start-2 lg:col-span-10 grid grid-cols-10 gap-[30px] p-5 lg:px-0 lg:py-20 bg-[url('../assets/images/umbreco-certified-developer.webp')] rounded-2xl">
+        <div class="col-span-10 lg:col-start-2 lg:col-span-8 p-5 lg:p-10 space-y-[30px] lg:space-y-[60px] bg-white rounded-2xl outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)]">
+
+        <SectionTitle
+            Title="Our Tech-stack!"
+            Heading="The list of tools and technologies we use to power up your AI game!"
+        />
+
+        <!-- TABS -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-[#21292C]">
+            <div class="service-item relative">
+                <button class="service-tab w-full flex items-start text-left pb-6  opacity-100 font-bold text-lg lg:text-xl" data-target="tools" > <p>Tools </p>
+                    <div class="absolute bottom-0 w-full h-1 bg-gray-300 rounded-full overflow-hidden">
+                        <!-- Progress fill -->
+                        <div class="progress-bar h-full w-full bg-[#0FA1DB] rounded-full blur-sm"></div>
+                    </div>
+                </button>
+            
+                <div class="service-mobile-content py-5 border-b border-[#0FA1DB] lg:hidden">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[30px]" >
+                        <div class="text-center justify-items-center space-y-5">
+                            <img src={VSCode.src} alt="vs-code">
+                            <p class="font-medium">Visual Studio Code</p>
+                        </div>
+                        <div class="text-center justify-items-center space-y-5">
+                            <img src={dotnetcore.src} alt=".NET SDK">
+                            <p class="font-medium">.NET SDK</p>
+                        </div>
+                        <div class="text-center justify-items-center space-y-5">
+                            <img src={nuget.src} alt="NuGet">
+                            <p class="font-medium">NuGet</p>
+                        </div>
+                        <div class="text-center justify-items-center space-y-5">
+                            <img src={SQL.src} alt="SQL Server Management Studio">
+                            <p class="font-medium">SQL Server Management Studio</p>
+                        </div>
+                        <div class="text-center justify-items-center space-y-5">
+                            <img src={git.src} alt="Git">
+                            <p class="font-medium">Git</p>
+                        </div>
+
+                        <div class="text-center justify-items-center space-y-5">
+                            <img src={azureDevOps.src} alt="Azure DevOps">
+                            <p class="font-medium">Azure DevOps</p>
+                        </div>
+                        <div class="text-center justify-items-center space-y-5">
+                            <img src={azureFunction.src} alt="Azure Functions">
+                            <p class="font-medium">Azure Functions</p>
+                        </div>
+                        <div class="text-center justify-items-center space-y-5">
+                            <img src={docker.src} alt="Docker">
+                            <p class="font-medium">Docker</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <button class="w-full relative service-tab flex items-start text-left pb-6  opacity-60 font-bold text-lg lg:text-xl" data-target="programming-and-language" > <p>Programming Language</p>
+                    <div class="absolute bottom-0 w-full h-1 bg-gray-300 rounded-full overflow-hidden">
+                        <!-- Progress fill -->
+                        <div class="progress-bar h-full w-0 bg-[#0FA1DB] rounded-full blur-sm"></div>
+                    </div>
+                </button>
+                <div class="service-mobile-content py-5 border-b border-[#0FA1DB]" >
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[30px]">
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={ASPDotNetCore.src} class="w-[60px]" alt="vs-code">
+                        <p class="font-medium">ASP.NET Core</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={Umbraco.src} class="w-[60px]" alt="Umbraco">
+                        <p class="font-medium">Umbraco</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={dotnetcore.src} class="w-[60px]" alt="Entity Framework">
+                        <p class="font-medium">Entity Framework</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={javascript.src} class="w-[60px]" alt="Javascript">
+                        <p class="font-medium">Javascript</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="service-item lg:relative">
+                <button class="relative lg:static w-full service-tab flex items-start text-left pb-6  opacity-60 font-bold text-lg lg:text-xl" data-target="database" > 
+                    <p>Database</p>
+                    <div class="absolute bottom-0 w-full h-1 bg-gray-300 rounded-full overflow-hidden">
+                            <!-- Progress fill -->
+                            <div class="progress-bar h-full w-0 bg-[#0FA1DB] rounded-full blur-sm"></div>
+                    </div> 
+                </button>
+
+                <div class="service-mobile-content py-5 border-b border-[#0FA1DB]" >
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[30px]">
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={SQLServer.src} class="w-[60px]" alt="SQL Server">
+                        <p class="font-medium">SQL Server</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={MongoDB.src} class="w-[60px]" alt="Mongo DB">
+                        <p class="font-medium">Mongo DB</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={MySql.src} class="w-[60px]" alt="My SQL">
+                        <p class="font-medium">My SQL</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={PostgreSQL.src} class="w-[60px]" alt="PostgreSQL">
+                        <p class="font-medium">PostgreSQL</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={SQLite.src} class="w-[60px]" alt="SQLite">
+                        <p class="font-medium">SQLite</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CONTENT -->
+        <div class="space-y-10 hidden lg:block min-h-[265px]">
+            <!-- 1 -->
+            <div id="tools" class="service-content grid grid-cols-5 gap-[30px]" >
+                <div class="text-center justify-items-center space-y-5">
+                    <img src={VSCode.src} alt="vs-code">
+                    <p class="font-medium">Visual Studio Code</p>
+                </div>
+                <div class="text-center justify-items-center space-y-5">
+                    <img src={dotnetcore.src} alt=".NET SDK">
+                    <p class="font-medium">.NET SDK</p>
+                </div>
+                <div class="text-center justify-items-center space-y-5">
+                    <img src={nuget.src} alt="NuGet">
+                    <p class="font-medium">NuGet</p>
+                </div>
+                <div class="text-center justify-items-center space-y-5">
+                    <img src={SQL.src} alt="SQL Server Management Studio">
+                    <p class="font-medium">SQL Server Management Studio</p>
+                </div>
+                <div class="text-center justify-items-center space-y-5">
+                    <img src={git.src} alt="Git">
+                    <p class="font-medium">Git</p>
+                </div>
+
+                <div class="text-center justify-items-center space-y-5">
+                    <img src={azureDevOps.src} alt="Azure DevOps">
+                    <p class="font-medium">Azure DevOps</p>
+                </div>
+                <div class="text-center justify-items-center space-y-5">
+                    <img src={azureFunction.src} alt="Azure Functions">
+                    <p class="font-medium">Azure Functions</p>
+                </div>
+                <div class="text-center justify-items-center space-y-5">
+                    <img src={docker.src} alt="Docker">
+                    <p class="font-medium">Docker</p>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div
+            id="programming-and-language"
+            class="service-content hidden"
+            >
+                <div class="grid grid-cols-5 gap-[30px]">
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={ASPDotNetCore.src} class="w-[60px]" alt="vs-code">
+                        <p class="font-medium">ASP.NET Core</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={Umbraco.src} class="w-[60px]" alt="Umbraco">
+                        <p class="font-medium">Umbraco</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={dotnetcore.src} class="w-[60px]" alt="Entity Framework">
+                        <p class="font-medium">Entity Framework</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={javascript.src} class="w-[60px]" alt="Javascript">
+                        <p class="font-medium">Javascript</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div
+            id="database"
+            class="service-content hidden"
+            >
+                <div class="grid grid-cols-5 gap-[30px]">
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={SQLServer.src} class="w-[60px]" alt="SQL Server">
+                        <p class="font-medium">SQL Server</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={MongoDB.src} class="w-[60px]" alt="Mongo DB">
+                        <p class="font-medium">Mongo DB</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={MySql.src} class="w-[60px]" alt="My SQL">
+                        <p class="font-medium">My SQL</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={PostgreSQL.src} class="w-[60px]" alt="PostgreSQL">
+                        <p class="font-medium">PostgreSQL</p>
+                    </div>
+                    <div class="text-center justify-items-center space-y-5">
+                        <img src={SQLite.src} class="w-[60px]" alt="SQLite">
+                        <p class="font-medium">SQLite</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".service-tab");
+    const contents = document.querySelectorAll(".service-content");
+
+    let currentIndex = 0;
+    const intervalTime = 5000;
+    let autoTab = null;
+    let isMobile = window.innerWidth < 1024;
+
+    /* ---------------- CORE ---------------- */
+
+    function activateTab(index) {
+        const tab = tabs[index];
+        const targetId = tab.dataset.target;
+
+        // Reset tabs
+        tabs.forEach(t => {
+            t.classList.remove("opacity-100");
+            t.classList.add("opacity-60");
+
+            const bar = t.querySelector(".progress-bar");
+            if (bar) {
+                bar.style.transition = "none";
+                bar.style.width = "0%";
+            }
+
+            // Hide all mobile contents
+            t.closest(".service-item")
+                ?.querySelector(".service-mobile-content")
+                ?.classList.add("hidden");
+        });
+
+        // Hide all desktop contents
+        contents.forEach(c => c.classList.add("hidden"));
+
+        // Activate tab
+        tab.classList.remove("opacity-60");
+        tab.classList.add("opacity-100");
+
+        if (isMobile) {
+            // MOBILE → show below tab
+            tab.closest(".service-item")
+                ?.querySelector(".service-mobile-content")
+                ?.classList.remove("hidden");
+        } else {
+            // DESKTOP → show right content
+            document.getElementById(targetId)?.classList.remove("hidden");
+
+            // Animate progress bar
+            const bar = tab.querySelector(".progress-bar");
+            if (bar) {
+                requestAnimationFrame(() => {
+                    bar.style.transition = `width ${intervalTime}ms linear`;
+                    bar.style.width = "100%";
+                });
+            }
+        }
+    }
+
+    /* ---------------- AUTOPLAY ---------------- */
+
+    function startAutoplay() {
+        clearInterval(autoTab);
+        if (isMobile) return;
+
+        autoTab = setInterval(() => {
+            currentIndex = (currentIndex + 1) % tabs.length;
+            activateTab(currentIndex);
+        }, intervalTime);
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoTab);
+        autoTab = null;
+    }
+
+    /* ---------------- EVENTS ---------------- */
+
+    tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => {
+            currentIndex = i;
+            activateTab(currentIndex);
+            startAutoplay();
+        });
+    });
+
+    window.addEventListener("resize", () => {
+        const nowMobile = window.innerWidth < 1024;
+
+        if (nowMobile !== isMobile) {
+            isMobile = nowMobile;
+
+            stopAutoplay();
+            activateTab(currentIndex);
+            startAutoplay();
+        }
+    });
+
+    /* ---------------- INIT ---------------- */
+
+    activateTab(0);
+    startAutoplay();
+});
+
+</script>
