@@ -13,7 +13,7 @@ const {Icon, Title="", PrimaryText=[], SecondaryText=[], LiList=[]} = Astro.prop
 
             {
                 LiList.length > 0 && (
-                    <ul class="list-disc list-outside pl-5">
+                    <ul class="list-decimal list-outside pl-5">
                         {LiList.map((text:any) => (
                             <li class="leading-[150%]">{text}</li>
                         ))}
