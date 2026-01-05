@@ -1,0 +1,157 @@
+---
+import CaseStudyIntroduction from "../../components/CaseStudyIntroduction.astro";
+import HeroSection from "../../components/HeroSection.astro";
+import Layout from "../../layouts/Layout.astro";
+import Challenges from "../../components/Challenges.astro";
+import Icon1 from "../../assets/images/multi-vendor-franchising-white-1.png";
+import Icon2 from "../../assets/images/multi-vendor-franchising-white-2.png"
+import Icon3 from "../../assets/images/multi-vendor-franchising-white-3.png"
+import Icon4 from "../../assets/images/multi-vendor-franchising-white-4.png"
+import Icon5 from "../../assets/images/multi-vendor-franchising-white-5.png"
+import SolutionDelivered from "../../components/SolutionDelivered.astro";
+import AchievementsCard from "../../components/AchievementsCard.astro";
+import CertificationBG from "../../assets/images/certification-bg.webp"
+import Certificate1 from "../../assets/images/db-sql-server.png"
+import Certificate2 from "../../assets/images/backend-asp.net-mvc.png"
+import Certificate3 from "../../assets/images/frontend-angular.png"
+import TicketBookingImage from "../../assets/images/ticket-booking-system.webp";
+import CaseStudyResults from "../../components/CaseStudyResults.astro";
+import ResultImage from "../../assets/images/ticket-booking-system-result.png"
+
+
+const ChallengesData = [
+    {
+        Image: Icon1,
+        Topic: "Multi Vendor",
+        Span: "Franchising",
+        Challenge: [
+            "The client wants the facility of managing all franchises and their bookings & payment cycle with ease of access.",
+            "We can invite as many as vendors with fixed or dynamic revenue mechanisms.",
+        ],
+        Solution: [
+            "To achieve Multi-vendor franchising, we have added a mechanism in the backend to make registration with Shubak with the appropriate verification process.",
+            "At the time of registering with Shubak, Commission & payment distribution will be set."
+        ]
+    },
+
+    {
+        Image: Icon2,
+        Topic: "Flexible Seating",
+        Span: "layout design",
+        Challenge: [
+            "The requisites by the client are amazingly surprising, They wanted a rough canvas where they can put screen & seat arrangement according to their wish which is user-friendly so any vendor can design their theatre as per their wish.",
+        ],
+        Solution: [
+            "This Feature has made the uniqueness of the project. We have developed a scalable & flexible solution that allows franchise owners to create dynamic seating layouts.",
+            "We have achieved this feature using JavaScript with efficient performance."
+        ]
+    },
+
+    {
+        Image: Icon3,
+        Topic: "Manage",
+        Span: "Multilingual",
+        Challenge: [
+            "As this is an Arabic country, the Arabic layout is necessary for this project. Our client wants a pixel-perfect layout & crystal-clear functionality with both English & Arabic layouts.",
+        ],
+        Solution: [
+            "While managing multilingual is mostly the language translations but as this project belongs to Saudi Arabia, we need to translate the UI from LTR to RTL.",
+            "To deliver it, we have used the i18 package on the Angular side to make it work."
+        ]
+    },
+
+    {
+        Image: Icon4,
+        Topic: "Sync with",
+        Span: "Cinema",
+        Challenge: [
+            "The application must be a real-time app, each operation must be reflected in all the active user's accounts.",
+            "We can invite as many as vendors with fixed or dynamic revenue mechanisms."
+        ],
+        Solution: [
+            "The module is designed to be used to sync the Seat’s Reservation with the franchise owner’s internal system to make it a real-time update.",
+            "We have used the asynchronous Web API to update the franchise owner’s record with Json in response."
+        ]
+    },
+
+    {
+        Image: Icon5,
+        Topic: "Revenue",
+        Span: "Distribution",
+        Challenge: [
+            "They need the facility of dynamically placing the reservation order to any cinema and it will provide the commission based revenue distribution automatically which is set by the Corporate Admin."
+        ],
+        Solution: [
+            "This functionality includes in one business strategy with which all the franchise owners are benefited as per their reservation with their part of the commission.",
+            "We have provided a mechanism like commission-based UI while adding new franchise owners, so at a certain cycle period all the franchise owners will get paid simultaneously."
+        ]
+    },
+]
+
+const Certification = [ Certificate1,Certificate2,Certificate3 ]
+
+const ResultsList = [
+    {
+        Image: Icon1,
+        Topic: "Multi-Vendor Franchising",
+        Text: [
+            "As A result of Multi-vendor Franchising, The corporate admin has all the rights to manage all the franchises and their modules with this unique feature, which makes the flow easy.",
+            "Even the customers are availed of this unique facility which avoids the cumbersome procedure to book their tickets without going anywhere."
+        ]
+    },
+    {
+        Image: Icon2,
+        Topic: "Flexible Seating Layout Design",
+        Text: [
+            "By using that Vendors have smiles on their face as they can design their own theatre as per their needs/wish.",
+            "Now, the franchise owners are independent to design their own theater seating layout."
+        ]
+    },
+    {
+        Image: Icon3,
+        Topic: "Multilingual Management",
+        Text: [
+            "As a result of this feature, they got more native customers who are mostly habitual to their local(Arabic) language.",
+            "By selecting the Arabic language they will get their reservation tickets in the Arabic language too which is designed with nice UI Ticket."
+        ]
+    },
+    {
+        Image: Icon4,
+        Topic: "Efficient Synchronization with Cinema",
+        Text: [
+            "Real-time synchronization updates show schedules, seat availability, and bookings across all connected cinema systems.",
+            "Eliminates manual errors and ensures consistent data flow between corporate admin and franchise locations."
+        ]
+    },
+    {
+        Image: Icon5,
+        Topic: "Multilingual Management",
+        Text: [
+            "All the connected franchisee owners will get an advantage of this system.",
+            "The Commission and the payment cycle which the corporate admin has set will get automatically paid at regular intervals."
+        ]
+    },
+
+]
+
+---
+
+<Layout>
+    <!-- * Hero Section -->
+    <HeroSection Padding={true}  SubTitle="Case Study" , Title="Ticket Booking System", Paragraph="Custom Solution for Ticket Booking System with Flexible Seating Allotment" />
+
+    <!-- * Introduction -->
+    <CaseStudyIntroduction SubTitle="Introduction" Title="OVERVIEW", Image={TicketBookingImage}, Paragraph="The Concept of Shubak cinema turns a working Movie ticket booking system into an interactive experience that enchants more customers. Ismael wants to create a multi-vendor cinema booking system, so anyone can book their tickets without going to the theatre but the major concern in Shubak is that our vendor can design the theatre seat layout design as per their wish without any restrictions.The client wants to make uniqueness as a free seat layout design & multi vendor-franchise model which is going to put smiles on the faces of franchisees, as well as customers." />
+
+    <!-- * Overcoming Challenges -->
+    <Challenges SubTitle="Overcoming Challenges" Title="Their Challenges and Solution & Our Results with Power-Packed !" Topics={ChallengesData} />
+
+    <!-- * Results -->
+    <CaseStudyResults Image={ResultImage} Title="Driving Success" Heading="Results" Paragraph="And It was a smashing Success..!!" Results={ResultsList} />
+
+    <!-- * Technology Offered -->
+    <AchievementsCard BgImage={CertificationBG} Heading="Technologies Offered" Certificates={Certification} FullWidth={true} GridClass="grid-cols-2 lg:grid-cols-5" GapClass="gap-[32px] lg:gap-[60px]" />
+
+    <!-- * Solution Delivered -->
+    <SolutionDelivered />
+</Layout>
