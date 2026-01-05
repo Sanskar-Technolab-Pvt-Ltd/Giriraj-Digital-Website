@@ -1,0 +1,51 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+
+const {Image,Title="", Paragraph="", Heading="", Results=[]} = Astro.props;
+---
+
+<section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
+    <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-10">
+        <SectionTitle Title={Title} Heading={Heading} Paragraph={Paragraph} />
+        <div class="grid grid-cols-10 gap-5 lg:gap-10">
+            <div class="order-2 xl:order-1 col-span-10 xl:col-span-4 lg:grid lg:grid-cols-2 xl:grid-cols-1 gap-10 xl:max-h-[585px]   xl:overflow-y-auto xl:pl-7 xl:pr-2 xl:py-2 no-scrollbar">
+
+                {
+                    Results && Results.map((item:any) => (
+                        <div class="p-5 lg:p-[30px] space-y-5 rounded-[20px] outline-4 lg:outline-8 outline-[rgba(0,62,135,0.1)]">
+                            <div class="flex space-x-5 items-center">
+                                <img src={item.Image.src} alt={item.Topic} class="" />
+                                <h3 class="text-[#21292C] font-bold text-xl md:text-2xl lg:text-[26px]">Multi-Vendor Franchising</h3>
+                            </div>
+                            <div class="text-[#2C363A] space-y-1">
+                                {
+                                    item.Text.map((text:any) => (
+                                        <p class="text-[#21292C]  leading-[150%]">{text}</p>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <div class="order-1 xl:order-2 col-span-10 xl:col-span-6 rounded-[20px] p-5 lg:p-10 bg-[url('../assets/images/fuel-of-success-bg.webp')] bg-cover">
+                <div class="bg-white rounded-[20px]">
+                    <img src={Image.src} alt="result" class="px-5 py-10 justify-self-center self-center" />  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* global.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+</style>

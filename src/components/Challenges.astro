@@ -1,0 +1,42 @@
+---
+import SectionTitle from "./SectionTitle.astro"
+
+const {SubTitle="", Title="", Topics=""} = Astro.props
+---
+
+<section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px] space-y-[30px] lg:space-y-[60px]">
+    <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px] lg:space-y-[60px]">
+        <SectionTitle Title={SubTitle || ""} Heading={Title || ""} WidthClass="lg:w-[60%]" />
+    </div>
+
+    <div class="col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-3 xl:col-span-9 grid grid-cols-12">
+        <div class="col-span-4 border-b hidden lg:block border-[#E3E3E3]"></div>
+        <div class="p-5 col-span-4 lg:p-[30px] hidden lg:block bg-[#FDF9F2] border-b border-[#F6E5C1]">
+            <h4 class="text-[#21292C] font-bold text-xl lg:text-[26px]">Challenge</h4>
+        </div>
+        <div class="p-5 col-span-4 lg:p-[30px] hidden lg:block bg-[#E9F2FC] border-b border-[#C5DDF7]">
+            <h4 class="text-[#21292C] font-bold text-xl lg:text-[26px]">Solution</h4>
+        </div>
+
+        {
+            Topics && Topics.map((item: any) => (
+                <div class="col-span-12 lg:col-span-4 lg:border-b lg:border-[#E3E3E3] flex pl-0 lg:pl-0 p-5 lg:p-[30px] space-x-5 lg:space-x-[30px]">
+                    <img src={item.Image.src} alt={item.name} class="h-fit" />
+                    <h3 class="text-[#21292C] leading-[120%] font-bold text-2xl lg:text-[28px] capitalize">{item.Topic} <span class="lg:block">{item.Span}</span></h3>
+                </div>
+                <div class="p-2 col-span-12 lg:col-span-4 lg:p-[30px] lg:bg-[#FDF9F2] lg:border-b lg:border-[#F6E5C1] space-y-4">
+                    <p class="text-[#0FA1DB] font-semibold lg:text-xl lg:hidden">Challenges</p>
+                    {item.Challenge.map((challenge:any) => (
+                        <p class="text-[#21292C] lg:text-lg font-medium leading-[150%]">{challenge}</p>
+                    ))}
+                </div>
+                <div class="p-2 pb-5 col-span-12 lg:col-span-4 lg:p-[30px] lg:bg-[#E9F2FC] border-b border-[#E3E3E3] lg:border-[#C5DDF7] space-y-4">
+                    <p class="text-[#0FA1DB] font-semibold lg:text-xl lg:hidden">Solution</p>
+                    {item.Solution.map((solution:any) => (
+                        <p class="text-[#21292C] lg:text-lg font-medium leading-[150%]">{solution}</p>
+                    ))}
+                </div>
+            ))
+        }
+    </div>
+</section>

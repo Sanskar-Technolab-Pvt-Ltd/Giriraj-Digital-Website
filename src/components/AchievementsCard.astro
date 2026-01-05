@@ -6,46 +6,50 @@ const {
     BgImage,
 
     // layout control
+    FullWidth = false, 
     GridClass = "grid-cols-2 lg:grid-cols-3",
     GapClass = "gap-7 lg:gap-[30px]",
 } = Astro.props;
 
-// final grid classes
+// grid
 const gridClasses = `grid ${GridClass} ${GapClass}`;
 
-// background logic
+// background
 const backgroundStyle = BgImage ? `background-image: url('${BgImage.src}');` : "background-color: #E9F2FC;";
 
-// text + outline logic
+// colors
 const ParagraphColor = BgImage ? "text-white" : "text-[#0FA1DB]";
 const HeadingColor   = BgImage ? "text-white" : "text-[#212529]";
 const OutlineColor   = BgImage ? "outline-[rgba(18,156,216,0.2)]" : "outline-[rgba(0,62,135,0.1)]";
+
+// layout logic
+const wrapperCols = FullWidth ? "col-span-12" : "col-span-12 lg:col-span-10 lg:col-start-2";
 ---
 
+
 <section class="section-container w-full bg-white grid grid-cols-12 gap-5 lg:gap-[30px]">
-    <div
-        class="space-y-[30px] 2xl:space-y-0 col-span-12 lg:col-span-10 lg:col-start-2 p-5 md:p-10 lg:p-20 grid grid-cols-10 rounded-3xl bg-cover bg-center"
-        style={backgroundStyle}
-    >
-        <!-- Left Content -->
-        <div class="col-span-10 2xl:col-span-4 space-y-1.5 lg:space-y-3.5 lg:w-[80%]">
+    <div class={`${FullWidth ? "space-y-[30px] lg:space-y-[60px]" : "space-y-[30px] 2xl:space-y-0" }  ${wrapperCols} p-5 md:p-10 lg:p-20 grid grid-cols-10 rounded-3xl bg-cover bg-center`} style={backgroundStyle}>
+
+        <!-- Heading -->
+        <div class={`col-span-10 ${FullWidth ? "2xl:col-span-10" : "2xl:col-span-4" } space-y-1.5 lg:space-y-3.5 lg:w-[80%]`}>
             <p class={`font-semibold lg:text-xl ${ParagraphColor}`}>
                 {Title || ""}
             </p>
+
             <h2 class={`text-[26px] lg:text-5xl leading-[120%] font-bold ${HeadingColor}`}>
                 {Heading || ""}
             </h2>
         </div>
 
-        <!-- Certificates Grid -->
-        <div class={`col-span-10 2xl:col-span-6 h-fit ${gridClasses}`}>
-            {Certificates.map((item:any) => (
+            <!-- Certificates -->
+        <div class={`col-span-10 ${ FullWidth ? "2xl:col-span-10" : "2xl:col-span-6" } h-fit ${gridClasses}`} >
+            {Certificates.map((item: any) => (
                 <div class="flex justify-center">
-                    <img
-                        src={item.src}
-                        alt={item.alt || "certificate"}
-                        class={`w-full h-full object-contain outline-8 ${OutlineColor} rounded-xl lg:rounded-[20px]`}
-                    />
+                <img
+                    src={item.src}
+                    alt={item.alt || "certificate"}
+                    class={`w-full h-full object-contain outline-8 ${OutlineColor} rounded-xl lg:rounded-[20px]`}
+                />
                 </div>
             ))}
         </div>

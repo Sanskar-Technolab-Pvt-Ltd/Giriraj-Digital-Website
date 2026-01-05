@@ -7,7 +7,8 @@ const {
     ParagraphTitle = "",
     HeroImage,
     ButtonText = "",
-    SubTitle = ""
+    SubTitle = "",
+    Padding=false
 } = Astro.props;
 
 import LinkButton from "./LinkButton.astro";
@@ -26,7 +27,7 @@ const contentCols = hasHeroImage ? "lg:col-span-6 py-10 md:py-20 lg:py-24 xl:py-
 
 <section class={`section-container mt-[90px]! grid grid-cols-12 gap-[30px]   ${hasBgImage ? `bg-no-repeat bg-[length:120px] lg:bg-[length:auto] ${bgPosition}` : ""} `} {...(hasBgImage && {   style: `background-image: url('${BgImage.src}');` })}
 >
-    <div class={`lg:col-start-2 col-span-12 ${contentCols} space-y-5 lg:space-y-8`}>
+    <div class={`lg:col-start-2 col-span-12 ${Padding && "py-10 md:py-20 lg:py-24 xl:py-[120px]"} ${contentCols} space-y-5 lg:space-y-8`}>
         <div class="space-y-4">
             {
             SubTitle && (
