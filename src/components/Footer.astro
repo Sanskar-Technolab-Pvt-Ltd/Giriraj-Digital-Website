@@ -1,6 +1,7 @@
 ---
 import FooterLocation from "./FooterLocation.astro"
 import FooterLinks from "./FooterLinks.astro"
+const { hideFooterLocation = false } = Astro.props;
 
 
 import Call from "../assets/images/call-icon.svg"
@@ -66,7 +67,7 @@ const AboutUsLinks = [
 ---
 
 <footer class="w-full text-white bg-white mt-10 lg:mt-40">
-    <FooterLocation />
+    {!hideFooterLocation && <FooterLocation />}
     <div class="py-10 lg:py-[100px] bg-[#041E28] px-5 lg:px-[30px]">
         <div class="grid grid-cols-12  gap-y-10 md:gap-[30px] xl:gap-y-20">
             <!-- * Business And HR/Career Details -->

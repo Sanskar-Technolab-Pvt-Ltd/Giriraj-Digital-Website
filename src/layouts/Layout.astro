@@ -3,7 +3,7 @@ import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
 
-const {Title} = Astro.props;
+const {Title, hideFooterLocation = false} = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -43,7 +43,7 @@ const {Title} = Astro.props;
 	<body class="bg-white">
 		<Navbar />
 		<slot />
-		<Footer />
+		<Footer hideFooterLocation={hideFooterLocation} />
 	</body>
 	<script src="../assets/js/faq.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>

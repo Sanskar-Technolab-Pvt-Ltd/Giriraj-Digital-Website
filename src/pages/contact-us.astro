@@ -1,0 +1,170 @@
+---
+import HeroSection from "../components/HeroSection.astro";
+import Layout from "../layouts/Layout.astro";
+import SectionTitle from "../components/SectionTitle.astro"
+import denmark from "../assets/images/Denmark.png";
+import india from "../assets/images/India.png";
+import usa from "../assets/images/Usa.png";
+import Call from "../assets/images/call-icon.png";
+import Email from "../assets/images/email-icon.png";
+
+const Location = [
+    {
+        id: "india",
+        Image: india,
+        Name: "INDIA",
+        Location: "B-1020, Navratna Corporate Park, Ambli, Ahmedabad - 380058, India",
+        Contact: "+91 82008 17694",
+        mapSrc:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.8540406881025!2d72.48942917591218!3d23.02913081608224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b8138bb97b9%3A0xb11421b9079b685!2sGIRIRAJ%20DIGITAL!5e0!3m2!1sen!2sin!4v1710504932745!5m2!1sen!2sin",
+    },
+    {
+        id: "denmark",
+        Image: denmark,
+        Name: "DENMARK",
+        Location: "Amagerfælledvej 108, 2300 København Denmark",
+        Contact: "+45 61 41 91 91",
+        mapSrc:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2250.864910260973!2d12.587224694720463!3d55.6565585299141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652535ab7f77d77%3A0x57c57387d73c2814!2sAmagerf%C3%A6lledvej%20108!5e0!3m2!1sen!2sin!4v1727708439441!5m2!1sen!2sin",
+    },
+    {
+        id: "usa",
+        Image: usa,
+        Name: "USA",
+        Location: "200 Union Blvd. Suite 200, Lakewood, Colorado - 80228 USA",
+        Contact: "+1(408) 831 1164",
+        mapSrc:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.9313629111452!2d-105.13429582359863!3d39.718725197825876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b83ff4cc33283%3A0xd0026156a08be0c5!2s200%20Union%20Blvd!5e0!3m2!1sen!2sin!4v1710505793501!5m2!1sen!2sin",
+    },
+];
+
+
+---
+
+<Layout Title="Contact Us | GIRIRAJ DIGITAL" hideFooterLocation={true}>
+    <HeroSection Padding={true} SubTitle="Let's Connect" Title="Contact Us" Paragraph="Fill up the form and our Team will get back to you as soon as possible." />
+
+    <!-- * TO DISCUSS HOW WE CAN HELP YOU! -->
+    <section class="section-container mt-0!">
+        <div class="rounded-xl lg:rounded-2xl lg:bg-[url('../assets/images/fuel-of-success-bg.webp')] lg:py-[100px] bg-cover grid grid-cols-12 gap-y-5 lg:gap-[30px]">
+            <div class="col-span-12 lg:col-start-2 lg:col-span-5 lg:p-10 space-y-5">
+                <p class="text-[#0FA1DB] font-semibold lg:text-xl">Let's Talk About Your Needs</p>
+                <div class="space-y-2.5">
+                    <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">TO DISCUSS HOW WE CAN HELP YOU!</h2>
+                    <div class="text-[#0D0D0D] space-y-3 lg:text-lg">
+                        <p>Want some assistance regarding your business? Our veteran consultants know their job and would love to hear from you! Our team is available throughout the working week.</p>
+                        <p>Alternatively, we would love to hear from you at</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="mailto:info@girirajdigital.com" class=" relative h-fit w-fit rounded-full text-white flex items-center space-x-2.5 py-2 lg:py-3 px-3.5 lg:px-6 font-semibold overflow-hidden bg-[linear-gradient(90deg,#0FA1DB,#5C2D91,#0FA1DB)] bg-size-[200%_200%] bg-left transition-[background-position] duration-500 ease-in-out hover:bg-right cursor-pointer lg:text-xl">info@girirajdigital.com </a>
+                </div>
+            </div>
+
+            <div class="col-span-12 lg:col-start-7 lg:col-span-5 lg:p-10 space-y-5 rounded-[20px] outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)] bg-white">
+                <h2 class="text-[#21292C] text-[26px] lg:text-[36px] leading-[120%] font-bold">Get in Touch</h2>
+                <form action="" class="space-y-3">
+                    <input type="text" name="first_name" class="w-full border border-[#CCCCCC] outline-none text-[#0D0D0D] px-3 py-2" placeholder="First Name *" required />
+                    <input type="text" name="last_name" class="w-full border border-[#CCCCCC] outline-none text-[#0D0D0D] px-3 py-2" placeholder="Last Name" />
+                    <input type="email" name="email" class="w-full border border-[#CCCCCC] outline-none text-[#0D0D0D] px-3 py-2" placeholder="Email *" required />
+                    <input type="tel" name="phone_number" class="w-full border border-[#CCCCCC] outline-none text-[#0D0D0D] px-3 py-2" placeholder="Phone Number" />
+
+                    <div>
+                        <label class="w-full px-3 py-2 border border-[#CCCCCC] cursor-pointer flex items-center space-x-5 ">
+                        <span class="text-gray-500">Choose files</span>
+                        <span id="file-name" class="text-[#0D0D0D]">No File Chosen</span>
+                        <input
+                            type="file"
+                            id="file-input"
+                            name="file"
+                            class="hidden"
+                        />
+                        </label>
+                    </div>
+
+
+                    <input type="text" name="message" class="w-full border border-[#CCCCCC] outline-none text-[#0D0D0D] px-3 py-2" placeholder="Message" />
+                </form>
+
+                <button class="relative h-fit w-fit rounded-full text-white flex items-center space-x-2.5 py-2 lg:py-3 px-3.5 lg:px-6 font-semibold overflow-hidden bg-[linear-gradient(90deg,#0FA1DB,#5C2D91,#0FA1DB)] bg-size-[200%_200%] bg-left transition-[background-position] duration-500 ease-in-out hover:bg-right cursor-pointer lg:text-xl">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- * GIRIRAJ DIGITAL at World Wide -->
+    <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px] lg:space-y-[60px]">
+            <SectionTitle Title="Our Global Locations" Heading="GIRIRAJ DIGITAL at World Wide"  />
+            <div class="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-[30px]">
+            {
+                Location.map((location:any) => (
+                <button
+                    type="button"
+                    data-id={location.id}
+                    data-map={location.mapSrc}
+                    class="location-card flex text-left rounded-xl lg:rounded-[20px] p-6 space-x-6 border-4 border-[#E9F2FC] transition-all"
+                >
+                    <div class="flex flex-col space-y-6 justify-between">
+                        <img src={location.Image.src} class="w-fit h-fit" alt={location.Name} />
+                        <p class="font-semibold lg:text-lg">{location.Name}</p>
+                    </div>
+
+                    <div class="space-y-4 text-[#212529]">
+                        <p class="font-medium">{location.Location}</p>
+                        <div class="flex flex-col font-semibold">
+                            <div class="flex space-x-1 items-center">
+                                <img class="w-fit h-fit" src={Call.src} alt="call" />
+                                <a class="text-[15px]" href={`tel:${location.Contact}`}>{location.Contact}</a>
+                            </div>
+                            <div class="flex space-x-1 items-center">
+                                <img class="w-fit h-fit" src={Email.src} alt="call" />
+                                <a class="text-[15px]" href="mailto:info@girirajdigital.com">info@girirajdigital.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+                ))
+            }
+            </div>
+
+            <div class="rounded-2xl p-5 lg:p-[60px] bg-[url('../assets/images/map-bg.webp')] bg-cover">
+                <div class="bg-white rounded-xl lg:rounded-[20px] outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)]">
+                    <iframe
+                    id="mapFrame"
+                    src={Location[0].mapSrc}
+                    height="480"
+                    class="w-full rounded-[20px]"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<script is:inline>
+    const cards = document.querySelectorAll(".location-card");
+    const mapFrame = document.getElementById("mapFrame");
+
+    function setActive(card) {
+        cards.forEach(c => {
+        c.classList.remove("border-[#003E87]");
+        c.classList.add("border-[#E9F2FC]");
+        });
+
+        card.classList.remove("border-[#E9F2FC]");
+        card.classList.add("border-[#003E87]");
+
+        mapFrame.src = card.dataset.map;
+    }
+
+    // Default select INDIA
+    setActive(cards[0]);
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => setActive(card));
+    });
+</script>
+
+</Layout>
