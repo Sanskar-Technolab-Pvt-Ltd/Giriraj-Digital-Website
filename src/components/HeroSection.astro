@@ -8,60 +8,109 @@ const {
     HeroImage,
     ButtonText = "",
     SubTitle = "",
-    Padding=false
+    Padding = false,
+    BlogDetails=[]
 } = Astro.props;
 
 import LinkButton from "./LinkButton.astro";
+import Clock from "../assets/images/clock-icon.svg";
 
-// conditions
 const hasHeroImage = !!HeroImage;
 const hasBgImage = !!BgImage;
 
-
-// background positioning based on HeroImage
-const bgPosition = hasHeroImage ? " bg-[position:calc(100%-10px)_calc(100%-20px)] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_165px]" : "bg-[position:center_right_80px]";
-
-// column size for content
-const contentCols = hasHeroImage ? "lg:col-span-6 py-10 md:py-20 lg:py-24 xl:py-[120px]" : "lg:col-span-7";
+// column logic
+const contentCols = hasBgImage
+    ? "lg:col-span-7"
+    : hasHeroImage
+        ? "lg:col-span-6"
+        : "lg:col-span-10";
 ---
 
-<section class={`section-container mt-[90px]! grid grid-cols-12 gap-[30px]   ${hasBgImage ? `bg-no-repeat bg-[length:120px] lg:bg-[length:auto] ${bgPosition}` : ""} `} {...(hasBgImage && {   style: `background-image: url('${BgImage.src}');` })}
->
-    <div class={`lg:col-start-2 col-span-12 ${Padding && "py-10 md:py-20 lg:py-24 xl:py-[120px]"} ${contentCols} space-y-5 lg:space-y-8`}>
+<section class="section-container mt-[90px]! grid grid-cols-12 gap-[30px]">
+    
+    {/* CONTENT */}
+    <div
+        class={`lg:col-start-2 col-span-12 ${contentCols} space-y-5 lg:space-y-8
+        ${Padding ? "py-10 md:py-20 lg:py-24 xl:py-[120px]" : ""}`}
+    >
         <div class="space-y-4">
-            {
-            SubTitle && (
-                <p class="font-semibold text-black text-lg lg:text-2xl">{SubTitle}</p>
-                )
-            }
+            {SubTitle && (
+                <p class="font-semibold text-black text-lg lg:text-2xl">
+                    {SubTitle}
+                </p>
+            )}
 
             <h1 class="font-bold text-[32px] lg:text-[64px] text-[#21292C] leading-[120%]">
-            {Title}
+                {Title}
             </h1>
         </div>
 
         <div class="space-y-3 text-[#000000]">
-        {ParagraphTitle && (
-            <p class="font-semibold text-lg lg:text-2xl">{ParagraphTitle}</p>
-        )}
+            {ParagraphTitle && (
+                <p class="font-semibold text-lg lg:text-2xl">
+                    {ParagraphTitle}
+                </p>
+            )}
 
-        {Paragraph && (
-            <p class="lg:text-lg font-medium">{Paragraph}</p>
-        )}
+            {Paragraph && (
+                <p class="lg:text-lg font-medium">
+                    {Paragraph}
+                </p>
+            )}
         </div>
 
         {ButtonLink && (
-        <div class="w-fit">
-            <LinkButton Text={ButtonText} Link="/" />
-        </div>
+            <div class="w-fit">
+                <LinkButton Text={ButtonText} Link="/" />
+            </div>
         )}
+
+        {BlogDetails.length > 0 && (
+            <div class="flex flex-wrap gap-5 lg:gap-x-10 gap-y-3">
+                <div class="flex items-center space-x-2">
+                    <img src={Clock.src} alt="read time" />
+                    <p class="text-[#2C363A] leading-[150%]">
+                        {BlogDetails[0].Time} Mins read
+                    </p>
+                </div>
+
+                <p class="text-[#2C363A] leading-[150%]">
+                    {BlogDetails[0].Date}
+                </p>
+
+                <div class="flex items-center space-x-2">
+                    <img
+                        src={BlogDetails[0].BloggerImage.src}
+                        alt={BlogDetails[0].BloggerName}
+                        class="w-6 h-6 rounded-full object-cover"
+                    />
+                    <p class="text-[#2C363A] leading-[150%]">
+                        {BlogDetails[0].BloggerName}
+                    </p>
+                </div>
+            </div>
+        )}
+
     </div>
 
+    {/* BG IMAGE AS GRID ITEM */}
+    {hasBgImage && (
+        <div class="col-span-12 lg:col-span-3 self-center">
+            <img
+                src={BgImage.src}
+                alt="Background Visual"
+                class="justify-self-center"
+            />
+        </div>
+    )}
+
+    {/* HERO IMAGE (UNCHANGED) */}
     {HeroImage && (
         <img
-        src={HeroImage.src}
-        class="col-span-12 lg:col-span-4 justify-self-center lg:justify-self-end self-center"
-        alt={Title}
+            src={HeroImage.src}
+            class="col-span-12 lg:col-span-4 justify-self-center lg:justify-self-end self-center"
+            alt={Title}
         />
     )}
+
 </section>
