@@ -56,7 +56,7 @@ const PopularBlogList = [
     <HeroSection BgImage={UmbracoHeroImage} Padding={true} SubTitle="Umbraco" Title="Giriraj Digital Becomes Umbraco Gold Contributing Partner"  BlogDetails={BlogDetails} />
 
     <section class="section-container mt-[60px]! grid grid-cols-12 gap-5 lg:gap-[30px]">
-        <div class="lg:col-start-2 lg:col-span-6 xl:col-start-3 xl:col-span-5">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-6 xl:col-start-3 xl:col-span-5">
             <div class="p-5 lg:p-10 space-y-[30px] lg:space-y-[60px] shadow-[0px_0px_6px_rgba(0,0,0,0.15)]">
                 <div class="space-y-2.5">
                     <h2 class="text-[#21292C] text-[26px] lg:text-[40px] leading-[120%] font-bold">Introduction</h2>
@@ -117,9 +117,9 @@ const PopularBlogList = [
             </div>
         </div>
 
-        <div class="lg:col-start-8 lg:col-span-3 xl:col-start-8 xl:col-span-3 space-y-5 lg:space-y-10 xl:space-y-20">
+        <div class="col-span-12 lg:col-start-8 lg:col-span-3 xl:col-start-8 xl:col-span-3 space-y-5 lg:space-y-10 xl:space-y-20">
             <div class="h-fit pt-5 xl:pt-[30px] xl:pl-[30px] space-y-5 ">
-                <h2 class="text-[#21292C] text-[26px] xl:text-[36px] leading-[120%] font-bold">Most popular blogs</h2>
+                <h2 class="text-[#21292C] text-[26px] xl:text-[36px] leading-[120%] font-semibold capitalize">Most popular blogs</h2>
                 {
                     PopularBlogList.map((item, index) => (
                         <div class={`${ index !== PopularBlogList.length - 1 ? "border-b border-[#C1D9F3] pb-5" : "" }`}>
@@ -142,11 +142,9 @@ const PopularBlogList = [
                     <input name="first_name" type="text" class="py-2 px-3 text-black placeholder:text-[rgba(33,37,41,0.7)] bg-white outline-none w-full border border-[#7AADD9]" placeholder="Please enter your first name" />
                     <input name="email" type="email" class="py-2 px-3 text-black placeholder:text-[rgba(33,37,41,0.7)] bg-white outline-none w-full border border-[#7AADD9]" placeholder="Please enter valid email address" />
                     <textarea name="message" class="py-2 px-3 text-black placeholder:text-[rgba(33,37,41,0.7)] bg-white outline-none w-full border border-[#7AADD9]" placeholder="Please enter valid email address" />  
-                    <button class=" relative h-fit w-fit rounded-full text-white flex items-center space-x-2.5 py-2 lg:py-2.5 px-3.5 lg:px-6 font-semibold overflow-hidden bg-[linear-gradient(90deg,#0FA1DB,#5C2D91,#0FA1DB)] bg-size-[200%_200%] bg-left transition-[background-position] duration-500 ease-in-out hover:bg-right cursor-pointer ">Send Inquiry</button>
+                    <button class="outline-none relative h-fit w-fit rounded-full text-white flex items-center space-x-2.5 py-2 lg:py-2.5 px-3.5 lg:px-6 font-semibold overflow-hidden bg-[linear-gradient(90deg,#0FA1DB,#5C2D91,#0FA1DB)] bg-size-[200%_200%] bg-left transition-[background-position] duration-500 ease-in-out hover:bg-right cursor-pointer ">Send Inquiry</button>
                 </form>
             </div>
         </div>
-
     </section>
-
 </Layout>

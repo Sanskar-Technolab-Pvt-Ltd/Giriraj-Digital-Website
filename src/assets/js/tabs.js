@@ -3,6 +3,7 @@ const tabImage = document.getElementById("tab-image");
 let currentIndex = 0;
 const intervalTime = 7000;
 let autoplayInterval;
+let isAutoplayRunning = false;
 
 function resetTab(tab) {
     const fills = tab.querySelectorAll(".progress-fill");
@@ -35,15 +36,25 @@ function activateTab(index) {
 
     if (tabImage) tabImage.src = activeTab.dataset.image;
 
+    // 🚫 Do NOT animate progress if autoplay not running
+    if (!isAutoplayRunning) return;
+
     const activeFills = activeTab.querySelectorAll(".progress-fill");
+
     activeFills.forEach(f => {
+        f.style.transition = "none";
+        f.style.width = "0%";
+
+        // force repaint
+        f.offsetWidth;
+
         f.style.transition = `width ${intervalTime}ms linear`;
-        // use requestAnimationFrame for smooth start
         requestAnimationFrame(() => {
             f.style.width = "100%";
         });
     });
 }
+
 
 function nextTab() {
     currentIndex = (currentIndex + 1) % tabs.length;
@@ -51,21 +62,50 @@ function nextTab() {
 }
 
 function startAutoplay() {
-    clearInterval(autoplayInterval);
+    if (isAutoplayRunning) return;
+
+    isAutoplayRunning = true;
+
+    // start progress for current tab
+    activateTab(currentIndex);
+
     autoplayInterval = setInterval(nextTab, intervalTime);
 }
+
 
 tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
         clearInterval(autoplayInterval);
+        isAutoplayRunning = true;
         activateTab(index);
-        startAutoplay();
+        autoplayInterval = setInterval(nextTab, intervalTime);
     });
 });
 
-// INITIAL LOAD
+
+// INITIAL STATE
 activateTab(0);
-startAutoplay();
+
+let hasStarted = false;
+
+const section = document.getElementById("auto-tabs-section");
+
+
+const observer = new IntersectionObserver(
+    ([entry]) => {
+        if (entry.isIntersecting && !hasStarted) {
+            startAutoplay();
+            hasStarted = true;
+        }
+    },
+    { threshold: 0.4 }
+);
+
+observer.observe(section);
+
+
+
+
 
 // HANDLE VIEWPORT CHANGES
 let isDesktop = window.innerWidth >= 1024;

@@ -118,15 +118,16 @@ const PopularBlogList = [
 <Layout Title="Blogs | GIRIRAJ DIGITAL">
     <HeroSection Padding={true} SubTitle="Web & Mobile App Development Blogs" Title="Blogs" Paragraph="Welcome to our blog. Here we will sum up our continually curious approach to the way we think and work. We're always looking for bigger ideas and better ways to do things. And when we find them, we'll share them with you here." />
 
-    <section class="section-container mt-0! grid grid-cols-12 gap-5 lg:gap-[30px] xl:gap-[60px] pt-10 px-10 xl:pt-20 xl:px-20 bg-[url('../assets/images/tags-bg.webp')] bg-no-repeat bg-cover xl:gap-y-20">
+    <section class="section-container mt-0! grid grid-cols-12 gap-5 lg:gap-[30px] xl:gap-[60px] pt-10 px-10 xl:pt-20 xl:px-20 bg-[url('../assets/images/tags-bg.webp')] bg-no-repeat bg-size-[100%_auto] xl:gap-y-20">
         <div class="col-span-12 xl:col-start-2 xl:col-span-7 flex flex-wrap gap-2 xl:gap-4 text-sm xl:text-base h-fit" id="filterButtons">
-            <button class=" filter-btn active">All</button>
+            <button class="filter-btn active" data-tag="ALL">All</button>
             {
                 Tag.map((item) => (
-                    <button class=" filter-btn">{item}</button>
+                    <button class="filter-btn" data-tag={item}>{item}</button>
                 ))
             }
         </div>
+
 
         <div class="col-span-12 xl:col-start-2 xl:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-[30px] xl:gap-[60px]" id="caseStudyGrid">
             {

@@ -25,7 +25,7 @@ import PostgreSQL from "../assets/images/postgresql.png"
 import SQLite from "../assets/images/sqlite.png"
 ---
 
-<section class="section-container grid grid-cols-12 gap-[30px] text-[#21292C]">
+<section id="tech-stack-auto-tabs" class="section-container grid grid-cols-12 gap-[30px] text-[#21292C]">
     <div class="col-span-12 lg:col-start-2 lg:col-span-10 grid grid-cols-10 gap-[30px] p-5 lg:px-0 lg:py-20 bg-[url('../assets/images/umbreco-certified-developer.webp')] rounded-2xl">
         <div class="col-span-10 lg:col-start-2 lg:col-span-8 p-5 lg:p-10 space-y-[30px] lg:space-y-[60px] bg-white rounded-2xl outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)]">
 
@@ -250,54 +250,55 @@ import SQLite from "../assets/images/sqlite.png"
 
 <script is:inline>
 document.addEventListener("DOMContentLoaded", () => {
+    const section = document.getElementById("tech-stack-auto-tabs");
     const tabs = document.querySelectorAll(".service-tab");
     const contents = document.querySelectorAll(".service-content");
 
     let currentIndex = 0;
     const intervalTime = 5000;
     let autoTab = null;
+    let hasStarted = false;
     let isMobile = window.innerWidth < 1024;
 
     /* ---------------- CORE ---------------- */
 
-    function activateTab(index) {
-        const tab = tabs[index];
-        const targetId = tab.dataset.target;
+    function resetTabs() {
+        tabs.forEach(tab => {
+            tab.classList.remove("opacity-100");
+            tab.classList.add("opacity-60");
 
-        // Reset tabs
-        tabs.forEach(t => {
-            t.classList.remove("opacity-100");
-            t.classList.add("opacity-60");
-
-            const bar = t.querySelector(".progress-bar");
+            const bar = tab.querySelector(".progress-bar");
             if (bar) {
                 bar.style.transition = "none";
                 bar.style.width = "0%";
+                bar.offsetWidth; // force repaint
             }
 
-            // Hide all mobile contents
-            t.closest(".service-item")
+            tab.closest(".service-item")
                 ?.querySelector(".service-mobile-content")
                 ?.classList.add("hidden");
         });
 
-        // Hide all desktop contents
         contents.forEach(c => c.classList.add("hidden"));
+    }
 
-        // Activate tab
+    function activateTab(index) {
+        currentIndex = index;
+        resetTabs();
+
+        const tab = tabs[index];
+        const targetId = tab.dataset.target;
+
         tab.classList.remove("opacity-60");
         tab.classList.add("opacity-100");
 
         if (isMobile) {
-            // MOBILE → show below tab
             tab.closest(".service-item")
                 ?.querySelector(".service-mobile-content")
                 ?.classList.remove("hidden");
         } else {
-            // DESKTOP → show right content
             document.getElementById(targetId)?.classList.remove("hidden");
 
-            // Animate progress bar
             const bar = tab.querySelector(".progress-bar");
             if (bar) {
                 requestAnimationFrame(() => {
@@ -311,8 +312,10 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ---------------- AUTOPLAY ---------------- */
 
     function startAutoplay() {
-        clearInterval(autoTab);
-        if (isMobile) return;
+        if (hasStarted || isMobile) return;
+
+        hasStarted = true;
+        activateTab(currentIndex);
 
         autoTab = setInterval(() => {
             currentIndex = (currentIndex + 1) % tabs.length;
@@ -327,11 +330,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ---------------- EVENTS ---------------- */
 
-    tabs.forEach((tab, i) => {
+    tabs.forEach((tab, index) => {
         tab.addEventListener("click", () => {
-            currentIndex = i;
+            currentIndex = index;
+            stopAutoplay();
+            hasStarted = true;
             activateTab(currentIndex);
-            startAutoplay();
+
+            if (!isMobile) {
+                autoTab = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % tabs.length;
+                    activateTab(currentIndex);
+                }, intervalTime);
+            }
         });
     });
 
@@ -340,17 +351,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (nowMobile !== isMobile) {
             isMobile = nowMobile;
-
             stopAutoplay();
             activateTab(currentIndex);
-            startAutoplay();
         }
     });
 
-    /* ---------------- INIT ---------------- */
+    /* ---------------- INTERSECTION OBSERVER ---------------- */
 
-    activateTab(0);
-    startAutoplay();
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                startAutoplay();
+            }
+        },
+        { threshold: 0.4 }
+    );
+
+    observer.observe(section);
+
+    /* ---------------- INIT (STATIC STATE) ---------------- */
+
+    activateTab(0); // no autoplay yet
 });
-
 </script>
+
