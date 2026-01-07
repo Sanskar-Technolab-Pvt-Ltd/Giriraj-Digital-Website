@@ -6,7 +6,7 @@ import Icon3 from "../assets/images/product-support.png";
 import Icon4 from "../assets/images/mvp.png";
 ---
 
-<section class="section-container grid grid-cols-12 gap-[30px] text-[#21292C]">
+<section id="services-auto-tabs" class="section-container grid grid-cols-12 gap-[30px] text-[#21292C]">
     <div class="col-span-12 lg:col-start-2 lg:col-span-10 grid grid-cols-10 gap-[30px] p-5 lg:px-0 lg:py-20 bg-[url('../assets/images/umbreco-certified-developer.webp')] rounded-2xl">
         <div class="col-span-10 lg:col-start-2 lg:col-span-8 p-5 lg:p-10 space-y-[30px] lg:space-y-[60px] bg-white rounded-2xl outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)]">
 
@@ -259,83 +259,107 @@ import Icon4 from "../assets/images/mvp.png";
 
 <script is:inline>
 document.addEventListener("DOMContentLoaded", () => {
-const tabs = document.querySelectorAll(".service-tab");
-const contents = document.querySelectorAll(".lg\\:block .service-content");
+    const section = document.getElementById("services-auto-tabs");
+    const tabs = document.querySelectorAll(".service-tab");
+    const contents = document.querySelectorAll(".lg\\:block .service-content");
 
-const isMobile = window.innerWidth < 1024;
+    const isMobile = window.innerWidth < 1024;
 
-let currentIndex = 0;
-const intervalTime = 5000;
-let autoTab = null;
+    let currentIndex = 0;
+    const intervalTime = 5000;
+    let autoTab = null;
+    let hasStarted = false;
 
-function activateTab(index) {
-    const tab = tabs[index];
-    const targetId = tab.dataset.target;
+    function resetTabs() {
+        tabs.forEach(tab => {
+            tab.classList.remove("opacity-100");
+            tab.classList.add("opacity-60");
 
-    // Reset tabs
-    tabs.forEach(t => {
-    t.classList.remove("opacity-100");
-    t.classList.add("opacity-60");
+            const bar = tab.querySelector(".progress-bar");
+            if (bar) {
+                bar.style.transition = "none";
+                bar.style.width = "0%";
+                bar.offsetWidth; // force repaint
+            }
 
-    const bar = t.querySelector(".progress-bar");
-    if (bar) {
-        bar.style.transition = "none";
-        bar.style.width = "0%";
-    }
-
-    // mobile content
-    const mobileContent = t.closest(".service-item")?.querySelector(".service-mobile-content");
-    mobileContent?.classList.add("hidden");
-    });
-
-    // Desktop content
-    contents.forEach(c => c.classList.add("hidden"));
-
-    // Activate tab
-    tab.classList.remove("opacity-60");
-    tab.classList.add("opacity-100");
-
-    if (isMobile) {
-    // Show content below tab
-    tab.closest(".service-item")
-        ?.querySelector(".service-mobile-content")
-        ?.classList.remove("hidden");
-    } else {
-    document.getElementById(targetId)?.classList.remove("hidden");
-    }
-
-    // Progress bar (desktop only)
-    if (!isMobile) {
-    const activeBar = tab.querySelector(".progress-bar");
-    if (activeBar) {
-        requestAnimationFrame(() => {
-        activeBar.style.transition = "width 5s linear";
-        activeBar.style.width = "100%";
+            const mobileContent = tab.closest(".service-item")
+                ?.querySelector(".service-mobile-content");
+            mobileContent?.classList.add("hidden");
         });
-    }
-    }
-}
 
-tabs.forEach((tab, i) => {
-    tab.addEventListener("click", () => {
-    currentIndex = i;
-    activateTab(currentIndex);
-    resetInterval();
+        contents.forEach(c => c.classList.add("hidden"));
+    }
+
+    function activateTab(index) {
+        currentIndex = index;
+        resetTabs();
+
+        const tab = tabs[index];
+        const targetId = tab.dataset.target;
+
+        tab.classList.remove("opacity-60");
+        tab.classList.add("opacity-100");
+
+        if (isMobile) {
+            tab.closest(".service-item")
+                ?.querySelector(".service-mobile-content")
+                ?.classList.remove("hidden");
+        } else {
+            document.getElementById(targetId)?.classList.remove("hidden");
+
+            const bar = tab.querySelector(".progress-bar");
+            if (bar) {
+                requestAnimationFrame(() => {
+                    bar.style.transition = `width ${intervalTime}ms linear`;
+                    bar.style.width = "100%";
+                });
+            }
+        }
+    }
+
+    function startAutoplay() {
+        if (isMobile || hasStarted) return;
+
+        hasStarted = true;
+        activateTab(currentIndex);
+
+        autoTab = setInterval(() => {
+            currentIndex = (currentIndex + 1) % tabs.length;
+            activateTab(currentIndex);
+        }, intervalTime);
+    }
+
+    // TAB CLICK
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+            currentIndex = index;
+            clearInterval(autoTab);
+            hasStarted = true;
+            activateTab(currentIndex);
+
+            if (!isMobile) {
+                autoTab = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % tabs.length;
+                    activateTab(currentIndex);
+                }, intervalTime);
+            }
+        });
     });
+
+    // INITIAL STATIC STATE (no progress)
+    activateTab(0);
+
+    // INTERSECTION OBSERVER
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                startAutoplay();
+            }
+        },
+        { threshold: 0.4 }
+    );
+
+    observer.observe(section);
 });
-
-function resetInterval() {
-    if (isMobile) return;
-    clearInterval(autoTab);
-    autoTab = setInterval(() => {
-    currentIndex = (currentIndex + 1) % tabs.length;
-    activateTab(currentIndex);
-    }, intervalTime);
-}
-
-// Init
-activateTab(0);
-resetInterval();
-});
-
 </script>
+

@@ -9,6 +9,7 @@ const {
     ButtonText = "",
     SubTitle = "",
     Padding = false,
+    BackImage,
     BlogDetails=[]
 } = Astro.props;
 
@@ -17,17 +18,37 @@ import Clock from "../assets/images/clock-icon.svg";
 
 const hasHeroImage = !!HeroImage;
 const hasBgImage = !!BgImage;
+const hasBackImage = !!BackImage;
 
 // column logic
-const contentCols = hasBgImage
+const contentCols = hasBackImage || hasBgImage
     ? "lg:col-span-7"
     : hasHeroImage
         ? "lg:col-span-6"
-        : "lg:col-span-10";
----
+        : "lg:col-span-7";
 
-<section class="section-container mt-[90px]! grid grid-cols-12 gap-[30px]">
-    
+
+// const bgPosition = hasBackImage
+//     ? "bg-[position:bottom_0px_right_165px]"
+//     : hasHeroImage
+//         ? "bg-[position:calc(100%-10px)_calc(100%-20px)] lg:bg-[position:bottom_0px_right_40px] xl:bg-[position:bottom_0px_right_165px]"
+//         : "bg-[position:center_right_80px]";
+
+
+const backImageBg = "bg-no-repeat bg-[position:calc(100%-10px)_center] lg:bg-[position:calc(100%-40px)_center] xl:bg-[position:calc(100%-110px)_center]";
+
+
+
+---
+<section
+    class={`section-container mt-[90px]! grid grid-cols-12 gap-[30px]
+    ${hasBackImage ? backImageBg : ""}`}
+    style={
+        hasBackImage
+        ? `background-image: url('${BackImage.src}');`
+        : ""
+    }
+>
     {/* CONTENT */}
     <div
         class={`lg:col-start-2 col-span-12 ${contentCols} space-y-5 lg:space-y-8
@@ -53,7 +74,7 @@ const contentCols = hasBgImage
             )}
 
             {Paragraph && (
-                <p class="lg:text-lg font-medium">
+                <p class="lg:text-lg xl:text-xl font-medium">
                     {Paragraph}
                 </p>
             )}
@@ -95,7 +116,7 @@ const contentCols = hasBgImage
 
     {/* BG IMAGE AS GRID ITEM */}
     {hasBgImage && (
-        <div class="col-span-12 lg:col-span-3 self-center">
+        <div class="col-span-12 hidden lg:block lg:col-span-3 self-center">
             <img
                 src={BgImage.src}
                 alt="Background Visual"
