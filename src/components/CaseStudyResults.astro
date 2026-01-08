@@ -7,8 +7,8 @@ const {Image,Title="", Paragraph="", Heading="", Results=[]} = Astro.props;
 <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
     <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-10">
         <SectionTitle Title={Title} Heading={Heading} Paragraph={Paragraph} />
-        <div class="grid grid-cols-10 gap-5 lg:gap-10">
-            <div class="order-2 xl:order-1 col-span-10 xl:col-span-4 lg:grid lg:grid-cols-2 xl:grid-cols-1 gap-10 xl:max-h-[585px]   xl:overflow-y-auto xl:pl-2 xl:pr-2 xl:py-2 no-scrollbar">
+        <div class="grid grid-cols-10 gap-7 lg:gap-10">
+            <div id="results-scroll" class="order-2 xl:order-1 col-span-10 xl:col-span-4 lg:grid lg:grid-cols-2 xl:grid-cols-1 gap-10 xl:max-h-[585px] space-y-7 lg:space-y-0 xl:overflow-y-auto xl:pl-2 xl:pr-2 xl:py-2 no-scrollbar">
                 {
                     Results && Results.map((item:any) => (
                         <div class="p-5 lg:p-[30px] space-y-5 rounded-[20px] outline-4 lg:outline-8 outline-[rgba(0,62,135,0.1)]">
@@ -48,3 +48,66 @@ const {Image,Title="", Paragraph="", Heading="", Results=[]} = Astro.props;
 }
 
 </style>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const box = document.getElementById("results-scroll");
+    if (!box) return;
+
+    let currentScroll = 0;
+    let targetScroll = 0;
+    let isAnimating = false;
+
+    const ease = 0.08; // 🔥 smoothness control (lower = smoother)
+
+    function animate() {
+      if (!isAnimating) return;
+
+      currentScroll += (targetScroll - currentScroll) * ease;
+      box.scrollTop = currentScroll;
+
+      if (Math.abs(targetScroll - currentScroll) < 0.5) {
+        currentScroll = targetScroll;
+        isAnimating = false;
+      } else {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    window.addEventListener(
+      "wheel",
+      (e) => {
+        const rect = box.getBoundingClientRect();
+
+        const inView =
+          rect.top < window.innerHeight * 0.5 &&
+          rect.bottom > window.innerHeight * 0.5;
+
+        if (!inView) return;
+
+        const maxScroll = box.scrollHeight - box.clientHeight;
+        const delta = e.deltaY * 0.9; // 👈 controls scroll speed
+
+        targetScroll = Math.min(
+          maxScroll,
+          Math.max(0, targetScroll + delta)
+        );
+
+        const isAtTop = targetScroll <= 0;
+        const isAtBottom = targetScroll >= maxScroll;
+
+        if (!isAtTop && !isAtBottom) {
+          e.preventDefault();
+          if (!isAnimating) {
+            isAnimating = true;
+            currentScroll = box.scrollTop;
+            requestAnimationFrame(animate);
+          }
+        }
+      },
+      { passive: false }
+    );
+  });
+</script>
+
