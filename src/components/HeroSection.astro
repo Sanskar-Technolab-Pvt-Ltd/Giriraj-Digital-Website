@@ -35,21 +35,14 @@ const contentCols = hasBackImage || hasBgImage
 //         : "bg-[position:center_right_80px]";
 
 
-const backImageBg = "bg-no-repeat bg-[position:calc(100%-10px)_center] lg:bg-[position:calc(100%-40px)_center] xl:bg-[position:calc(100%-110px)_center]";
+const backImageBg = " bg-none!  lg:bg-no-repeat lg:bg-[position:calc(100%-10px)_center] lg:bg-[position:calc(100%-40px)_center] xl:bg-[position:calc(100%-110px)_center]";
 
 
 
 ---
 <section
-    class={`section-container mt-[90px]! grid grid-cols-12 gap-[30px]
-    ${hasBackImage ? backImageBg : ""}`}
-    style={
-        hasBackImage
-        ? `background-image: url('${BackImage.src}');`
-        : ""
-    }
->
-    {/* CONTENT */}
+    class={`section-container mt-[90px]! grid grid-cols-12 gap-[30px] ${hasBackImage ? backImageBg : ""}`} style={ hasBackImage ? `background-image: url('${BackImage.src}') !important;` : ""}>
+
     <div
         class={`lg:col-start-2 col-span-12 ${contentCols} space-y-5 lg:space-y-8
         ${Padding ? "py-10 md:py-20 lg:py-24 xl:py-[120px]" : ""}`}

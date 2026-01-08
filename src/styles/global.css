@@ -70,3 +70,8 @@ footer h5 {
 .blur-sm {
     filter: blur(2px);
 }
+
+
+#dropdownNavbar, #WhatWeDoDropdown, #ResourcesDropdown {
+        transform: translate(0px, 59px) !important;
+}

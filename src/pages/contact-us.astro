@@ -93,16 +93,16 @@ const Location = [
 
     <!-- * GIRIRAJ DIGITAL at World Wide -->
     <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
-        <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-[30px] lg:space-y-[60px]">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 flex flex-col space-y-[30px] lg:space-y-[60px]">
             <SectionTitle Title="Our Global Locations" Heading="GIRIRAJ DIGITAL at World Wide"  />
-            <div class="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-[30px]">
+            <div class="order-2 lg:order-1 grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-[30px]">
             {
                 Location.map((location:any) => (
                 <button
                     type="button"
                     data-id={location.id}
                     data-map={location.mapSrc}
-                    class="location-card flex text-left rounded-xl lg:rounded-[20px] p-6 space-x-6 border-4 border-[#E9F2FC] transition-all"
+                    class="location-card cursor-pointer flex text-left rounded-xl lg:rounded-[20px] p-6 space-x-6 border-4 border-[#E9F2FC] transition-all"
                 >
                     <div class="flex flex-col space-y-6 justify-between">
                         <img src={location.Image.src} class="w-fit h-fit" alt={location.Name} />
@@ -127,7 +127,7 @@ const Location = [
             }
             </div>
 
-            <div class="rounded-2xl p-5 lg:p-[60px] bg-[url('../assets/images/map-bg.webp')] bg-cover">
+            <div class="order-1 mb-10 lgmb-0 lg:order-2 rounded-2xl p-5 lg:p-[60px] bg-[url('../assets/images/map-bg.webp')] bg-cover">
                 <div class="bg-white rounded-xl lg:rounded-[20px] outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)]">
                     <iframe
                     id="mapFrame"
@@ -143,6 +143,8 @@ const Location = [
 
     </section>
 
+
+<!-- * Location JS -->
 <script is:inline>
     const cards = document.querySelectorAll(".location-card");
     const mapFrame = document.getElementById("mapFrame");
@@ -165,6 +167,42 @@ const Location = [
     cards.forEach(card => {
         card.addEventListener("click", () => setActive(card));
     });
+</script>
+
+<!-- * File Input JS -->
+<script>
+  // Handle file input
+    const fileInput = document.getElementById('file-input') as HTMLInputElement;
+    const fileName = document.getElementById('file-name');
+
+    if (fileInput && fileName) {
+        fileInput.addEventListener('change', (e) => {
+        const target = e.target as HTMLInputElement;
+        const file = target.files?.[0];
+        fileName.textContent = file ? file.name : 'No File Chosen';
+        });
+    }
+
+    // Handle form submission
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    
+    if (form) {
+        form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        
+        console.log('Form submitted:', data);
+        
+        // Add your form submission logic here
+        // For example: send to an API endpoint
+        
+        alert('Message sent successfully!');
+        form.reset();
+        if (fileName) fileName.textContent = 'No File Chosen';
+        });
+    }
 </script>
 
 </Layout>
