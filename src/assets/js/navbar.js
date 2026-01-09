@@ -254,3 +254,14 @@ setupInner(
   'case-study-arrow',
   'resources-mobile'
 );
+
+
+const navbar = document.getElementById("navbar-main");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 10) {
+    navbar.classList.add("shadow-md");
+  } else {
+    navbar.classList.remove("shadow-md");
+  }
+});

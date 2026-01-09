@@ -4,6 +4,7 @@ import TestimonialCard from "../components/TestimonialCard.astro";
 import Ismael from "../assets/images/ismael-a.png";
 import Alek from "../assets/images/alex-k.webp";
 import Vector from "../assets/images/swiper-button-vector.svg";
+import randal from "../assets/images/randal-a.png";
 ---
 
 <section class="section-container grid grid-cols-12 gap-5 lg:gap-[30px]">
@@ -18,43 +19,35 @@ import Vector from "../assets/images/swiper-button-vector.svg";
                 <swiper-slide>
                     <TestimonialCard VideoUrl="https://www.youtube.com/embed/3FOjvG0AB8I?autoplay=1" Name="Alex K." Designation="Head of Marketing, Autino" TestimonialImage={Alek} Content={["After their nice introduction, the decision to leverage Giriraj Digital for our Umbraco work didn't take much more thinking. The work was clearly understood & properly set out deliverables, and a good turnaround delivery.","The team has responded timely even for minor changes & which is what is good about this team. We're really happy to be continuing this working relationship.", ]} />
                 </swiper-slide>
+
+                <swiper-slide>
+                    <TestimonialCard VideoUrl="https://www.youtube.com/embed/Et-GVVHy_kM?autoplay=1" Name="Alex K." Designation="Head of Marketing, Autino" TestimonialImage={randal} Content={["It's been exactly 2 years since getting engaged with Giriraj Digital for my digital transformation needs. It's a recommended experience working with them. The team has a good bunch of people with a proactive attitude & timeliness.","Always recommend GIRIRAJ DIGITAL for upcoming line ups.", ]} />
+                </swiper-slide>
             </swiper-container>      
 
-            <div class="absolute top-90 right-0 lg:top-0 z-30 lg:right-10 flex justify-end gap-3 ">
+            <!-- <div class="absolute top-90 right-0 lg:top-0 z-30 lg:right-10 flex justify-end gap-3 ">
                 <button class="swiper-button-prev-custom w-[30px] h-[30px] rounded-full cursor-pointer bg-[rgba(93,93,93,0.3)] hover:bg-[#5D5D5D] transition-colors duration-300 ease-in-out flex items-center justify-center">
                     <img src={Vector.src} alt="next slide" class="w-2" >
                 </button>
                 <button class="swiper-button-next-custom w-[30px] h-[30px] rounded-full cursor-pointer bg-[rgba(93,93,93,0.3)] hover:bg-[#5D5D5D] transition-colors duration-300 ease-in-out flex items-center justify-center">
                     <img src={Vector.src} alt="next slide" class="rotate-180 w-2">
                 </button>
-            </div>
+            </div> -->
         </div>      
     </div>
 
     <!-- Video Modal -->
-        <div id="video-modal"
-            class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm">
+        <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm">
         
-        <div class="relative w-[90%] max-w-3xl aspect-video bg-black rounded-xl overflow-hidden">
-            
-            <!-- Close Button -->
-            <button id="close-video"
-                    class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white text-black font-bold">
-            ✕
-            </button>
+            <div class="relative w-[90%] max-w-3xl aspect-video bg-black rounded-xl overflow-hidden">
+                
+                <!-- Close Button -->
+                <button id="close-video" class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white text-black font-bold">✕</button>
 
-            <!-- YouTube iframe -->
-            <iframe
-            id="youtube-frame"
-            class="w-full h-full"
-            src=""
-            title="YouTube video"
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen>
-            </iframe>
+                <!-- YouTube iframe -->
+                <iframe id="youtube-frame" class="w-full h-full" src="" title="YouTube video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-        </div>
+            </div>
         </div>
 
 
