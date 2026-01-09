@@ -4,12 +4,12 @@ import Arrow from "../assets/images/button-arrow.svg"
 import LinkButton from "./LinkButton.astro";
 import Image from "../assets/images/left-content-bg.webp"
 
-const {BgImage, RightImage, SubTitle, Title, Paragraph, ButtonLink, Section = true} = Astro.props;
+const {BgImage, RightImage, SubTitle, Title, Paragraph, ButtonLink, Section = true , MarginFalse= false} = Astro.props;
 
 const BackgroundImage = BgImage || Image
 ---
 
-<section class=`${Section && "section-container px-5 lg:px-[30px] mt-0!"} w-full bg-white`>
+<section class=`${Section && "section-container px-5 lg:px-[30px]"} ${MarginFalse ? "" : "mt-0!"} w-full bg-white`>
     <div class="grid grid-cols-12 gap-5 lg:gap-[30px] rounded-xl bg-cover bg-center w-full p-5 lg:px-0 lg:py-20 xl:py-[100px]" style={`background-image: url('${BackgroundImage.src}');`} >
         <div class="col-span-12 lg:col-start-2 lg:col-span-10 lg:grid lg:grid-cols-10 gap-10 space-y-5 lg:space-y-0">
             <div class="col-span-10 xl:col-span-5 p-4 lg:p-[30px] bg-white rounded-xl lg:rounded-3xl outline-3 lg:outline-8 outline-[rgba(255,255,255,0.6)] space-y-5 lg:space-y-10">

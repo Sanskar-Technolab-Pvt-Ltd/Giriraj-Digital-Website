@@ -6,7 +6,7 @@ import EmailIcon from "../assets/images/Email-Icon.png";
 import PhoneIcon from "../assets/images/Phone-Icon.png";
 ---
 
-<div class=`location-item ${isActive ? 'active' : ''} bg-[url('../assets/images/COPENHAGEN.webp')] lg:bg-none bg-cover`>
+<div class=`location-item ${isActive ? 'active' : ''} lg:bg-none bg-cover` style={`background-image: url('${Image.src}');`}>
     <img class="hidden lg:block" src={Image.src} alt={City} />
     <div class="bottom-bar space-y-5 lg:space-y-0">
         <div class="left flex flex-col space-y-2">

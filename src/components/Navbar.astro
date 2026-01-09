@@ -4,6 +4,7 @@ import Icon from "../assets/images/navbar-icon.svg";
 import LinkButton from "./LinkButton.astro";
 import Arrow from "../assets/images/button-arrow.svg";
 import Arrow2 from "../assets/images/arrow-color.svg";
+import ProductEngineeing from "../pages/services/product-engineeing.astro";
 
 const AiAutomation = [
   {
@@ -192,16 +193,7 @@ const CaseStudy2 = [
     </a>
     <div
       class="inline-flex space-x-3 xl:space-x-5 lg:space-x-3 rtl:space-x-reverse lg:order-2 items-center content-center">
-      <button
-        type="button"
-        class="px-3 py-2.5 lg:px-4 lg:py-3
-            font-semibold leading-5
-            bg-brand text-sm lg:text-base
-            border border-transparent rounded-base
-            bg-[#000000] rounded-full
-            cursor-pointer text-white"
-        >Inquire Now</button
-      >
+      <button type="button" class="px-3 py-2.5 lg:px-4 lg:py-3 font-semibold leading-5 bg-brand text-sm lg:text-base border border-transparent rounded-base bg-[#000000] rounded-full cursor-pointer text-white">Inquire Now</button>
       <button
         data-collapse-toggle="navbar-cta"
         type="button"
@@ -367,14 +359,11 @@ const CaseStudy2 = [
             </svg>  
             </button>
               <div id="industries-served-mobile" class="inner-dropdown hidden flex flex-col space-y-1 px-5">
-                    <a href="#" >AI Automation</a>
-                    <a href="">Insurance</a>
-                    <a href="">Retails & Hospitality</a>
-                    <a href="">Travel</a>
-                    <a href="#">Healthcare</a>
-                    <a href="">Media & Entertainment</a>
-                    <a href="">Real Estate</a>
-                    <a href="">Ecommerce</a>
+                {
+                  AiAutomation.map((item: any) => (
+                    <a href={item.Link}>{item.Text}</a>
+                  ))
+                }
               </div>
 
 
@@ -389,11 +378,11 @@ const CaseStudy2 = [
             </svg>  
             </button>
               <div id="services-served-mobile" class="inner-dropdown hidden flex flex-col space-y-1 px-5">
-                    <a href="#" >Product Engineering</a>
-                    <a href="">Web Application Development</a>
-                    <a href="">Quality Assurance</a>
-                    <a href="">Ecommerce Solution</a>
-                    <a href="#">Dedicated Development Center</a>
+                {
+                  Services.map((item: any) => (
+                    <a href={item.Link}>{item.Text}</a>
+                  ))
+                }
               </div>
 
 
@@ -408,11 +397,16 @@ const CaseStudy2 = [
             </svg>  
             </button>
               <div id="technology-partnership-mobile" class="inner-dropdown hidden flex flex-col space-y-1 px-5">
-                    <a href="#" >Product Engineering</a>
-                    <a href="">Web Application Development</a>
-                    <a href="">Quality Assurance</a>
-                    <a href="">Ecommerce Solution</a>
-                    <a href="#">Dedicated Development Center</a>
+                  {
+                    TechnologyPartnership1.map((item: any) => (
+                      <a href={item.Link}>{item.Text}</a>
+                    ))
+                  }
+                  {
+                    TechnologyPartnership2.map((item: any) => (
+                      <a href={item.Link}>{item.Text}</a>
+                    ))
+                  }
               </div>
           </div>
         </li>
@@ -460,17 +454,16 @@ const CaseStudy2 = [
             </svg>  
             </button>
               <div id="case-study-mobile" class="inner-dropdown hidden flex flex-col space-y-1 px-5">
-                    <a href="#" >AI Sales Automation Platform</a>
-                    <a href="">Helpdesk Management System</a>
-                    <a href="">Ticket Booking System</a>
-                    <a href="">Reward Loyalty Program</a>
-                    <a href="#">Health Counselling Web Application</a>
-                    <a href="#" >Healthcare Software Solution</a>
-                    <a href="">Multivendor Insurance portal</a>
-                    <a href="">Travel & Tourism Portal</a>
-                    <a href="">Multivendor Ecommerce Portal</a>
-                    <a href="#">Stock Tracker Web App</a>
-                    <a href="#">Construction Equipment App</a>
+                {
+                  CaseStudy1.map((item: any) => (
+                    <a href={item.Link}>{item.Text}</a>
+                  ))
+                }
+                {
+                  CaseStudy2.map((item: any) => (
+                    <a href={item.Link}>{item.Text}</a>
+                  ))
+                }
               </div>
             <a href="#" class="block px-2">Blogs</a>
             <a href="#" class="block px-2">Business Events</a>
