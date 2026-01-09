@@ -1,33 +1,51 @@
 ---
-const {TestimonialImage, Content=[], Name, Designation, VideoUrl} = Astro.props;
-import Play from "../assets/images/video-play-button.svg"
-import TestimonialSays from "../assets/images/testimonial-says.svg"
+const { TestimonialImage, Content = [], Name, Designation, VideoUrl } = Astro.props;
+import Play from "../assets/images/video-play-button.svg";
+import TestimonialSays from "../assets/images/testimonial-says.svg";
 ---
 
 <div class="grid grid-cols-10 gap-5 xl:gap-[30px]">
-    <div class="col-span-12 xl:col-span-3 xl:h-fit  md:aspect-auto  xl:aspect-square md:w-fit xl:w-auto p-8 h-fit 2xl:p-[60px] bg-[url('../assets/images/testimonial-bg.webp')] rounded-4xl relative">
+  
+  <!-- SINGLE BUTTON -->
+  <button
+    type="button"
+    class="col-span-12 xl:col-span-3 xl:h-fit md:aspect-auto xl:aspect-square cursor-pointer
+           md:w-fit xl:w-auto p-8 h-fit 2xl:p-[60px]
+           bg-[url('../assets/images/testimonial-bg.webp')]
+           rounded-4xl relative play-video"
+    data-video={VideoUrl}
+  >
 
-        <img src={TestimonialImage.src} class="border-6 border-[rgba(255,255,255,0.6)] rounded-[20px] h-72 w-[320px] mx-auto object-cover" alt={Name}>
-        <!-- Center Bottom-10 Play Button -->
-        <button
-        class="cursor-pointer absolute bottom-14 xl:bottom-20 left-1/2 -translate-x-1/2 play-video"
-        data-video={VideoUrl}
-        >
-        <img src={Play.src} alt="play-video" class="w-[60px] h-[60px]">
-</button>
+    <img
+      src={TestimonialImage.src}
+      class="border-6 border-[rgba(255,255,255,0.6)] rounded-[20px] h-72 mx-auto object-cover"
+      alt={Name}
+    />
 
+    <!-- Play Icon (NOT a button) -->
+    <span
+      class="pointer-events-none absolute bottom-14 xl:bottom-20
+             left-1/2 -translate-x-1/2"
+    >
+      <img src={Play.src} alt="play-video" class="w-[60px] h-[60px]" />
+    </span>
+
+  </button>
+
+  <!-- CONTENT -->
+  <div class="col-span-12 xl:col-span-7 content-center text-[#2C363A]
+              space-y-2.5 text-lg md:text-xl xl:text-2xl xl:px-5 2xl:px-10">
+    <div class="space-y-6">
+      <img src={TestimonialSays.src} alt="testimonial says" />
+      {Content.map((text: any) => (
+        <p>{text}</p>
+      ))}
     </div>
 
-    <div class="col-span-12 xl:col-span-7 content-center text-[#2C363A] space-y-2.5 text-lg md:text-xl xl:text-2xl xl:px-5 2xl:px-10">
-        <div class="space-y-6">
-            <img src={TestimonialSays.src} class="" alt="testimonial says">
-            {Content.map((text:any) => (
-                <p>{text}</p>
-            ))}
-        </div>
-        <div class="space-y-1">
-            <p class="font-bold">{Name || ""}</p>
-            <p>{Designation || ""}</p>
-        </div>
+    <div class="space-y-1">
+      <p class="font-bold">{Name}</p>
+      <p>{Designation}</p>
     </div>
+  </div>
+
 </div>
