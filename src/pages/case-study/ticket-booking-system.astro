@@ -93,7 +93,23 @@ const ChallengesData = [
     },
 ]
 
-const Certification = [ Certificate1,Certificate2,Certificate3 ]
+const Certification = [
+    {
+        Image: Certificate1,
+        Link: "#",
+        AltText: "DB SQL Server"
+    },
+    {
+        Image: Certificate2,
+        Link: "#",
+        AltText: "Angular"
+    },
+    {
+        Image: Certificate3,
+        Link: "#",
+        AltText: "Node.js"
+    }
+]
 
 const ResultsList = [
     {
@@ -155,7 +171,7 @@ const ResultsList = [
     <CaseStudyResults Image={ResultImage} Title="Driving Success" Heading="Results" Paragraph="And It was a smashing Success..!!" Results={ResultsList} />
 
     <!-- * Technology Offered -->
-    <AchievementsCard BgImage={CertificationBG} Heading="Technologies Offered" Certificates={Certification} FullWidth={true} GridClass="grid-cols-2 lg:grid-cols-5" GapClass="gap-[32px] lg:gap-[60px]" />
+    <AchievementsCard BgImage={CertificationBG} Heading="Technologies Offered" Certificates={Certification} FullWidth={true} GridClass="grid-cols-2 lg:grid-cols-3 xl:grid-cols-5" GapClass="gap-[32px] lg:gap-[60px]" />
 
     <!-- * Solution Delivered -->
     <SolutionDelivered />

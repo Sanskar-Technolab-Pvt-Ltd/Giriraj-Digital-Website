@@ -119,7 +119,7 @@ const PopularBlogList = [
     <HeroSection Padding={true} SubTitle="Web & Mobile App Development Blogs" Title="Blogs" Paragraph="Welcome to our blog. Here we will sum up our continually curious approach to the way we think and work. We're always looking for bigger ideas and better ways to do things. And when we find them, we'll share them with you here." />
 
     <section class="section-container mt-0! grid grid-cols-12 gap-5 lg:gap-[30px] xl:gap-[60px] pt-10 px-10 xl:pt-20 xl:px-20 bg-[url('../assets/images/tags-bg.webp')] bg-no-repeat bg-size-[100%_auto] xl:gap-y-20">
-        <div class="col-span-12 xl:col-start-2 xl:col-span-7 flex flex-wrap gap-2 xl:gap-4 text-sm xl:text-base h-fit" id="filterButtons">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-2 xl:col-span-7 flex flex-wrap gap-2 lg:gap-4 text-sm xl:text-base h-fit" id="filterButtons">
             <button class="filter-btn active" data-tag="ALL">All</button>
             {
                 Tag.map((item) => (
@@ -129,7 +129,7 @@ const PopularBlogList = [
         </div>
 
 
-        <div class="col-span-12 xl:col-start-2 xl:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-[30px] xl:gap-[60px]" id="caseStudyGrid">
+        <div class="col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-2 xl:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-[30px] xl:gap-[60px]" id="caseStudyGrid">
             {
                 Card.map((card) => (
                     <a href={card.Link} class="outline-3 xl:outline-8 outline-[#E9F2FC] rounded-[20px] bg-white case-card" data-tag={card.Tag}>
@@ -157,7 +157,7 @@ const PopularBlogList = [
             }
         </div>
 
-        <div class="order-2 md:mt-8 lg:mt-0 xl:order-1 col-span-12 rounded-[20px] h-fit xl:col-start-9 xl:col-span-3 bg-[#E9F2FC] p-5 xl:p-[30px] space-y-5 shadow-[0px_0px_6px_0px_rgba(0,0,0,0.15)]">
+        <div class="order-2 md:mt-8 lg:mt-0 xl:order-1 col-span-12 rounded-[20px] h-fit lg:col-start-2 lg:col-span-10 xl:col-start-9 xl:col-span-3 bg-[#E9F2FC] p-5 xl:p-[30px] space-y-5 shadow-[0px_0px_6px_0px_rgba(0,0,0,0.15)]">
             <h2 class="text-[#21292C] text-[26px] xl:text-[36px] leading-[120%] font-bold">Most popular blogs</h2>
             {
                 PopularBlogList.map((item, index) => (
@@ -172,7 +172,7 @@ const PopularBlogList = [
 
         </div>
 
-        <button id="loadMoreBtn" class="order-1 xl:order-2 rounded-[40px] col-span-12 xl:col-start-2 xl:col-span-7 text-[#0FA1DB] bg-[#E9F2FC] text-center w-full font-semibold text-lg xl:text-xl py-3 cursor-pointer">Load More</button>
+        <button id="loadMoreBtn" class="order-1 xl:order-2 rounded-[40px] col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-2 xl:col-span-7 text-[#0FA1DB] bg-[#E9F2FC] text-center w-full font-semibold text-lg xl:text-xl py-3 cursor-pointer">Load More</button>
 
     </section>
 

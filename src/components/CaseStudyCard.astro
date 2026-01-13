@@ -4,9 +4,9 @@ import LinkButton from "./LinkButton.astro"
 const {Image="",Tag="",Name="",Description="",Link=""} = Astro.props
 ---
 
-<div class="rounded-[20px] outline-3 lg:outline-8 outline-[#E9F2FC]">   
+<div class="bg-white">   
     <img src={Image.src} alt={Name} class="rounded-t-[20px]" />
-    <div class="p-5 lg:p-10 space-y-5 lg:space-y-10">
+    <div class="p-5 lg:p-8 xl:p-10 space-y-5 lg:space-y-10">
         <div class="space-y-5">
             <p class="bg-[#E9F2FC] p-2.5 w-fit text-[#0FA1DB] font-semibold">{Tag}</p>
             <h3 class="text-[#21292C] text-2xl lg:text-[26px] font-bold">{Name}</h3>

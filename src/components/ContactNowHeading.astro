@@ -21,7 +21,7 @@ const isHidden = isImageHidden ? 'hidden' : '';
         <div
             class={`col-span-12 p-5 lg:px-0 lg:py-10 lg:col-start-2 md:col-span-7 xl:col-start-2 xl:col-span-6  space-y-[30px] content-center`}
         >
-            <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">
+            <h2 class="text-[#21292C] text-[26px] lg:text-4xl xl:text-5xl leading-[120%] font-bold">
             {Heading}
             </h2>
 
@@ -32,8 +32,8 @@ const isHidden = isImageHidden ? 'hidden' : '';
 
         <!-- Right Image -->
         {hasImage && (
-            <div class={`col-span-12 md:col-span-5 lg:col-span-5 lg:col-start-8  flex items-center justify-center p-5 md:p-0 ${isImageHidden ? "hidden md:block" : ""}`}>
-                <img src={Image.src} alt={Heading} class="md:w-full md:h-full lg:w-auto" />
+            <div class={`col-span-12 content-center md:col-span-5 lg:col-start-9 lg:col-span-4 xl:col-span-5 xl:col-start-8  flex items-center justify-center p-5 md:p-0 ${isImageHidden ? "hidden md:block" : ""}`}>
+                <img src={Image.src} alt={Heading} class="md:w-full md:h-full lg:w-auto lg:h-auto xl:w-auto xl:h-full self-center" />
             </div>
         )}
 

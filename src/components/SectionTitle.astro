@@ -4,7 +4,7 @@ const {Title, Heading, WidthClass, SpanBlock="", Paragraph=""} = Astro.props;
 
 <div class=`space-y-1.5 md:space-y-3 lg:space-y-5 ${WidthClass ? WidthClass : ""}`>
     <p class="text-[#0FA1DB] font-semibold lg:text-xl">{Title || ""}</p>
-    <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold">{Heading || ""} 
+    <h2 class="text-[#21292C] text-[26px] lg:text-4xl xl:text-5xl leading-[120%] font-bold">{Heading || ""} 
         {
             SpanBlock && (
                 <span class="block">{SpanBlock}</span>

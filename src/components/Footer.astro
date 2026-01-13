@@ -71,8 +71,8 @@ const AboutUsLinks = [
     <div class="py-10 lg:py-[100px] bg-[#041E28] px-5 md:px-10 lg:px-[30px]">
         <div class="grid grid-cols-12  gap-y-10 md:gap-[30px] xl:gap-y-20">
             <!-- * Business And HR/Career Details -->
-            <div class="col-span-12 md:w-[50%] xl:w-auto xl:col-start-2 xl:col-span-5 2xl:col-start-2 2xl:col-span-2 space-y-5 lg:space-y-[30px]">
-                <div class="py-[13px] px-5 space-y-[18px] rounded-[18px] border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.06)]">
+            <div class="col-span-12 md:flex xl:flex-col sm:w-[50%] md:w-auto xl:col-start-2 xl:col-span-5 2xl:col-start-2 2xl:col-span-2 space-y-5 lg:space-y-[30px] md:space-x-5 xl:space-x-0">
+                <div class="md:w-full xl:w-auto md:h-full xl:h-auto py-[13px] px-5 space-y-[18px] rounded-[18px] border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.06)]">
                     <h5 class="font-semibold lg:text-lg uppercase pb-2 border-b border-[rgba(255,255,255,0.2)]">Business</h5>
                     <div class="roboto space-y-3.5 ">
                         <a href="tel:+918200817694" class="flex space-x-2 content-center items-center hover:text-[#0FA1DB] ease-in-out duration-300">
@@ -86,7 +86,7 @@ const AboutUsLinks = [
                     </div>
                 </div>
 
-                <div class="py-[13px] px-5 space-y-[18px] rounded-[18px] border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.06)]">
+                <div class="md:w-full xl:w-auto md:h-full xl:h-auto py-[13px] px-5 space-y-[18px] rounded-[18px] border border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.06)]">
                     <p class="font-semibold lg:text-lg uppercase pb-2 border-b border-[rgba(255,255,255,0.2)]">HR / Career</p>
                     <div class="roboto space-y-3.5">
                         <a href="tel:+918200817694" class="flex space-x-2 content-center items-center hover:text-[#0FA1DB] ease-in-out duration-300">
@@ -156,9 +156,10 @@ const AboutUsLinks = [
         </div>
     </div>
     
-    <div class="p-5 md:px-10 lg:px-[60px] bg-[#02141B] 2xl:flex 2xl:justify-between roboto content-center items-center space-y-5 xl:space-y-0">
+    <div class="p-5 md:px-10 lg:px-[60px] bg-[#02141B] 2xl:flex 2xl:justify-between roboto content-center items-center space-y-5 2xl:space-y-0">
         <!-- * Social Media -->
-        <div class="space-x-5 flex justify-between lg:justify-start xl:justify-between 2xl:justify-auto content-center items-center">
+        <div class="flex justify-between">
+            <div class="space-x-5 w-full lg:w-auto flex justify-between lg:justify-start xl:justify-between 2xl:justify-auto content-center items-center">
             <a href="/"><img src={Logo.src} class="w-20 lg:w-auto lg:pr-5 lg:border-r lg:border-white" alt="giriraj digital" /></a>
             <div class="flex space-x-0.5 lg:space-x-4">
                 <a href="" target="_blank" class="flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 hover:bg-[#3B5998] rounded-full transition-colors ease-in-out duration-300">
@@ -189,14 +190,21 @@ const AboutUsLinks = [
                     <img class="h-4 lg:h-5" src={youtube.src} alt="youtube">
                 </a>
             </div>
+            </div>
 
+            <!-- * Iso -->
+            <div class="hidden lg:flex 2xl:hidden w-full lg:w-auto justify-center space-x-5">
+                <img class="w-fit" src={IsoBlue.src} alt="ISO">
+                <img class="w-fit" src={IsoGray.src} alt="ISO">
+            </div>
         </div>
 
+        
         <!-- * Iso -->
-        <div class="flex w-full lg:w-auto justify-center space-x-5">
-            <img class="w-fit" src={IsoBlue.src} alt="ISO">
-            <img class="w-fit" src={IsoGray.src} alt="ISO">
-        </div>
+            <div class="flex lg:hidden 2xl:flex w-full lg:w-auto justify-center space-x-5">
+                <img class="w-fit" src={IsoBlue.src} alt="ISO">
+                <img class="w-fit" src={IsoGray.src} alt="ISO">
+            </div>
 
 
         <!-- * Copyright -->

@@ -67,9 +67,9 @@ const CaseStudies = [
     <!-- * Tabs -->
     <section class="section-container mt-0! grid grid-cols-12  pt-10 px-10 lg:pt-20 lg:px-20 bg-[url('../assets/images/tags-bg.webp')] bg-no-repeat bg-size-[100%_auto]">
         <div class="col-span-12 lg:col-start-2 lg:col-span-10 space-y-10 xl:space-y-20 ">
-            <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 space-x-[38px]">
-                <h2 class="text-[#21292C] text-[26px] lg:text-5xl leading-[120%] font-bold lg:w-[20%] h-fit">Select your Industry</h2> 
-                <div class="flex flex-wrap gap-2 lg:gap-4 text-sm lg:text-base h-fit lg:w-[80%]" id="filterButtons">
+            <div class="flex flex-col xl:flex-row space-y-6 xl:space-y-0 space-x-[38px]">
+                <h2 class="text-[#21292C] text-[26px] lg:text-4xl xl:text-5xl leading-[120%] font-bold xl:w-[20%] h-fit">Select your Industry</h2> 
+                <div class="flex flex-wrap gap-2 lg:gap-4 text-sm lg:text-base h-fit xl:w-[80%]" id="filterButtons">
                     <button data-tag="ALL" class="filter-btn active">ALL</button>
                     <button data-tag="AI Automation" class="filter-btn">AI Automation</button>
                     <button data-tag="Auto Mobile" class="filter-btn">Auto Mobile</button>
@@ -85,10 +85,10 @@ const CaseStudies = [
 
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20" id="caseStudyGrid">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20" id="caseStudyGrid">
             {
                 CaseStudies.map((item: any) => (
-                    <div class="case-card" data-tag={item.Tag}>
+                    <div class="case-card rounded-[20px] outline-3 lg:outline-8 outline-[#E9F2FC]" data-tag={item.Tag}>
                         <CaseStudyCard Image={item.Image} Name={item.Name} Tag={item.Tag} Description={item.Description} Link={item.Link} />
                     </div>
                 ))
