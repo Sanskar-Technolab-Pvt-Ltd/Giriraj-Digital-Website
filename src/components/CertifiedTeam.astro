@@ -5,6 +5,7 @@ import FiveDays from "../assets/images/5-days.webp"
 import SevenDays from "../assets/images/7-days.webp"
 import Nikhil from "../assets/images/bikhil-p-certified-developer.webp" 
 import Developer from "./Developer.astro"
+import DeveloperDetails from "./DeveloperDetails.astro"
 
 import MasterIcon from "../assets/images/master-icon.png"
 import ProfessionalIcon from "../assets/images/professional.png"
@@ -20,10 +21,61 @@ const MILAN = [
     MasterIcon
 ]
 
-const DIVYA = [
+const ASHA = [
     UmbracoIcon,
     ProfessionalIcon
 ]
+
+const NiKhilDetails = {
+    Name: "Nikhil Prajapati",
+    Designation: "Umbraco Certified Developer",
+    Experience: "13+ years",
+    Projects: "125+ Projects with Umbraco 7, 10, 13, 17, and Umbraco Cloud",
+    Technologies: "C#, Umbraco, .NET Core, JavaScript, Angular, Entity Framework, TypeScript, Web API, etc."
+}
+
+const MilanDetails = {
+    Name: "Milan D.",
+    Designation: "UMBRACO CERTIFIED MASTER",
+    Experience: "10+ years",
+    Projects: "80+ Projects with Umbraco 7, 10, 13, 17, and Umbraco Cloud",
+    Technologies: "C#, Umbraco, .NET Core, JavaScript, Angular, Entity Framework, TypeScript, Web API, etc."
+}
+
+const AshaDetails = {
+    Name: "ASHA C.",
+    Designation: "UMBRACO CERTIFIED MASTER",
+    Experience: "10+ years",
+    Projects: "60+ Projects with Umbraco 7, 10, 13,17, Cloud",
+    Technologies: ".NET Core, Umbraco, Typescript, C#, .NET MVC, Entity Framework, SQL Server, etc.."
+}
+
+
+const DEVELOPERS = [
+    {
+        id: "nikhil",
+        image: Nikhil,
+        icons: NIKHIL,
+        cardName: "NIKHIL P.",
+        details: NiKhilDetails
+    },
+    {
+        id: "milan",
+        image: Nikhil,
+        icons: MILAN,
+        cardName: "MILAN D.",
+        details: MilanDetails
+    },
+    {
+        id: "asha",
+        image: Nikhil,
+        icons: ASHA,
+        cardName: "ASHA C.",
+        details: AshaDetails
+    }
+];
+
+
 ---
 
 <section class="section-container grid grid-cols-12 gap-[30px]">
@@ -65,11 +117,120 @@ const DIVYA = [
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-[30px] justify-between">
-                <Developer Image={Nikhil} Name="NIKHIL P." Icons={NIKHIL} Designation="Umbraco Certified Developer" />
-                <Developer Image={Nikhil} Name="MILAN D." Icons={MILAN} Designation="Umbraco Certified Master" />
-                <Developer Image={Nikhil} Name="DIVYA C." Icons={DIVYA} Designation="Umbraco Certified Professional" />
+            <div id="developer-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 relative">
+                {DEVELOPERS.map((dev) => (
+                    <Developer
+                        Image={dev.image}
+                        Icons={dev.icons}
+                        Name={dev.cardName}
+                        Designation={dev.details.Designation}
+                        developerId={dev.id}
+                    />
+                ))}
+
+                {DEVELOPERS.map((dev) => (
+                    <DeveloperDetails
+                        Image={dev.image}
+                        Icons={dev.icons}
+                        Name={dev.cardName}
+                        Designation={dev.details.Designation}
+                        Details={dev.details}
+                        developerId={dev.id}
+                    />
+                ))}
             </div>
         </div>
     </div>
 </section>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll("[data-dev]");
+        const details = document.querySelectorAll("[data-dev-details]");
+
+        function closeAll() {
+        details.forEach(d => d.classList.add("hidden"));
+        }
+
+        cards.forEach(card => {
+        card.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const id = card.dataset.dev;
+
+            closeAll();
+
+            const target = document.querySelector(
+            `[data-dev-details="${id}"]`
+            );
+
+            target?.classList.remove("hidden");
+        });
+        });
+
+        details.forEach(d => {
+        d.querySelector("[data-dev-close]")
+            ?.addEventListener("click", closeAll);
+        });
+
+        document.addEventListener("click", (e) => {
+        const open = document.querySelector("[data-dev-details]:not(.hidden)");
+        if (!open) return;
+
+        if (!e.target.closest("[data-dev-details]")) {
+            closeAll();
+        }
+        });
+
+        document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeAll();
+        });
+    });
+</script>
+
+
+
+<!-- * New JS -->
+<!-- <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll("[data-dev]");
+        const overlays = document.querySelectorAll("[data-dev-overlay]");
+
+        function closeAll() {
+        overlays.forEach(o => o.classList.add("hidden"));
+        document.body.style.overflow = "";
+        }
+
+        cards.forEach(card => {
+        card.addEventListener("click", () => {
+            const id = card.dataset.dev;
+
+            closeAll();
+
+            const overlay = document.querySelector(
+            `[data-dev-overlay="${id}"]`
+            );
+
+            overlay?.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+        });
+        });
+
+        overlays.forEach(overlay => {
+        // Close button
+        overlay.querySelector("[data-dev-close]")
+            ?.addEventListener("click", closeAll);
+
+        // Click outside popup
+        overlay.addEventListener("click", (e) => {
+            if (!e.target.closest("[data-dev-popup]")) {
+            closeAll();
+            }
+        });
+        });
+
+        // ESC key (bonus)
+        document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeAll();
+        });
+    });
+</script> -->

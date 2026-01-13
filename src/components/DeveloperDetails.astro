@@ -1,0 +1,99 @@
+---
+const {Icons, Image, Details={}, developerId, Name, Designation} = Astro.props;
+import Arrow from "../assets/images/button-arrow.svg";
+import closeButton from "../assets/images/closebutton.png";
+---
+
+<div id="" class="content-start grid grid-cols-12 gap-6 lg:gap-[30px] space-y-5 md:space-y-0 bg-white absolute top-0 hidden h-full overflow-y-auto" data-dev-details={developerId}>
+    <!-- CLOSE BUTTON -->
+    <button type="button" data-dev-close class="absolute top-4 right-4 z-10 cursor-pointer" aria-label="Close" > <img class="w-10" src={closeButton.src} alt="close" /> </button>
+
+    <div class="col-span-12 lg:col-span-4 relative md:w-fit lg:w-auto h-fit">
+        <img src={Image.src} class="rounded-2xl w-full" />
+        <div class="absolute rounded-b-2xl bottom-0 w-full">
+            <div class="bg-[url('../assets/images/certified-developer-bg.webp')] p-5 rounded-b-2xl text-white">
+                <h6 class="font-bold text-lg lg:text-xl">{Name}</h6>
+                <p class="font-medium text-sm sm:text-base">{Designation}</p>
+            </div>
+        </div>
+        {Icons.length > 0 && (
+            <div class="absolute bottom-14 lg:bottom-14 right-5 flex flex-col gap-4">
+                {Icons.map((icon: any, index: number) => (
+                    <img src={icon.src} alt="certification-icon" class={`transition-all duration-300 ease-out`} />
+                ))}
+            </div>
+        )}
+    </div>
+
+    <div class="col-span-12 lg:col-span-5 space-y-5 xl:space-y-7">
+        <p class="text-[#0FA1DB] font-semibold lg:text-xl">{Details.Designation} </p>
+        <h3 class="text-[#21292C] text-[26px] lg:text-4xl leading-[120%] font-bold">{Details.Name}</h3>
+        <p class="text-[#21292C] text-lg lg:text-xl xl:text-2xl font-semibold">PROJECTS: <span class="font-normal">{Details.Projects}</span></p>
+        <p class="text-[#21292C] text-lg lg:text-xl xl:text-2xl font-semibold">EXPERIENCE: <span class="font-normal">{Details.Experience}</span></p>
+        <p class="text-[#21292C] text-lg lg:text-xl xl:text-2xl font-semibold">KEY TECHNOLOGIES: <span class="font-normal">{Details.Technologies}</span></p>
+    </div>
+</div>
+
+
+
+<!-- <div
+  class="dev-overlay hidden fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center"
+  data-dev-overlay={developerId}
+>
+
+  <div
+    class="dev-popup relative bg-white rounded-2xl max-w-5xl w-full mx-4 p-6"
+    data-dev-popup
+  >
+
+    <button
+      class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-xl font-bold"
+      data-dev-close
+      aria-label="Close"
+    >
+      ✕
+    </button>
+
+    <div class="grid grid-cols-12 gap-6 lg:gap-[30px]">
+
+      <div class="col-span-12 lg:col-span-4 relative">
+        <img src={Image.src} class="rounded-2xl w-full" />
+
+        <div class="absolute rounded-b-2xl bottom-0 w-full">
+          <div class="bg-[url('../assets/images/certified-developer-bg.webp')] p-5 text-white">
+            <h6 class="font-bold text-lg lg:text-xl">{Name}</h6>
+            <p class="font-medium text-sm sm:text-base">{Designation}</p>
+          </div>
+          <div class="p-4 rounded-b-2xl bg-[linear-gradient(90deg,#0FA1DB,#5C2D91,#0FA1DB)] flex justify-between">
+            <p class="text-white font-semibold">View Profile</p>
+            <img src={Arrow.src} alt="arrow" />
+          </div>
+        </div>
+
+        {Icons.length > 0 && (
+          <div class="absolute bottom-28 right-5 flex flex-col gap-4">
+            {Icons.map((icon: any) => (
+              <img src={icon.src} alt="certification-icon" />
+            ))}
+          </div>
+        )}
+      </div>
+
+
+      <div class="col-span-12 lg:col-span-8 space-y-5 xl:space-y-7">
+        <p class="text-[#0FA1DB] font-semibold lg:text-xl">{Details.Designation}</p>
+        <h3 class="text-[#21292C] text-3xl lg:text-4xl font-bold">{Details.Name}</h3>
+
+        <p class="text-xl font-semibold">
+          PROJECTS: <span class="font-normal">{Details.Projects}</span>
+        </p>
+        <p class="text-xl font-semibold">
+          EXPERIENCE: <span class="font-normal">{Details.Experience}</span>
+        </p>
+        <p class="text-xl font-semibold">
+          KEY TECHNOLOGIES: <span class="font-normal">{Details.Technologies}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div> -->

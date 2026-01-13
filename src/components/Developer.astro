@@ -1,11 +1,11 @@
 ---
-const {Image, Name="", Designation="", Link="/", Icons = []} = Astro.props;
+const {Image, Name="", Designation="",  Icons = [], developerId} = Astro.props;
 import Arrow from "../assets/images/button-arrow.svg";
 ---
 
-<a href={Link} class="relative rounded-t-2xl group">
+<button class="cursor-pointer relative rounded-t-2xl group" data-dev={developerId}>
     <img src={Image.src} class="rounded-2xl w-full" alt={Name}>
-    <div class="absolute rounded-b-2xl bottom-0 w-full">
+    <div class="absolute rounded-b-2xl bottom-0 w-full text-left">
         <div class="bg-[url('../assets/images/certified-developer-bg.webp')] p-5  text-white">
             <h6 class="font-bold text-lg lg:text-xl">{Name}</h6>
             <p class="font-medium text-sm sm:text-base">{Designation}</p>
@@ -34,4 +34,4 @@ import Arrow from "../assets/images/button-arrow.svg";
             ))}
         </div>
     )}
-</a>
+</button>
