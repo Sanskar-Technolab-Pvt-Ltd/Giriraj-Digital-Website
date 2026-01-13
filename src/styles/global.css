@@ -82,3 +82,11 @@ footer h5 {
 #dropdownNavbar, #WhatWeDoDropdown, #ResourcesDropdown {
         transform: translate(0px, 59px) !important;
 }
+
+
+body.dropdown-lock {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
